@@ -1,4 +1,4 @@
-#Fragen und Lösungen zur Vorlesung Theo II
+# Fragen und Lösungen zur Vorlesung Theo II
 
 Die Lösungen die hier zusammengefasst wurden, kommen von mir und von Bildern
 aus die Theo II Whatsappgruppe.
@@ -6,3 +6,9 @@ aus die Theo II Whatsappgruppe.
 Bei Fragen, Korrektionen oder sonstiges, könnt ihr mich gerne per 
 email erreichen: \ 
 ljbkusters@gmail.com
+
+Vielen Dank an jeder, der mitgeholfen hat! Insbesondere:
+
++ Prof. Honerkamp / Dr. Mück für die Fragen
++ ``Der Andere'' für Seine Bilder mit Lösungen in der Whatsappgruppe.
+
