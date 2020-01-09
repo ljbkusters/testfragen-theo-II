@@ -50,7 +50,7 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
       2 & Sehr sicher & 7  & Sehr sicher & 12 & Sehr sicher \\
       3 & Sehr sicher & 8  & Sehr sicher & 13 & Sehr sicher \\
       4 & Sehr sicher & 9  & Sehr sicher & 14 & Sehr sicher \\
-      5 & Sehr sicher & 10 & Sicher      & 15 & \textbf{Eher unsicher} \\
+      5 & Sehr sicher & 10 & Sicher      & 15 & \textbf{unsicher} \\
       \bottomrule
     \end{tabular}
   \end{center}
@@ -59,7 +59,7 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
     \item Man berechne $\ds \grad\rr{1}$.
           $$\ds \grad\rr{1}=
            \frac{\vb r -\vb r'}{\abs{\vb r - \vb r'}^3}\quad
-           \qty(=-\grad'\rr{1})$$
+           \qty(=-\grad'\rr{1})\quad\text{(Skript 1.3.1)}$$ 
 
     \item Was ergibt $\ds \Delta\rr{1}$?
           $$\ds \Delta \rr{1} = -4\pi \delta(\vb r-\vb r')$$
@@ -123,7 +123,7 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
           einer Kugel mit Radius R an.
           $$\ds dA = R^2\sin\theta d\theta d\phi$$
           \textbf{Notiz:} $\ds\int_{\partial B_R(0)} dA=\int\delta(r-R)dV
-           =\int \delta(r-R)r^2\sin\theta d\theta d\phi
+           =\int \delta(r-R)r^2dr\sin\theta d\theta d\phi
            =R^2 \int \sin\theta d\theta d\phi$
 
     \item Man berechne das Volumen einer Kugel mit Radius R 
@@ -174,17 +174,16 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
 
   \begin{center}
     \begin{tabular}{ll|ll|ll}
-      \toprule
-      Frage & Sicherheitsgrad & Frage & Sicherheitsgrad 
-            & Frage & Sicherheitsgrad \\
-      \midrule
-      1 & Sicher              & 6  & Sicher& 11 & \\ 
-      2 & Sicher              & 7  & \textbf{Eher unsicher} & 12 & \\
-      3 & Sicher              & 8  & \textbf{Eher unsicher} & 13 & \\
-      4 & \textbf{Eher unsicher}
-                              & 9  & \textbf{Eher unsicher} & 14 & \\
-      5 & Sicher              & 10 & & 15 & \\
-      \bottomrule
+     \toprule
+     Frage & Sicherheitsgrad & Frage & Sicherheitsgrad 
+           & Frage & Sicherheitsgrad \\
+     \midrule
+     1 & Sicher            & 6  & Sicher            & 11 & Sicher\\ 
+     2 & Sicher            & 7  & \textbf{unsicher} & 12 & Sicher\\
+     3 & Sicher            & 8  & \textbf{unsicher} & 13 & Sicher\\
+     4 & \textbf{unsicher} & 9  & \textbf{unsicher} & 14 & Sicher\\
+     5 & Sicher            & 10 & Sicher            & 15&\textbf{unsicher}\\
+     \bottomrule
     \end{tabular}
   \end{center}
   \begin{enumerate}
@@ -291,33 +290,54 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
             exponentiell ab)
             (Skript 1.8.30)
           \end{center}
-          %TODO
 
     \textbf{[MAGNETOSTATIK]}
     \item Man scheibe die Konitinuitätsgleichung in differentieller Form
           und mit Integralen über ein Volumen $V$ bzw.\ dessen Oberfläche 
           $\partial V$.
-          %TODO
+          \begin{center}
+          \begin{tabular}{lll}
+            Differential Form & $\ds\pdv{t}\rho(\vb r, t)=
+                                 -\div\vb j(\vb r, t)$
+                                & (Skript 2.1.5)\\
+            Integral Form     & $\ds\int_V d^3r\partial_t\rho(\vb r,t)=
+                                \int_{\partial V}d\vb A\cdot
+                                \vb j(\vb r, t)=-I_F$
+                                & (Skript 2.1.1 und 2.1.3)\\
+          \end{tabular}
+          \end{center}
 
     \item Man schreibe Ladungsdichte $\rho(\vb r)$ und Stromdichte
           $\vb j(\vb r)$ für $i=1,\ldots,N$ Punktladungen $q_i$ mit 
           Trajektorioen $\vb r_i(t)$.
-          %TODO
+          $$\rho(\vb r)=\sum_i q_i\delta(\vb r-\vb r_i(t))
+          \quad \text{(Skript 1.1.2)}$$
+          $$\vb j(\vb r)=\sum_i q_i\dot{\vb r}_i\delta(\vb r-\vb r_i(t))
+          \quad \text{(Skript 2.1.2)}$$
 
     \item Wie lautet das Biot-Savart'sche Gesetz für $\vb A(\vb r)$ und
           $\vb B(\vb r)$?
-          %TODO
+          $$\vb B(\vb r)=k'\int d^3r'\frac{\vb j(\vb r')\times
+          (\vb r-\vb r')}{\abs{\vb r-\vb r'}^3}
+          \quad \text{(Skript 2.2.1)}$$
+          $$\vb B(\vb r)=k'\int d^3r'\rr{\vb j(\vb r')}
+          \quad \text{(Skript 2.3.2)}$$
+          \textbf{Notiz:} $k'=\frac{\mu_0}{4\pi}$ (SI)
 
     \item Wie lauten die zwei Feldgleichungen der Magnetostatik?
-          %TODO
+          $$\div \vb B(\vb r) = 0\quad \curl \vb B= 4\pi k'\vb j(\vb r)$$
 
     \item Man berechne das magnetische Dipolmoment für eine Punktladung auf
           einer Kreisbahn mit Radius $R$ sowie Drehimpuls $\vb L$.
-          %TODO
+          $$\vb j(\vb r,t)=q\vb v(t)\delta(\vb r-\vb r(t))$$
+          $$\vb m = \frac{1}{2}\vb r \times \vb j=\frac{q}{2}\vb 
+          r\times\vb v=\frac{q}{2m}\vb L$$
 
     \item Wie lauten die Zusammenhänge zwischen $\vb B$, $\vb H$ 
           und $\vb M$ in einem Paramagneten?
-          %TODO
+          $$\vb B = \vb H + 4\pi k'\vb M\quad\text{(Skript 2.5.12)}$$
+          $$\vb B = \mu_0 \vb H + \mu_0 \vb M \quad\text{(SI) 
+          (Skript 2.5.17)}$$
 
   \end{enumerate}
 
