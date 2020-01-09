@@ -1,0 +1,295 @@
+\documentclass{scrartcl}
+\usepackage[margin=3cm]{geometry} 
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{physics}
+\usepackage{bbold}
+
+\newcommand{\rr}[1]{\frac{#1}{\abs{\vb{r}-\vb{r}'}}} 
+\newcommand{\ds}{\displaystyle} 
+
+\title{Fragen und Loesungen zur Vorlesung Theo II}
+\author{Luc Kusters}
+\date{WS 19/20}
+
+\begin{document}
+
+\maketitle
+
+\noindent
+Die Lösungen die hier zusammengefasst wurden, kommen von mir und von Bildern
+aus die Theo II Whatsappgruppe. 
+\textbf{Weder Vollständichkeit noch Korrektheit kann garrantiert werden!}
+Bei Fragen, Korrektionen oder sonstiges, könnt ihr mich gerne per 
+email erreichen:\\ 
+ljbkusters@gmail.com \\
+
+
+\noindent
+Vielen Dank an jeder, der mitgeholfen hat! Insbesondere:
+\begin{itemize}
+  \item Prof. Honerkamp / Dr. Mück für die Fragen
+  \item ``Der Andere'' für Seine Bilder mit Lösungen in der Whatsappgruppe.
+\end{itemize}
+
+\clearpage
+\newpage
+\setcounter{page}{1}
+\tableofcontents
+\newpage
+
+\section{Grundkentnisse Elektrostatik I}
+  \begin{enumerate}
+    \item Man berechne $\ds \grad\rr{1}$.\\
+          $\ds \grad\rr{1}=
+           \frac{\vb r -\vb r'}{\abs{\vb r - \vb r'}^3}\quad
+           \qty(=-\grad'\rr{1})$
+
+    \item Was ergibt $\ds \Delta\rr{1}$?\\
+          $\ds \Delta \rr{1} = 4\pi \delta(\vb r-\vb r')$
+      
+    \item Wie lauten die beiden Feldgleichungen für das 
+          elektrische Feld in der Elektrostatik?\\
+          $\ds \div \vb E=4\pi k\rho(\vb r)\qquad\curl\vb E=0
+           \qquad\qty(\text{SI:}\,k=\frac{1}{4\pi\epsilon_0})$
+    
+    \item Wie lautet die Bestimmungsgleichung für das elektrostatische 
+          Potential bei gegebener Ladungsdichte $\rho(\vb r)$?\\
+          $\ds \phi(\vb r)=\int d^3r'\rr{\rho(\vb r')}$ 
+
+    \item Wie berechnet sich das elektrische Feld $\vb E (\vb r)$ aus dem
+          Potential $\Phi(\vb r)$?\\
+          $\ds \vb E(\vb r) = - \grad \Phi (\vb r)$
+
+    \item Wie Berechnet man den Potentialunterschied \textbf{[Spannung]}
+          zwischen den Orten 
+          $\vb r_2$ und $\vb r_1$ bei gegebenem Feld $\vb E(\vb r)$?\\
+          $\ds U(\vb r_1, \vb r_2)=\int_{\vb r_1}^{\vb r_2}
+           \vb E(\vb r)\cdot d\vb s
+           =\Phi(\vb r_2)-\Phi(\vb r_1)$\\
+           \textbf{Notiz}: Wegen $\vb E=-\grad\Phi$ ist $\vb E$ ein reines
+           Gradientenfeld. Dies heißt, daß das Integral über $\vb E$
+           wegunabhängig ist (nur Gültig in der Elektrostatik!!!).
+
+    \item Was besagt der satz von Gauß als mathematische Aussage?\\
+          $\ds \int_V d^3r \qty[\div \vb F(\vb r)]=
+           \int_{\partial V}d\vb A\cdot \vb F(\vb r)$\\
+          \textbf{Notiz:} In 3 Dimensionen, wobei $V$ ein Volumen darstellt,
+          und $\partial V$ dessen Randfläche darstellt.
+
+    \item Welche Aussage erhält man mit dem Satz von Gauß in der 
+          Elektrostatik in Anwesenheit von Ladungen in einem Volumen V?\\
+          $\vb E(\vb r)\eval_{\abs{\vb r} > R}\propto Q_{\text{ges}}\in V_R$\\
+          Oder in wörter: Das Elektrische Feld außerhalb einem Volumen 
+          $V_R$\footnote{maximale Radius R, d.h. $V_R\subset B_R$ 
+                   wobei $B_R$ ein Kugel 
+          mit Radius R ist}
+          ist
+          proportional zur Gesammtladung $Q_{\text{ges}}$ im Volumen $V_R$
+
+    \item Was besagt der Satz von Stokes Mathematisch?\\
+          $\ds \int_A d\vb A \cdot \qty[\curl \vb F(\vb r)]=
+           \int_{\partial A}d\vb s\cdot \vb F(\vb r)$\\
+          \textbf{Notiz:} In 3 Dimensionen, wobei $A$ eine Fläche 
+          darstellt,
+          und $\partial A$ dessen Rand darstellt.
+
+    \item Wann ist die Lösung der Poisson-Gleichung eindeutig?\\
+          Falls die Randbedingungen vorgegeben sind.\\
+          \textbf{Notiz:} $G(\vb r, \vb r')=\rr{1} + F(\vb r, \vb r')$ 
+          ist wegen $F(\vb r, \vb r')$ nicht eindeutig!
+          
+    \item Man gebe das infinitesimale Flächenelement auf der Oberfläche 
+          einer Kugel mit Radius R an.\\
+          $\ds dA = R^2\sin\theta d\theta d\phi$\\
+          \textbf{Notiz:} $\ds\int_{\partial B_R(0)} dA=\int\delta(r-R)dV
+           =\int \delta(r-R)r^2\sin\theta d\theta d\phi
+           =R^2 \int \sin\theta d\theta d\phi$
+
+    \item Man berechne das Volumen einer Kugel mit Radius R 
+          in Kugelkoordinaten\\
+          $\ds V_k=\int_{\sqrt{x^2+y^2+z^2}=R} 1\cdot dxdydz
+           =\int_0^{2\pi}\int_0^\pi\int_0^R 1\cdot r^2dr 
+            \sin\theta d\theta d\phi$\\
+          $\ds V_k=\int_0^R r^2 dr \int_{-1}^{1} d\cos\theta 
+                   \int_0^{2\pi}d\phi
+           =\qty[\frac{1}{3}R^3]\qty[2]\qty[2\pi]=\frac{4\pi}{3}R^3$
+
+    \item Wie sieht die Enwicklung einer Funktkion $f(\theta,\phi)$ in
+          Kugelflächenfunkionen aus und wie bestimmt man die 
+          Entwicklungskoffizienten?\\
+          $\ds f(\theta, \phi)=\sum_{lm} f_{lm}Y_{lm}(\theta,\phi)
+          \qquad l\in \mathbb{N}_0;\quad \abs{m}\le l; 
+          \quad m\in\mathbb{Z}$\\
+          $\ds f_{lm}=const.
+           =\int_{-1}^{1} d\cos\theta\int_0^{2\pi}d\phi 
+           Y^*_{lm}(\theta,\phi)f(\theta,\phi)
+           =\int d\Omega Y^*_{lm}(\Omega)f(\Omega)$\\
+
+    \item Wie lautet der Ansatz für die Lösung der Laplace-Gleichung in
+          Kugelfächenfunktionen?\\
+          $f(r,\theta,\phi)=
+          \sum_{lm}\qty(a_{lm}r^l+b_{lm}r^{-(l+1)})Y_{lm}(\theta,\phi)$
+           
+
+    \item Welche zwei wichtigen Gleichungen erfüllt die Dirichlet-Green'sche
+          Funktion $G_D(\vb r, \vb r')$?\\
+          1. $\ds G_D(\vb r, \vb r')= G_D(\vb r', \vb r)$ 
+             (für reine Dirichlet Randbedingungen)\\
+          2. $\ds \Phi(\vb r)=k\int_V d^3r' G_D(\vb r, \vb r')\rho(\vb r)
+             -\frac{1}{4\pi}\int_{\partial V}d\vb A'\cdot\phi(r')
+             \grad G_D(\vb r, \vb r')$\\
+          \textbf{Notiz:} Ob ich diese Frage richtig interpretiert habe 
+          weiß ich nicht.
+          
+
+  \end{enumerate}
+  \newpage
+  \section{Grundkenntinsse Elektrostatik II / Magnetostatik}
+  \begin{enumerate}
+
+    \item Wie lautet die Taylor-Entwicklung von $\rr{1}$ in den Komponenten
+          von $\vb r'$ bei $\vb r'=0$ bis einschließlich der Zweiten
+          Ordnung?\\
+          %TODO
+
+    \item Man drücke das elektrostatische Potential $\Phi(\vb r)$ einer
+          räumlich begrenzte Ladungsverteilung $\rho(\vb r')$ mittels
+          Monopol, den Dipolvektor und den Quadrupoltensor aus\\
+          %TODO
+
+    \item Man gebe Formel für das Monopolmoment, den Dipolvektor und den
+          Quadrupoltensor an.\\
+          %TODO
+
+    \item Wie koppeln Monopol und Dipol an ein externes elektrostatisches
+          Potential bzw. Feld\\
+          %TODO
+
+    \item Wie lautet die elektrostatische Energie einer Ladungsverteilung?
+          Man gebe zwei Äquivalente Ausdrücke, einerseits mit $\rho(\vb r)$
+          und andersseits mit $\vb E(\vb r)$\\
+          %TODO
+
+    \item Wie ist die elektrische Suszeptibilität $\chi$ in einem 
+          linearen, isotropen Medium definiert?\\
+          %TODO
+
+    \item Wie lautet der Zusammenhang zwischen elektrischem Feld, 
+          dielektrischer Verschiebung und Polarisation\\
+          %TODO
+
+    \item Welche Feldgleichung erfüllt die dielektrische Verschiebung?\\
+          %TODO
+
+    \item Was geschieht mit dem $1/r$-Potential von Punktladungen in
+          Metallen?\\
+          %TODO
+
+    \textbf{[MAGNETOSTATIK]}\\
+    \item Man scheibe die Konitinuitätsgleichung in differentieller Form
+          und mit Integralen über ein Volumen $V$ bzw.\ dessen Oberfläche 
+          $\partial V$.\\
+          %TODO
+
+    \item Man schreibe Ladungsdichte $\rho(\vb r)$ und Stromdichte
+          $\vb j(\vb r)$ für $i=1,\ldots,N$ Punktladungen $q_i$ mit 
+          Trajektorioen $\vb r_i(t)$.\\
+          %TODO
+
+    \item Wie lautet das Biot-Savart'sche Gesetz für $\vb A(\vb r)$ und
+          $\vb B(\vb r)$\\
+          %TODO
+
+    \item Wie lauten die zwei Feldgleichungen der Magnetostatik?\\
+          %TODO
+
+    \item Man berechne das magnetische Dipolmoment für eine Punktladung auf
+          einer Kreisbahn mit Radius $R$ sowie Drehimpuls $\vb L$\\
+          %TODO
+
+    \item Wie lauten die Zusammenhänge zwischen $\vb B$, $\vb H$ 
+          und $\vb M$ in einem
+          Paramagneten\\
+          %TODO
+
+  \end{enumerate}
+
+  \newpage
+
+  \section{Grundkenntinsse Elektrodynamik}
+  \begin{enumerate}
+
+    \item Wie lauten die vollen, makroskopischen Maxwell-Gleichungen für
+          die Felder $\vb E(\vb r, t)$ und $\vb B(\vb r, t)$\\
+          %TODO
+
+    \item Welche Gleichung legt das Verhalten der aus Punktladungen
+          zusammen gesetzten Quellen $\rho(\vb r, t)$ und 
+          $\vb j(\vb r, t)$ in den Feldern $\vb E(\vb r, t)$
+          und $\vb B(\vb r, t)$ fest?\\
+          %TODO
+
+    \item Man zeige mittels Kontinuitätsgleichung und Ampère-Gesetz, 
+          dass der Maxwell'sche Verschibungsstrom für Ladungserhaltung
+          notwendig ist.\\
+          %TODO
+
+    \item Wie lauten die Wellengleichungen für $\vb E(\vb r, t)$ und
+          $\vb B(\vb r, t)$ im Vakuum?\\
+          %TODO
+
+    \item Wie sehen Ebene-Wellen-Lösungen im Vakuum aus? Was weiß man
+          über die Richtungen der Felder bezüglich der 
+          Ausbreitungsrichtung?\\
+          %TODO
+
+    \item Wie erhällt man die Dispersionsrelation und wie lautet sie für
+          elektromagnetische Wellen im Vakuum?\\
+          %TODO
+
+    \item Man gebe die Formeln für die Fourier-Hin- und Rücktransformation
+          für eine Funktion $f(t)$ auf der $t$-Achse auf $\omega$-Achse und
+          zurück an.\\
+          %TODO
+
+    \item Man berechne die Fouriertransformation von $\delta(t-t_0)$.\\
+          %TODO
+
+    \item Wie berechnet sich der Poynting-Vektor für reelle Felder? Was
+          ist seine physikalische Bedeutung?\\
+          %TODO
+
+    \item Wie lauten die inhomogenen Maxwell-Gleichungen in Materie,
+          charakterisiert durc Dielektrizitätskonstante $\epsilon_r$ und
+          Permeabilität $\mu_r$?\\
+          %TODO
+
+    \item Durch welche drei Sachverhalte unterscheiden sich 
+          elektromagnetische Wellen in eienem Wellenleiter mit einfach
+          zusammenhängenden rechteckigem Querschnitt von denen im Vakuum?\\
+          %TODO
+
+    \item Wie sind Phasen- und Gruppengeschwindigkeit definiert und was ist
+          ihre physikalische Bedeutung?\\
+          %TODO
+
+    \item Man gebe zwei Formen für das Ohm'sche Gesetz an. Wie ist die
+          Beziehung zwischen Leitfähigkeit $\sigma$ und Widerstand $R$ 
+          für einen homogenen Leiter der länge $l$ und mit 
+          Querschnitt $A$?\\
+          %TODO
+
+    \item Wie entsteht eine komplexe, frequenzabhängige 
+          Dielektrizitätskonstante $\epsilon(\omega)$ in einem Metal?\\
+          %TODO
+
+    \item Wie verhält sich die Dielektrizitätskonstante $\epsilon(\omega)$
+          bei der Plasmafrequenz $\omega_P$? Was passiert physikalisch bei
+          $\omega=\omega_P$ und bei $\omega>\omega_P$?\\
+          %TODO
+
+  \end{enumerate}
+    
+
+\end{document}
