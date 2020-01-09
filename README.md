@@ -4,11 +4,11 @@ Die Lösungen die hier zusammengefasst wurden, kommen von mir und von Bildern
 aus die Theo II Whatsappgruppe.
 **Weder Vollständichkeit noch Korrektheit kann garrantiert werden!**
 Bei Fragen, Korrektionen oder sonstiges, könnt ihr mich gerne per 
-email erreichen: \ 
+email erreichen:  
 ljbkusters@gmail.com
 
 Vielen Dank an jeder, der mitgeholfen hat! Insbesondere:
 
 + Prof. Honerkamp / Dr. Mück für die Fragen
-+ ``Der Andere'' für Seine Bilder mit Lösungen in der Whatsappgruppe.
++ "Der Andere" für Seine Bilder mit Lösungen in der Whatsappgruppe.
 
