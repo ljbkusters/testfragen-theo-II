@@ -6,6 +6,10 @@
 \usepackage{booktabs}
 \usepackage{bbold}
 \usepackage{bm}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 \newcommand{\rr}[1]{\frac{#1}{\abs{\vb{r}-\vb{r}'}}} 
 \newcommand{\ds}{\displaystyle} 
@@ -238,10 +242,11 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
           \begin{center}
           \begin{tabular}{lll}
             mit $\rho$    & $\ds E_{\text{WW}}=
-                            \frac{1}{2}\int d^3 r\rho(\vb r)$
+                            \frac{1}{2}\int d^3 r\rho(\vb r)
+                            \Phi_\rho(\vb r)$
                               &(Skript 1.7.9)\\
             mit $\vb E$   & $\ds E_{\text{WW}}=\frac{1}{8k\pi}
-                            \int d^3 r\rho(\vb r)$
+                             \int d^3 r\vb E^2(\vb r)$
                               &(Skript 1.7.15)\\
           \end{tabular}
           \end{center}
@@ -292,7 +297,7 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
           \end{center}
 
     \textbf{[MAGNETOSTATIK]}
-    \item Man scheibe die Konitinuitätsgleichung in differentieller Form
+    \item Man scheibe die Kontinuitätsgleichung in differentieller Form
           und mit Integralen über ein Volumen $V$ bzw.\ dessen Oberfläche 
           $\partial V$.
           \begin{center}
@@ -300,9 +305,10 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
             Differential Form & $\ds\pdv{t}\rho(\vb r, t)=
                                  -\div\vb j(\vb r, t)$
                                 & (Skript 2.1.5)\\
-            Integral Form     & $\ds\int_V d^3r\partial_t\rho(\vb r,t)=
+            Integral Form     & $\ds\dot Q_V
+                                =\int_V d^3r\partial_t\rho(\vb r,t)=
                                 \int_{\partial V}d\vb A\cdot
-                                \vb j(\vb r, t)=-I_F$
+                                \vb j(\vb r, t)=-I_{\partial V}$
                                 & (Skript 2.1.1 und 2.1.3)\\
           \end{tabular}
           \end{center}
@@ -344,6 +350,7 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
   \newpage
 
 \section{Grundkenntinsse Elektrodynamik}
+\setcounter{footnote}{0}
   \begin{center}
     \begin{tabular}{ll|ll|ll}
       \toprule
@@ -362,63 +369,183 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
 
     \item Wie lauten die vollen, makroskopischen Maxwell-Gleichungen für
           die Felder $\vb E(\vb r, t)$ und $\vb B(\vb r, t)$
-          %TODO
+          \begin{center}
+          \scalebox{0.8}{
+          \begin{tabular}{lll}
+          Name          & Differentiell       
+                              & Integral\\
+          Gauß'scher Satz     
+                        & $\ds \div \vb E(\vb r, t) 
+                          = 4\pi k\rho(\vb r, t)$
+                              & $\ds \oint_{\partial V}d\vb A\cdot
+                                \vb E(\vb r, t)=
+                                4\pi k Q_{\text{ges,V}}$\\
+          Keine Magn. Monopole
+                        & $\div \vb B(\vb r, t)=0$
+                              & $\ds\oint_{\partial V}d\vb A\cdot 
+                                \vb B(\vb r, t) = 0 $\\
+          Faraday'sche Gesetz 
+                        & $\ds \curl \vb E(\vb r , t)=k''\partial_t
+                          \vb B(\vb r, t)$
+                        & $\ds \oint_{\partial A}d\vb l\cdot\vb 
+                        E(\vb r, t)=k''\dv{t}\iint_Ad\vb A\cdot \vb B(\vb r, t)$\\
+          Ampère'sche Gesetz  
+                        & $\ds \curl \vb B(\vb r, t)=4\pi k'\vb j(\vb r, t)
+                          +\frac{k'}{k}\partial_t \vb E(\vb r, t)$
+                        & $\ds\oint_{\partial A}d\vb l\cdot \vb B(\vb r, t)=
+                        \iint_{A}d\vb A\cdot(4\pi k'\vb j(\vb r, t)+
+                        \frac{k'}{k}\partial_t \vb E(\vb r, t))$\\
+          \end{tabular}
+          }
+          (SI: $k=\frac{1}{4\pi\epsilon_0}\quad k'=\frac{\mu_0}{4\pi}\quad
+                    k''=1$)
+          (Gauß: $k=1\quad k'=\frac{1}{c}\quad
+                  k''=\frac{1}{c}$)
+          \end{center}
 
     \item Welche Gleichung legt das Verhalten der aus Punktladungen
           zusammen gesetzten Quellen $\rho(\vb r, t)$ und 
           $\vb j(\vb r, t)$ in den Feldern $\vb E(\vb r, t)$
           und $\vb B(\vb r, t)$ fest?
-          %TODO
+          \begin{center}
+            Die Kontinuitätsgleichung 
+          \end{center}
 
     \item Man zeige mittels Kontinuitätsgleichung und Ampère-Gesetz, 
-          dass der Maxwell'sche Verschibungsstrom für Ladungserhaltung
+          dass der Maxwell'sche Verschiebungsstrom für Ladungserhaltung
           notwendig ist.
-          %TODO
+          $$\div \vb j(\vb r, t) = -\pdv{t}\rho(\vb r ,t)$$
+          $$\curl\vb B(\vb r, t) \coloneqq 
+          4\pi k'\vb j(\vb r ,t) + \vb C(\vb r, t)$$
+          $$\text{Allgemein gilt:}\,\div\curl\vb F(\vb r, t)
+          =\curl \div \vb F(\vb r, t)=0$$
+          \begin{center}
+            \begin{tabular}{rl}
+            $\ds \div\curl\vb B(\vb r, t)$
+                        &$\ds= \div \qty[
+                        4\pi k'\vb j(\vb r, t)+\vb C(\vb r, t)]$\\
+                        &$\ds= 4\pi k'\div\vb j(\vb r,t) +
+                        \div \vb C(\vb r,t)$\\
+                        &$\ds= 4\pi k'(-\pdv{t}\rho(\vb r, t)) 
+                        +\div \vb C(\vb r,t)\stackrel{!}{=}0$\\
+            $\Leftrightarrow\ds 4\pi k'\pdv{t}\rho(\vb r, t)$ 
+                        &$\ds =\div \vb 
+                        C(\vb r, t)$\footnotemark\\
+                        &$\ds \stackrel{!}{=}\div \pdv{t}K\vb E(\vb r, t)$\\
+                        &$\ds =\ds \pdv{t} 
+                        K4\pi k \rho(\vb r, t)$\\
+            $\Leftrightarrow K$         
+                        &$\stackrel{!}{=}\frac{k'}{k}$\\
+            $\Leftrightarrow \vb C(\vb r,t)$
+                        &$\coloneqq \frac{k'}{k}\pdv{t}\vb E(\vb r, t)$
+            \end{tabular}
+          
+          \end{center}
+          \footnotetext{Erinnere daß $\div \vb E(\vb r, t)=4\pi k\rho(\vb r ,t)$}      
 
     \item Wie lauten die Wellengleichungen für $\vb E(\vb r, t)$ und
           $\vb B(\vb r, t)$ im Vakuum?
-          %TODO
+          $$\qty(\Delta - \frac{1}{c^2}\pdv[2]{t})\vb E(\vb r, t)=
+          \qty(\Delta - \frac{1}{c^2}\pdv[2]{t})\vb B(\vb r, t)=0$$
 
     \item Wie sehen Ebene-Wellen-Lösungen im Vakuum aus? Was weiß man
           über die Richtungen der Felder bezüglich der 
           Ausbreitungsrichtung?
-          %TODO
+          $$f(\vb r , t)=f_r(\vb r)f_t(t)$$
+          $$\vb k \,\bot\, \vb E \quad \vb k\,\bot\,\vb B \quad
+          \vb E\,\bot\, \vb B$$
 
     \item Wie erhällt man die Dispersionsrelation und wie lautet sie für
           elektromagnetische Wellen im Vakuum?
-          %TODO
+          \begin{center}
+            Indem man die Lösung (gegebene Funktion) in 
+            der Wellengleichung einsetzt und die
+            triviale Terme gegen einander wegstreicht.
+          \end{center}
+          $$\dv{w(k)}{k}=c \quad\text{(im Vakuum)}$$
 
     \item Man gebe die Formeln für die Fourier-Hin- und Rücktransformation
           für eine Funktion $f(t)$ auf der $t$-Achse auf $\omega$-Achse und
           zurück an.
-          %TODO
+          $$\hat f(\omega, \alpha)=\int \frac{dt}{\sqrt{2\pi}}
+                           e^{-i\omega t}f(t, \alpha)$$
+          $$f(t, \alpha)=\int \frac{d\omega}{\sqrt{2\pi}}
+                           e^{+i\omega t}\hat f(\omega, \alpha)$$
+          \begin{center}
+            ($\alpha$ stellt hier nicht zur Transformation relevante 
+            sonstige Parameter dar, wie z.B. $\vb r$)
+          \end{center}
 
     \item Man berechne die Fouriertransformation von $\delta(t-t_0)$.
-          %TODO
+          $$f(t)=\delta (t-t_0)$$ 
+          $$F[f(t)]=\hat f(\omega)=\int\frac{dt}{\sqrt{2\pi}}
+                                   e^{-i\omega t}\delta(t-t_0)
+                                   =\frac{1}{\sqrt{2\pi}}e^{-i\omega t_0}$$ 
 
     \item Wie berechnet sich der Poynting-Vektor für reelle Felder? Was
           ist seine physikalische Bedeutung?
-          %TODO
+          $$\vb S(\vb r,t)=\frac{1}{\mu_0}\vb E(\vb r,t)\times\vb B(\vb r,t)
+          =\vb E(\vb r,t)\times \vb H(\vb r,t)$$
+          $$\text{(Allgemein)}\quad\vb S(\vb r,t)=
+          \frac{1}{\mu_0}\Re[\vb E(\vb r,t)]\times \Re[\vb B(\vb r,t)]$$
+          
+          \begin{center}
+            Die physikalische Bedeutung ist die von den 
+            Feldern verursachte Energiefluß.
+          \end{center}
 
     \item Wie lauten die inhomogenen Maxwell-Gleichungen in Materie,
-          charakterisiert durc Dielektrizitätskonstante $\epsilon_r$ und
+          charakterisiert durch Dielektrizitätskonstante $\epsilon_r$ und
           Permeabilität $\mu_r$?
-          %TODO
+          \begin{center}
+            \begin{tabular}{rcl}
+              $\div \vb D$ & $=$ &$\rho_f$\\
+              $\curl \vb H-\pdv{t}\vb D$ & $=$ &$\vb j_f$\\
+              $\curl \vb E-\pdv{t}\vb B$ & $=$ &$0$\\
+              $\div \vb B$ & $=$ &$0$\\
+            \end{tabular}
+            $$\vb D(\vb r,t)=\epsilon_r\epsilon_0\vb E(\vb r,t) \quad
+            \text{und}\quad\vb H(\vb r, t)=\frac{1}{\mu_0\mu_r}
+            \vb B(\vb r,t)$$
+          \end{center}
 
     \item Durch welche drei Sachverhalte unterscheiden sich 
           elektromagnetische Wellen in eienem Wellenleiter mit einfach
           zusammenhängenden rechteckigem Querschnitt von denen im Vakuum?
-          %TODO
+          \begin{enumerate}
+            \item Die Dispersionsrelation ändert sich 
+                  ($\omega(\vb k)\ne c\abs{\vb k}$ i.A.)
+            \item Es gilt i.A. \textbf{nicht} dass $\vb E\,\bot\,\vb B$
+            \item Es gilt i.A. \textbf{nicht} dass $\vb E\,\bot\,\vb k$
+                  oder dass $\vb B\,\bot\,\vb k$
+          \end{enumerate}
 
     \item Wie sind Phasen- und Gruppengeschwindigkeit definiert und was ist
           ihre physikalische Bedeutung?
-          %TODO
+          \begin{center}
+            \begin{tabular}{ll}
+              $v_{\text{ph}}=\frac{\omega(k)}{k}$ 
+                        &Gescwhindigkeit mit 
+                         den die Spitzen der Welle sich ausbreiten\\\\
+          $v_{\text{gr}}=\dv{\omega(k)}{k}$
+                        &Gewschwindigkeit mit
+                         den die Knoten einer ebene Welle sich ausbreiten.\\
+                        &Geschwindigkeit eines gesammten Wellenpackets.\\
+            \end{tabular}
+          \end{center}
+          $v_{\text{ph}}$ kann durchaus größer als $c$ sein. Dies ist aber
+          kein Problem, denn die Phasengeschwindigkeit ``trägt'' keine
+          Information. Für $v_{\text{gr}}$ gilt immer $v_{\text{gr}}\le c$!
 
     \item Man gebe zwei Formen für das Ohm'sche Gesetz an. Wie ist die
           Beziehung zwischen Leitfähigkeit $\sigma$ und Widerstand $R$ 
           für einen homogenen Leiter der länge $l$ und mit 
           Querschnitt $A$?
-          %TODO
+          \begin{enumerate}
+            \item $U=IR$
+            \item $\vb j= \sigma \vb E$\\
+              $\qty(\sigma=\frac{1}{\rho}\quad R=\frac{l}{\sigma A})$
+          \end{enumerate}
 
     \item Wie entsteht eine komplexe, frequenzabhängige 
           Dielektrizitätskonstante $\epsilon(\omega)$ in einem Metal?
