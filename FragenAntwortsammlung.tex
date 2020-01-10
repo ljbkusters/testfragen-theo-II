@@ -182,11 +182,11 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
      Frage & Sicherheitsgrad & Frage & Sicherheitsgrad 
            & Frage & Sicherheitsgrad \\
      \midrule
-     1 & Sicher            & 6  & Sicher            & 11 & Sicher\\ 
-     2 & Sicher            & 7  & \textbf{unsicher} & 12 & Sicher\\
-     3 & Sicher            & 8  & \textbf{unsicher} & 13 & Sicher\\
-     4 & \textbf{unsicher} & 9  & \textbf{unsicher} & 14 & Sicher\\
-     5 & Sicher            & 10 & Sicher            & 15&\textbf{unsicher}\\
+     1& Sehr sicher      & 6 & Sicher           & 11& Sehr sicher\\ 
+     2& Sehr sicher      & 7 & \textbf{Unsicher}& 12& Sehr sicher\\
+     3& Sehr sicher      & 8 & \textbf{Unsicher}& 13& Sehr sicher\\
+     4& \textbf{Unsicher}& 9 & \textbf{Unsicher}& 14& \textbf{Unsicher}\\
+     5& Sicher           & 10& Sicher           & 15& \textbf{Unsicher}\\
      \bottomrule
     \end{tabular}
   \end{center}
@@ -233,7 +233,7 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
           $$E_{\text{pot}}=\Phi(0)Q-\vb E(0)\cdot\vb p 
           \quad\qty(+ \frac{1}{6}\sum_{ij}\pdv{x_j}E_i(0)Q_{ij}+\ldots)$$
           \textbf{Notiz 1:} Energie minimierung für $\vb p\parallel \vb E$
-          und gegengerichtet (also $\vu e_{\vb p}=-\vu e_{\vb E}$).\\
+          und gleich ausgerichtet (also $\vu e_{\vb p}=\vu e_{\vb E}$).\\
           \textbf{Notiz 2:} Frage richtig verstanden?
 
     \item Wie lautet die elektrostatische Energie einer Ladungsverteilung?
@@ -287,6 +287,8 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
     \item Welche Feldgleichung erfüllt die dielektrische Verschiebung?
           $$\div \vb D=4\pi k\rho_f(\vb r)\quad\text{(Skript 1.8.4)}$$
           $$\qty(\div \vb P=-\rho_P(\vb r))\quad\text{(Skript 1.8.6)}$$
+          \textbf{Notiz:} Es wird in Kapitel 4 eine andere Definition von
+          $\div \vb D=\rho_f$ gegeben!
 
     \item Was geschieht mit dem $1/r$-Potential von Punktladungen in
           Metallen?
@@ -302,7 +304,8 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
           $\partial V$.
           \begin{center}
           \begin{tabular}{lll}
-            Differential Form & $\ds\pdv{t}\rho(\vb r, t)=
+            Differentieller Form 
+                              & $\ds\pdv{t}\rho(\vb r, t)=
                                  -\div\vb j(\vb r, t)$
                                 & (Skript 2.1.5)\\
             Integral Form     & $\ds\dot Q_V
@@ -326,7 +329,7 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
           $$\vb B(\vb r)=k'\int d^3r'\frac{\vb j(\vb r')\times
           (\vb r-\vb r')}{\abs{\vb r-\vb r'}^3}
           \quad \text{(Skript 2.2.1)}$$
-          $$\vb B(\vb r)=k'\int d^3r'\rr{\vb j(\vb r')}
+          $$\vb A(\vb r)=k'\int d^3r'\rr{\vb j(\vb r')}
           \quad \text{(Skript 2.3.2)}$$
           \textbf{Notiz:} $k'=\frac{\mu_0}{4\pi}$ (SI)
 
@@ -357,11 +360,11 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
       Frage & Sicherheitsgrad & Frage & Sicherheitsgrad 
             & Frage & Sicherheitsgrad \\
       \midrule
-      1 & & 6  & & 11 & \\ 
-      2 & & 7  & & 12 & \\
-      3 & & 8  & & 13 & \\
-      4 & & 9  & & 14 & \\
-      5 & & 10 & & 15 & \\
+      1& Sehr sicher      & 6 & Sicher     & 11& \textbf{Unsicher} \\ 
+      2& \textbf{Unsicher}& 7 & Sicher     & 12& Sicher\\
+      3& Sicher           & 8 & Sicher     & 13& Sicher\\
+      4& Sehr sicher      & 9 & Sicher     & 14& \textbf{Unsicher} \\
+      5& Sehr sicher      & 10& Sehr sicher& 15& \textbf{Unsicher} \\
       \bottomrule
     \end{tabular}
   \end{center}
@@ -402,6 +405,11 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
           (Gauß: $k=1\quad k'=\frac{1}{c}\quad
                   k''=\frac{1}{c}$)
           \end{center}
+          \textbf{Notiz:} Die Integral-Form der Maxwell-Gleichungen folgt
+          direkt aus beidseitig Integrieren der Differential-Form (über 
+          Volumen für die Divergenz-Gesetze, über Oberfläche für die 
+          Rotations-Gesetze) unter Anwendung der Gauß'sche und 
+          Stoke'sche Gesetze.
 
     \item Welche Gleichung legt das Verhalten der aus Punktladungen
           zusammen gesetzten Quellen $\rho(\vb r, t)$ und 
@@ -549,12 +557,27 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
 
     \item Wie entsteht eine komplexe, frequenzabhängige 
           Dielektrizitätskonstante $\epsilon(\omega)$ in einem Metal?
-          %TODO
+          $$\curl \vb H = \vb j + \pdv{t}\vb D$$
+          $$\curl \vb H -\qty(\sigma +\epsilon_0\epsilon_r\pdv{t})\vb E=0$$
+          $$\curl \vb H -\qty(\sigma +\epsilon_0\epsilon_ri\omega)\vb E=0$$
+          $$\curl \vb H +\epsilon_0 i\omega
+          \qty(\epsilon_r-\frac{\sigma}{i\omega\epsilon_0})\vb E=0$$
+          $$\curl \vb H +i\omega\epsilon_0 \epsilon(\omega)\vb E=0$$
+          $$\epsilon(\omega)=\qty(\epsilon_r-\frac{\sigma}
+          {i\omega\epsilon_0})$$
+          \textbf{Notiz:} Dieses Thema habe ich mir noch nicht so richtig
+          angeschaut.
 
     \item Wie verhält sich die Dielektrizitätskonstante $\epsilon(\omega)$
           bei der Plasmafrequenz $\omega_P$? Was passiert physikalisch bei
           $\omega=\omega_P$ und bei $\omega>\omega_P$?
-          %TODO
+          $$\epsilon(\omega_p)=0$$
+          $$\omega>\omega_p \Rightarrow\quad
+          \text{Metalle werden durchsichtig}$$
+          $$\omega\le\omega_p \Rightarrow\quad
+          \text{Expononentielle Abfall von EM-Wellen im Medium}$$
+          \textbf{Notiz:} Dieses Thema habe ich mir noch nicht so richtig
+          angeschaut.
 
   \end{enumerate}
 \end{document}
