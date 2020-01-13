@@ -62,7 +62,7 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
   \begin{enumerate}
     \item Man berechne $\ds \grad\rr{1}$.
           $$\ds \grad\rr{1}=
-           \frac{\vb r -\vb r'}{\abs{\vb r - \vb r'}^3}\quad
+           -\frac{\vb r -\vb r'}{\abs{\vb r - \vb r'}^3}\quad
            \qty(=-\grad'\rr{1})\quad\text{(Skript 1.3.1)}$$ 
 
     \item Was ergibt $\ds \Delta\rr{1}$?
@@ -93,7 +93,7 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
 
     \item Was besagt der satz von Gauß als mathematische Aussage?
           $$\ds \int_V d^3r \qty[\div \vb F(\vb r)]=
-           \int_{\partial V}d\vb A\cdot \vb F(\vb r)$$\\
+           \oint_{\partial V}d\vb A\cdot \vb F(\vb r)$$\\
           \textbf{Notiz:} In 3 Dimensionen, wobei $V$ ein Volumen darstellt,
           und $\partial V$ dessen Randfläche darstellt.
 
@@ -111,7 +111,7 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
 
     \item Was besagt der Satz von Stokes Mathematisch?
           $$\ds \int_A d\vb A \cdot \qty[\curl \vb F(\vb r)]=
-           \int_{\partial A}d\vb s\cdot \vb F(\vb r)$$
+           \oint_{\partial A}d\vb s\cdot \vb F(\vb r)$$
           \textbf{Notiz:} In 3 Dimensionen, wobei $A$ eine Fläche 
           darstellt,
           und $\partial A$ dessen Rand darstellt.
@@ -149,6 +149,10 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
            =\int_{-1}^{1} d\cos\theta\int_0^{2\pi}d\phi 
            Y^*_{lm}(\theta,\phi)f(\theta,\phi)
            =\int d\Omega Y^*_{lm}(\Omega)f(\Omega)$$
+           \textbf{Notiz:} Falls man $f(\theta,\phi)$ als linear kombination
+           von $Y_{lm}(\theta,\phi)$ schreiben kann, kann man $f_{lm}$
+           sehr einfach bestimmen (es gilt zwar $\ds \int d\Omega 
+           Y_{lm}(\Omega)Y_{l'm'}^*(\Omega)=\delta_{ll'}\delta_{mm'}$)
 
     \item Wie lautet der Ansatz für die Lösung der Laplace-Gleichung in
           Kugelfächenfunktionen?\\
@@ -183,8 +187,8 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
            & Frage & Sicherheitsgrad \\
      \midrule
      1& Sehr sicher      & 6 & Sicher           & 11& Sehr sicher\\ 
-     2& Sehr sicher      & 7 & \textbf{Unsicher}& 12& Sehr sicher\\
-     3& Sehr sicher      & 8 & \textbf{Unsicher}& 13& Sehr sicher\\
+     2& Sehr sicher      & 7 & Sehr sicher      & 12& Sehr sicher\\
+     3& Sehr sicher      & 8 & Sehr sicher      & 13& Sehr sicher\\
      4& \textbf{Unsicher}& 9 & \textbf{Unsicher}& 14& \textbf{Unsicher}\\
      5& Sicher           & 10& Sicher           & 15& \textbf{Unsicher}\\
      \bottomrule
@@ -274,21 +278,15 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
 
     \item Wie lautet der Zusammenhang zwischen elektrischem Feld, 
           dielektrischer Verschiebung und Polarisation?
-          $$\vb D = \vb E + 4\pi k\vb P \quad\text{(Skript 1.8.17)}$$
-          \textbf{Notiz 1:} Alternativ gilt $\vb D=\epsilon \vb E
+          $$\vb E= 4\pi k\vb D - 4\pi k\vb P \quad\text{(Skript 1.8.17)}$$
+          \textbf{Notiz:} Alternativ gilt $\vb D=\epsilon \vb E
           =\epsilon_0\epsilon_r \vb E$ mit
-          $\epsilon=1+4\pi k\chi$
-          (Skript 1.8.17)\\
-          \textbf{Notiz 2:} Hier kann ich etwas nicht ganz einigen mit
-          dem Skript, indem man SI Werte einsetzen soll und rauskommen soll
-          daß $\vb D=\epsilon_0 \vb E+\vb P$ (welches defnitiv stimmt)
-          (Skript 1.8.20)
+          $\epsilon=1+4\pi k\chi$ 
+          (unter die richtige Bedingungen, siehe Skript) (Skript 1.8.17)\\
 
     \item Welche Feldgleichung erfüllt die dielektrische Verschiebung?
-          $$\div \vb D=4\pi k\rho_f(\vb r)\quad\text{(Skript 1.8.4)}$$
+          $$\div \vb D=\rho_f(\vb r)\quad\text{(Skript 1.8.4)}$$
           $$\qty(\div \vb P=-\rho_P(\vb r))\quad\text{(Skript 1.8.6)}$$
-          \textbf{Notiz:} Es wird in Kapitel 4 eine andere Definition von
-          $\div \vb D=\rho_f$ gegeben!
 
     \item Was geschieht mit dem $1/r$-Potential von Punktladungen in
           Metallen?
@@ -344,9 +342,11 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
 
     \item Wie lauten die Zusammenhänge zwischen $\vb B$, $\vb H$ 
           und $\vb M$ in einem Paramagneten?
-          $$\vb B = \vb H + 4\pi k'\vb M\quad\text{(Skript 2.5.12)}$$
+          $$\vb B = 4\pi k'\vb H + 4\pi k'\vb M\quad\text{(Skript 2.5.12)}$$
           $$\vb B = \mu_0 \vb H + \mu_0 \vb M \quad\text{(SI) 
           (Skript 2.5.17)}$$
+          \textbf{Notiz:} $\ds \curl \vb H = \vb j_f$ und 
+          $\ds \curl \vb M=\vb j_M$ 
 
   \end{enumerate}
 
@@ -447,7 +447,6 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
             $\Leftrightarrow \vb C(\vb r,t)$
                         &$\coloneqq \frac{k'}{k}\pdv{t}\vb E(\vb r, t)$
             \end{tabular}
-          
           \end{center}
           \footnotetext{Erinnere daß $\div \vb E(\vb r, t)=4\pi k\rho(\vb r ,t)$}      
 
@@ -496,6 +495,8 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
           =\vb E(\vb r,t)\times \vb H(\vb r,t)$$
           $$\text{(Allgemein)}\quad\vb S(\vb r,t)=
           \frac{1}{\mu_0}\Re[\vb E(\vb r,t)]\times \Re[\vb B(\vb r,t)]$$
+          %$$\text{(Zeit Mittel)}\quad\bar{\vb S}(\vb r,t)=
+          %\frac{1}{\mu_0}\vb E(\vb r,t)\times \vb B^*(\vb r,t)$$
           
           \begin{center}
             Die physikalische Bedeutung ist die von den 
