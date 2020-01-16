@@ -30,8 +30,9 @@
 \noindent
 Die Lösungen die hier zusammengefasst wurden, kommen von mir und
 aus die Theo II Whatsappgruppe. 
-\textbf{Weder absolute Vollständichkeit noch absolute Korrektheit kann garrantiert werden!}
-Bei Anmerkungen, Fragen, Korrektionen oder sonstiges, könnt ihr mich gerne 
+\textbf{Weder absolute Vollständichkeit noch absolute Korrektheit wird garrantiert!} Aber wo ich mir unsicher war habe ich Sachen nachgefragt, oder 
+mittels dem Skript geklärt.
+Bei Anmerkungen, Fragen, Korrekturen oder sonstiges, könnt ihr mich gerne 
 per email erreichen:\\ 
 ljbkusters@gmail.com \\
 
@@ -59,7 +60,7 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
       2 & Sehr sicher & 7  & Sehr sicher & 12 & Sehr sicher \\
       3 & Sehr sicher & 8  & Sehr sicher & 13 & Sehr sicher \\
       4 & Sehr sicher & 9  & Sehr sicher & 14 & Sehr sicher \\
-      5 & Sehr sicher & 10 & Sicher      & 15 & \textbf{unsicher} \\
+      5 & Sehr sicher & 10 & Sicher      & 15 & Sicher\\
       \bottomrule
     \end{tabular}
   \end{center}
@@ -102,7 +103,7 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
            \quad\text{(Skript 3.2.6)}$$
           \textbf{Notiz}: Wegen $\vb E=-\grad\Phi$ ist $\vb E$ ein reines
           Gradientenfeld. Dies heißt, daß das Integral über $\vb E$
-          wegunabhängig ist (nur Gültig in der Elektrostatik!!!).
+          wegunabhängig ist (nur gültig in der Elektrostatik!).
 
     \item Was besagt der satz von Gauß als mathematische Aussage?
           $$\ds \int_V d^3r \qty[\div \vb F(\vb r)]=
@@ -185,6 +186,15 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
            
     \item Welche zwei wichtigen Gleichungen erfüllt die Dirichlet-Green'sche
           Funktion $G_D(\vb r, \vb r')$?
+
+          Allgemein Wichtige Bedingungen der Greenshce Funktion
+          \begin{center}
+            \begin{enumerate}
+              \item $\Delta G(\vb r, \vb r') = -4\pi\delta(\vb r -\vb r')$
+              \item $G(\vb r, \vb r') \to 0$ für $\vb r'\to\infty$
+            \end{enumerate}
+          \end{center}
+          Bei Dirichlet-RWB.:
           \begin{center}
           \begin{enumerate}
           \item $\ds G_D(\vb r, \vb r')= G_D(\vb r', \vb r)$ 
@@ -212,7 +222,7 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
      1& Sehr sicher      & 6 & Sicher           & 11& Sehr sicher\\ 
      2& Sehr sicher      & 7 & Sehr sicher      & 12& Sehr sicher\\
      3& Sehr sicher      & 8 & Sehr sicher      & 13& Sehr sicher\\
-     4& \textbf{Unsicher}& 9 & \textbf{Unsicher}& 14& Sicher\\
+     4& Sehr sicher      & 9 & Sicher           & 14& Sicher\\
      5& Sicher           & 10& Sicher           & 15& Sicher\\
      \bottomrule
     \end{tabular}
@@ -265,9 +275,8 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
           $$E_{\text{pot}}=\Phi(0)Q-\vb E(0)\cdot\vb p 
           \quad\qty(+ \frac{1}{6}\sum_{ij}\pdv{x_j}E_i(0)Q_{ij}+\ldots)
           \smref{1.7.7}$$
-          \textbf{Notiz 1:} Energie minimierung für $\vb p\parallel \vb E$
+          \textbf{Notiz:} Energie minimierung für $\vb p\parallel \vb E$
           und gleich ausgerichtet (also $\vu e_{\vb p}=\vu e_{\vb E}$).\\
-          \textbf{Notiz 2:} Frage richtig verstanden? Koppeln?
 
     \item Wie lautet die elektrostatische Energie einer Ladungsverteilung?
           Man gebe zwei Äquivalente Ausdrücke, einerseits mit $\rho(\vb r)$
@@ -394,11 +403,11 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
       Frage & Sicherheitsgrad & Frage & Sicherheitsgrad 
             & Frage & Sicherheitsgrad \\
       \midrule
-      1& Sehr sicher      & 6 & Sicher     & 11& \textbf{Unsicher} \\ 
-      2& \textbf{Unsicher}& 7 & Sicher     & 12& Sicher\\
+      1& Sehr sicher      & 6 & Sicher     & 11& Sicher\\ 
+      2& Sehr sicher      & 7 & Sicher     & 12& Sicher\\
       3& Sicher           & 8 & Sicher     & 13& Sicher\\
       4& Sehr sicher      & 9 & Sicher     & 14& Sicher\\
-      5& Sehr sicher      & 10& Sehr sicher& 15& \textbf{Unsicher} \\
+      5& Sehr sicher      & 10& Sehr sicher& 15& Sicher\\
       \bottomrule
     \end{tabular}
   \end{center}
@@ -454,7 +463,8 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
           $\vb j(\vb r, t)$ in den Feldern $\vb E(\vb r, t)$
           und $\vb B(\vb r, t)$ fest?
           \begin{center}
-            Die Kontinuitätsgleichung \sref{§3.1} 
+            Die allgemeine Lorentzkraft: 
+            $\ds \vb F_q=q\qty(\vb E+k''\vb v\times\vb B)\smref{3.7.1}$
           \end{center}
 
     \item Man zeige mittels Kontinuitätsgleichung und Ampère-Gesetz, 
@@ -596,6 +606,7 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
                         \sref{3.12.9}\\
             \end{tabular}
           \end{center}
+          \textbf{Notiz:} 
           $v_{\text{ph}}$ kann durchaus größer als $c$ sein. Dies ist aber
           kein Problem, denn die Phasengeschwindigkeit ``trägt'' keine
           Information. Für $v_{\text{gr}}$ gilt immer $v_{\text{gr}}\le c$!
