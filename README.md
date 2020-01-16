@@ -2,7 +2,7 @@
 
 Die Lösungen die hier zusammengefasst wurden, kommen von mir und
 aus die Theo II Whatsappgruppe.
-**Weder Vollständichkeit noch Korrektheit kann garrantiert werden!**
+**Weder absolute Vollständichkeit noch absolute Korrektheit kann garrantiert werden!**
 Bei Anmerkungen, Fragen, Korrektionen oder sonstiges, könnt ihr mich gerne per 
 email erreichen:  
 ljbkusters@gmail.com
