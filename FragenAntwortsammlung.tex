@@ -64,7 +64,6 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
       \bottomrule
     \end{tabular}
   \end{center}
-
   \begin{enumerate}
     \item Man berechne $\ds \grad\rr{1}$.
           $$\ds \grad\rr{1}=
@@ -143,7 +142,7 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
     \item Man gebe das infinitesimale Flächenelement auf der Oberfläche 
           einer Kugel mit Radius R an.
           $$\ds dA = R^2\sin\theta d\theta d\phi
-          \quad d\vb A = \vu e_r dA \quad\text{Skript 1.3.25}$$
+          \quad d\vb A = \vu e_r dA \smref{1.3.25}$$
           \textbf{Notiz:} $\ds\int_{\partial B_R(0)} dA=\int\delta(r-R)dV
            =\int \delta(r-R)r^2dr\sin\theta d\theta d\phi
            =R^2 \int \sin\theta d\theta d\phi$
@@ -190,29 +189,37 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
           Allgemein Wichtige Bedingungen der Greenshce Funktion
           \begin{center}
             \begin{enumerate}
-              \item $\Delta G(\vb r, \vb r') = -4\pi\delta(\vb r -\vb r')$
-              \item $G(\vb r, \vb r') \to 0$ für $\vb r'\to\infty$
+              \item $\Delta G(\vb r, \vb r') = -4\pi\delta(\vb r -\vb r')
+                \smref{1.5.90}$
+              \item Sei $\Delta g(x) = f(x)$ eine Lösung der inhomogenen  
+                Laplace Gleichung, so ist 
+                $$ g(x)=\Delta\int G(x,x')f(x')dx'$$
+              \item $G(\vb r, \vb r') \to 0$ bzw. $F(\vb r, \vb r')\to 0$ 
+                für $\vb r'\to\infty
+                \smref{§1.5.6, nach Formel 1.5.94}$
             \end{enumerate}
           \end{center}
           Bei Dirichlet-RWB.:
           \begin{center}
           \begin{enumerate}
-          \item $\ds G_D(\vb r, \vb r')= G_D(\vb r', \vb r)$ 
+            \item $\ds G_D(\vb r, \vb r')= G_D(\vb r', \vb r)
+              \smref{1.5.99}$ 
             (für reine Dirichlet Randbedingungen) (Skript §1.5.6)\\
           \item $\ds \Phi(\vb r)=k\int_V d^3r' G_D(\vb r, \vb r')\rho(\vb r)
              -\frac{1}{4\pi}\int_{\partial V}d\vb A'\cdot\phi(r')
-             \grad G_D(\vb r, \vb r')$ (Skript 1.5.90)\\
+             \grad' G_D(\vb r, \vb r')$ (Skript 1.5.90)\\
           \end{enumerate}
           \end{center}
-          \textbf{Notiz:} Ob ich diese Frage richtig interpretiert habe 
-          weiß ich nicht. Die Formeln kommen allerdings direkt aus dem
-          Skript und sollten richtig sein.\\
-          (Siehe Skript §1.5.6 S.37)
+          Bei von Neumann-RWB.:
+          \begin{enumerate}
+            \item $\ds \Phi(\vb r')=
+              k\int_V d^3r G_N(\vb r,\vb r')\rho(\vb r)
+              +\frac{1}{4\pi} \int_{\partial V} d\vb A \cdot 
+              G_N(\vb r,\vb r)\grad\phi(r) + C$
+          \end{enumerate}
   \end{enumerate}
   \newpage
-
 \section{Grundkenntinsse Elektrostatik II / Magnetostatik}
-
   \begin{center}
     \begin{tabular}{ll|ll|ll}
      \toprule
@@ -228,7 +235,6 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
     \end{tabular}
   \end{center}
   \begin{enumerate}
-
     \item Wie lautet die Taylor-Entwicklung von $\rr{1}$ in den Komponenten
           von $\vb r'$ bei $\vb r'=0$ bis einschließlich der Zweiten
           Ordnung?
@@ -390,11 +396,8 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
           (Skript 2.5.17)}$$
           \textbf{Notiz:} $\ds \curl \vb H = \vb j_f$ und 
           $\ds \curl \vb M=\vb j_M$ 
-
   \end{enumerate}
-
   \newpage
-
 \section{Grundkenntinsse Elektrodynamik}
 \setcounter{footnote}{0}
   \begin{center}
@@ -646,7 +649,7 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
           \begin{tabular}{rl}
             $\ds\omega>\omega_p$ &$\Rightarrow$ 
             Metalle werden durchsichtig\\
-            $\ds\omega\le\omega_p$& $\Rightarrow$ Expononentielle 
+            $\ds\omega\le\omega_p$& $\Rightarrow$ Exponentielle 
             Abfall von EM-Wellen im Medium
           \end{tabular}
           \begin{center}
