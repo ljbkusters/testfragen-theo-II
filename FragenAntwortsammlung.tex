@@ -41,6 +41,7 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
 \begin{itemize}
   \item Prof. Honerkamp / Dr. Mück für die Fragen
   \item ``Der Andere'' für Seine Bilder mit Lösungen in der Whatsappgruppe
+  \item Lais für Seine Aufmerksamkeit bei Fragen 2.7 und 2.8, wo immer noch Konstanten falsch definiert waren.
 \end{itemize}
 
 \clearpage
@@ -199,7 +200,19 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
                 \smref{§1.5.6, nach Formel 1.5.94}$
             \end{enumerate}
           \end{center}
-          Bei Dirichlet-RWB.:
+          \textbf{Notiz:} Relation (b) heißt in Wörter, das man die gesuchte
+          Funktion $g(x)$, welche die Poissong-Gleichung erfüllt, lösen
+          kann, indem man das Integral berechnet. Für uns würde bei g(x)
+          Durchaus $\Phi$ stehen, und bei $f(x)$ durchaus $\rho$.
+          Mit diese Relation kann man das 
+          Poisson-Problem
+          von ein DGL in ein Integral umwandern, falls man $G(x,x')$ kennt.
+          Dies ist der Hauptpunkt weshalb man gerne Greensche Funktionen
+          Benützt, denn Integralen sind durchaus einfacher 
+          zu lösen als DGLs (vor allem in der Praxis, wobei Numersich
+          lösen möglich ist).
+
+          \textbf{Bei Dirichlet-RWB.} (Hier gefragt):
           \begin{center}
           \begin{enumerate}
             \item $\ds G_D(\vb r, \vb r')= G_D(\vb r', \vb r)
@@ -304,28 +317,33 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
           linearen, isotropen Medium definiert?
           \begin{center}
           \begin{tabular}{lll}
-            Definition:             & $\ds\vb P = 
+            Definition:             & $\ds\vb P = \frac{1}{4\pi k} 
                                       \vu \chi(\vb E)\cdot \vb E\quad$
                                       ($\vu\chi$ ist ein Tensor)
                                       & (Skript 1.8.1) \\
             Falls linear, isotrop: 
                                     & $\ds\vu\chi(\vb E)=
                                          \mathbb{1}\chi(\vb E)$
+                                      ($\vu\chi$ Diagonal, wie Skalar)
                                       & (Skript 1.8.2) \\
             Mit schwache abh.\ von $\vb E$:
                                     & $\chi(\vb E)\approx\chi
-                                       \quad\chi=const.\in\mathbb{R}$
+                                    \quad(\chi=const.\in\mathbb{R})$
                                       & (Skript 1.8.3) \\
             
           \end{tabular}
           \end{center}
+          \textbf{Notiz:} Die im Skript gegebene Definition ist 
+          \textbf{Falsch}! (aber richtig bis auf der Vorfaktor.)\\
 
     \item Wie lautet der Zusammenhang zwischen elektrischem Feld, 
           dielektrischer Verschiebung und Polarisation?
           $$\vb E= 4\pi k\vb D - 4\pi k\vb P \quad\text{(Skript 1.8.17)}$$
-          \textbf{Notiz:} Alternativ gilt $\vb D=\epsilon \vb E
+          \textbf{Notiz 1:} Die im Skript gegebene Definition ist 
+          \textbf{Falsch}! (aber richtig bis auf die vorfaktoren.)\\
+          \textbf{Notiz 2:} Alternativ gilt (in SI) $\vb D=\epsilon \vb E
           =\epsilon_0\epsilon_r \vb E$ mit
-          $\epsilon=1+4\pi k\chi$ 
+          $\epsilon=\frac{1+\chi}{4\pi k}$ 
           (unter die richtige Bedingungen, siehe Skript) (Skript 1.8.17)\\
 
     \item Welche Feldgleichung erfüllt die dielektrische Verschiebung?
@@ -354,7 +372,7 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
                                 & (Skript 2.1.5)\\
             Integral Form     & $\ds\dot Q_V
                                 =\int_V d^3r\partial_t\rho(\vb r,t)=
-                                \int_{\partial V}d\vb A\cdot
+                                -\int_{\partial V}d\vb A\cdot
                                 \vb j(\vb r, t)=-I_{\partial V}$
                                 & (Skript 2.1.1 und 2.1.3)\\
           \end{tabular}
@@ -521,7 +539,7 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
             der Wellengleichung einsetzt und die
             triviale Terme gegen einander wegstreicht.
           \end{center}
-          $$\dv{w(k)}{k}=c \quad\text{(im Vakuum)}\smref{3.5.7}$$
+          $$\dv{\omega(k)}{k}=c \quad\text{(im Vakuum)}\smref{3.5.7}$$
 
     \item Man gebe die Formeln für die Fourier-Hin- und Rücktransformation
           für eine Funktion $f(t)$ auf der $t$-Achse auf $\omega$-Achse und
