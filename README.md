@@ -11,4 +11,5 @@ Vielen Dank an jeder, der mitgeholfen hat! Insbesondere:
 
 + Prof. Honerkamp / Dr. Mück für die Fragen
 + "Der Andere" für Seine Bilder mit Lösungen in der Whatsappgruppe
++ Lais für seine Aufmerksamkeit bei Fragen 2.7 und 2.8, wo immer noch Konstanten falsch definiert waren.
 
