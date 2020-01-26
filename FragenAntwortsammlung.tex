@@ -256,14 +256,17 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
           \frac{1}{2}\sum_{i,j=1}^3\frac{3r_{ij}-\delta_{ij}r^2}{r^5}
           r_i'r_j'
           \quad\text{(Skript 1.6.2)}$$
-          \textbf{Notiz:} Dies ist eine ``Fernfeld'' Näherung, d.h. 
-          eine Gute Näherung für $r\gg 0$
+          \textbf{Notiz 1:} Dies ist eine ``Fernfeld'' Näherung, d.h. 
+          eine Gute Näherung für $r\gg 0$\\
+          \textbf{Notiz 2:} Für genauere Information zur Mehrdimensionale
+          Taylor-Entwicklung, schaue im HöMa II Skript oder schaue hier 
+          nach:~\url{https://de.wikipedia.org/wiki/Taylorreihe#Mehrdimensionale_Taylorreihe}
 
     \item Man drücke das elektrostatische Potential $\Phi(\vb r)$ einer
           räumlich begrenzte Ladungsverteilung $\rho(\vb r')$ mittels
           Monopol, den Dipolvektor und den Quadrupoltensor aus.
           $$
-          \Phi\approx k\frac{Q_\text{ges}}{r} +
+          \Phi(\vb r)\approx k\frac{Q_\text{ges}}{r} +
           k\frac{\vb r\cdot \vb p}{r^3} +
           \frac{k}{2} \sum_{ij}\frac{r_ir_j}{r^5}Q_{ij}
           \smref{1.6.6}$$
@@ -277,7 +280,8 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
             Dipol:      & $\ds p_i=\int d^3r\rho(\vb r)r_i
                           \quad\vb p=p_i\vu{e}_i $
                           &\sref{1.6.8}\\
-            Quadruopl:  & $\ds Q_{ij}=\int d^3r\rho(\vb r)r_i$
+            Quadrupol:  & $\ds Q_{ij}=\int d^3r\rho(\vb r)
+            \qty(3r_ir_j - \delta_{ij}\abs{\vb r}^2)$
                           &\sref{1.6.9}\\
           \end{tabular}
           \end{center}
@@ -285,14 +289,16 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
           gilt zwar $Q_{ij}=Q_{ji}$ und 
           $\text{sp}(\bm Q)=\sum_i Q_{ii}=0$.\\
           \textbf{Notiz 2:} Die hier nicht gefragte Kugelkoordinaten
-          Entwicklung ist auch sehr wichtig! (Siehe Skript §1.6.6 S.42)
+          Multipolentwicklung ist auch sehr wichtig! 
+          (Siehe Skript §1.6.6 S.42)
 
     \item Wie koppeln Monopol und Dipol an ein externes elektrostatisches
           Potential bzw. Feld?
           
-          Für eine Multipol im Urpsrung:
-          $$E_{\text{pot}}=\Phi(0)Q-\vb E(0)\cdot\vb p 
-          \quad\qty(+ \frac{1}{6}\sum_{ij}\pdv{x_j}E_i(0)Q_{ij}+\ldots)
+          Für eine Multipol im Zentriert um $\vb r_0$:
+          $$E_{\text{pot}}=\Phi(\vb r_0)Q-\vb E(\vb r_0)\cdot\vb p 
+          \quad\qty(+ \frac{1}{6}\sum_{ij}\pdv{x_j}E_i(\vb r_0)Q_{ij}
+          +\ldots)
           \smref{1.7.7}$$
           \textbf{Notiz:} Energie minimierung für $\vb p\parallel \vb E$
           und gleich ausgerichtet (also $\vu e_{\vb p}=\vu e_{\vb E}$).\\
@@ -317,15 +323,14 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
           linearen, isotropen Medium definiert?
           \begin{center}
           \begin{tabular}{lll}
-            Definition:             & $\ds\vb P = \frac{1}{4\pi k} 
-                                      \vu \chi(\vb E)\cdot \vb E\quad$
-                                      ($\vu\chi$ ist ein Tensor)
-                                      & (Skript 1.8.1) \\
+            Definition:             
+            & $\vb P = \frac{1}{4\pi k} 
+              \vu \chi(\vb E)\cdot \vb E\quad$
+            & (Skript 1.8.1) \\
             Falls linear, isotrop: 
-                                    & $\ds\vu\chi(\vb E)=
-                                         \mathbb{1}\chi(\vb E)$
-                                      ($\vu\chi$ Diagonal, wie Skalar)
-                                      & (Skript 1.8.2) \\
+            & $\vu\chi(\vb E)=
+              \mathbb{1}\chi(\vb E)$
+                & (Skript 1.8.2) \\
             Mit schwache abh.\ von $\vb E$:
                                     & $\chi(\vb E)\approx\chi
                                     \quad(\chi=const.\in\mathbb{R})$
@@ -333,22 +338,36 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
             
           \end{tabular}
           \end{center}
-          \textbf{Notiz:} Die im Skript gegebene Definition ist 
+          \textbf{Notiz 1:} $\vu \chi$ ist im allgemeinsten Fall 
+          definiert als ein Matrix/Tensor.
+          dies lässt zu, dass $\vu \chi$ in unterschiedliche Richtungen
+          andere Auswirkungen hat (Polarisation kann z.B. in x-Richtung
+          Stärker sein als in y-Richtung). Wir betrachten in diesen Kurs 
+          aber im Allgemein
+          lineare, isotrope Medien, wobei es keine Richtungsabhängigkeit
+          gibt, und wobei $\chi$ auch nicht Stark abhängt von das äußere
+          $E$-Feld. Dadurch kann
+          man $\chi$ als eine Medienabhängige skalare Konstante 
+          sehen/nähern.\\
+          \textbf{Notiz 2:} Die im Skript gegebene Definition ist 
           \textbf{Falsch}! (aber richtig bis auf der Vorfaktor.)\\
 
     \item Wie lautet der Zusammenhang zwischen elektrischem Feld, 
           dielektrischer Verschiebung und Polarisation?
           $$\vb E= 4\pi k\vb D - 4\pi k\vb P \quad\text{(Skript 1.8.17)}$$
           \textbf{Notiz 1:} Die im Skript gegebene Definition ist 
-          \textbf{Falsch}! (aber richtig bis auf die vorfaktoren.)\\
-          \textbf{Notiz 2:} Alternativ gilt (in SI) $\vb D=\epsilon \vb E
-          =\epsilon_0\epsilon_r \vb E$ mit
-          $\epsilon=\frac{1+\chi}{4\pi k}$ 
+          \textbf{Falsch}! (aber richtig bis auf die Vorfaktoren.)\\
+          \textbf{Notiz 2:} Alternativ gilt $\vb D=\epsilon \vb E
+          \stackrel{\text{(SI)}}=\epsilon_0\epsilon_r \vb E$ mit
+          $\epsilon=\frac{1+\chi}{4\pi k}$ (Herleitung wie im Skript) und
+          $\epsilon_r=1+\chi$
           (unter die richtige Bedingungen, siehe Skript) (Skript 1.8.17)\\
 
     \item Welche Feldgleichung erfüllt die dielektrische Verschiebung?
           $$\div \vb D=\rho_f(\vb r)\quad\text{(Skript 1.8.4)}$$
           $$\qty(\div \vb P=-\rho_P(\vb r))\quad\text{(Skript 1.8.6)}$$
+          \textbf{Notiz:} Die im Skript gegebene Definition ist 
+          \textbf{Falsch}! (aber richtig bis auf der Vorfaktor.)
 
     \item Was geschieht mit dem $1/r$-Potential von Punktladungen in
           Metallen?
@@ -380,7 +399,7 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
 
     \item Man schreibe Ladungsdichte $\rho(\vb r)$ und Stromdichte
           $\vb j(\vb r)$ für $i=1,\ldots,N$ Punktladungen $q_i$ mit 
-          Trajektorioen $\vb r_i(t)$.
+          Trajektorien $\vb r_i(t)$.
           $$\rho(\vb r)=\sum_i q_i\delta(\vb r-\vb r_i(t))
           \quad \text{(Skript 1.1.2)}$$
           $$\vb j(\vb r)=\sum_i q_i\dot{\vb r}_i\delta(\vb r-\vb r_i(t))
@@ -405,15 +424,18 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
           $$\vb m = \frac{1}{2}\vb r \times \vb j=\frac{q}{2}\vb 
           r\times\vb v=\frac{q}{2m}\vb L$$
           \textbf{Notiz:} Man bemerke, dass man hier keine integrale 
-          formulierung braucht weil wir von ein Punktdipol reden!
+          formulierung braucht weil wir von ein Punktdipol reden bzw.
+          die $\delta$-Funktion im Integral eine einfache Lösung ergibt.
 
     \item Wie lauten die Zusammenhänge zwischen $\vb B$, $\vb H$ 
           und $\vb M$ in einem Paramagneten?
           $$\vb B = 4\pi k'\vb H + 4\pi k'\vb M\quad\text{(Skript 2.5.12)}$$
           $$\vb B = \mu_0 \vb H + \mu_0 \vb M \quad\text{(SI) 
           (Skript 2.5.17)}$$
-          \textbf{Notiz:} $\ds \curl \vb H = \vb j_f$ und 
-          $\ds \curl \vb M=\vb j_M$ 
+          \textbf{Notiz 1:} $\ds \curl \vb H = \vb j_f$ und 
+          $\ds \curl \vb M=\vb j_M$\\
+          \textbf{Notiz 2:} Die im Skript gegebene Definition ist 
+          \textbf{Falsch}! (aber richtig bis auf die Vorfaktor.)
   \end{enumerate}
   \newpage
 \section{Grundkenntinsse Elektrodynamik}
@@ -457,11 +479,11 @@ Vielen Dank an jedem, der mitgeholfen hat! Insbesondere:
                         & $\ds \oint_{\partial A}d\vb l\cdot\vb 
                         E(\vb r, t)=k''\dv{t}\iint_Ad\vb A\cdot \vb B(\vb r, t)$\\
           Ampère'sche Gesetz  
-                        & $\ds \curl \vb B(\vb r, t)=4\pi k'\vb j(\vb r, t)
-                          +\frac{k'}{k}\partial_t \vb E(\vb r, t)$
-                        & $\ds\oint_{\partial A}d\vb l\cdot \vb B(\vb r, t)=
-                        \iint_{A}d\vb A\cdot(4\pi k'\vb j(\vb r, t)+
-                        \frac{k'}{k}\partial_t \vb E(\vb r, t))$\\
+            & $\ds \curl \vb B(\vb r, t)=4\pi k'\vb j(\vb r, t)
+              +\frac{k'}{k}\partial_t \vb E(\vb r, t)$
+            & $\ds\oint_{\partial A}d\vb l\cdot \vb B(\vb r, t)=
+            \iint_{A}d\vb A\cdot\qty(4\pi k'\vb j(\vb r, t)+
+            \frac{k'}{k}\partial_t \vb E(\vb r, t))$\\
           \end{tabular}
           }
           (SI: $k=\frac{1}{4\pi\epsilon_0}\quad k'=\frac{\mu_0}{4\pi}\quad
