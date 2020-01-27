@@ -1,0 +1,192 @@
+\begin{center}
+  \begin{tabular}{ll|ll|ll}
+    \toprule
+    Frage & Sicherheitsgrad & Frage & Sicherheitsgrad 
+          & Frage & Sicherheitsgrad \\
+    \midrule
+    1&                  & 6 &            & 11&       \\ 
+    2&                  & 7 &            & 12&       \\
+    3&                  & 8 &            & 13&       \\
+    4&                  & 9 &            & 14&       \\
+    5&                  & 10&            & 15&       \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+\begin{enumerate}
+  \item Was bedeutet das spezielle Relativitätsprinzip für physikalische
+    Gesetze und die Lichtgeschwindigkeit?
+
+    Die Lichtgeschwindigkeit ist eine Konstante in jedem Bezugssystem.
+    Die physikalische Gesetze sollen in jedes Bezugssytem gleich sein,
+    unterschiedliche Observierer können aber unterschiedliche Gründen
+    angeben weshalb ein Erreignis statt findet.
+
+  \item Wie lautet die Formel für den invarianten Raum-Zeit-Abstand ds in
+    einem Koordinatensystem? Warum folgt aus der Invarianz von ds die
+    Invarianz der Lichgeschwindigkeit.
+    
+    \begin{equation*}
+      ds^2 = c^2 t^2 - \vb x^2
+    \end{equation*}
+
+  \item Welche Bedingungen stellt man an eigentliche orthochrone
+    Lorentz-transformationen?
+
+    %TODO
+
+  \item Wie lautet die Lorentz-Transformation für einen Boost in 
+    $z$-Richtung? Wie sieht die Inverse aus?
+    
+    Sei $S$ ein Ruhesystem und bewege $S'$ sich mit relativen 
+    Geschwindigkeit $v$ in $z$-Richtung. Man definiere die (einheitslosen)
+    Größen:
+    $\beta = \frac{v}{c}$, $\gamma=\qty(1-\frac{v^2}{c^2})^{-\frac{1}{2}}$
+    
+    Für die Hintransformation gilt:
+    \begin{equation*}
+      x'^\mu = \Lambda^\mu_{\ \nu} x^\nu 
+      \text{ mit } 
+      \Lambda^\mu_{\ \nu}=
+      \begin{pmatrix}
+        \gamma       & 0 & 0 & -\beta\gamma\\
+        0            & 1 & 0 & 0           \\
+        0            & 0 & 1 & 0           \\
+        -\beta\gamma & 0 & 0 & \gamma      \\
+      \end{pmatrix}
+    \end{equation*}
+    Für die Rücktransformation gilt:
+    \begin{equation*}
+      x^\mu = \qty(\Lambda^{-1})^\mu_{\ \nu} x'^\nu 
+      \text{ mit } 
+      \Lambda^\mu_{\ \nu}=
+      \begin{pmatrix}
+        \gamma       & 0 & 0 & \beta\gamma\\
+        0            & 1 & 0 & 0           \\
+        0            & 0 & 1 & 0           \\
+        \beta\gamma  & 0 & 0 & \gamma      \\
+      \end{pmatrix}
+    \end{equation*}
+
+    Man erinnere sich daran dass:
+      $(\Lambda^{-1})^\mu_{\ \nu}
+      =g_{\mu\sigma}\Lambda^{\sigma}_{\ \gamma}g_{\gamma\nu}$
+
+    \item Man schreibe den kontravarianten Vierer-Vektor für ein
+      Raum-Zeit-Ereignis x. Wie transformiert sich ein kontravarianter
+      Lorentz-Vierer-Vektor?
+
+      \begin{equation*}
+        x^\mu =
+        \begin{pmatrix}
+          ct\\ x \\ y \\ z
+        \end{pmatrix}
+      \qquad x'^\mu = \Lambda^\mu_{\ \nu} x^\nu 
+      \qquad x^\mu = (\Lambda^{-1})^\mu_{\ \nu} x'^\nu 
+      \end{equation*}
+
+    \item Wie erhält man den kovarianten Vierer-Vektor für x mit dem
+      metrischen Tensor?
+
+      \begin{equation*}
+        x_\mu = g_{\mu\nu}x^\nu
+        \begin{pmatrix}
+          ct\\ -x \\ -y \\ -z
+        \end{pmatrix}
+      \end{equation*}
+
+    \item Wie sieht das invariante Skalarprodukt zwischen zwei 
+      Vierer-Vektoren in einem Koordinaten-System aus, ohne und mit
+      dem metrischen Tensor geschrieben?
+      
+      Seien $v^\mu$, $w^\mu$ Vierervektoren der Form: 
+      $(x_0, x_1, x_2, x_3)^T$ mit $x=v,w$
+
+      \begin{equation*}
+        \begin{split}
+        \langle v^\mu , w^\mu \rangle 
+        &\coloneqq v^\mu w_\mu = 
+        v^\mu g_{\mu\nu} w^\nu
+        =
+        \begin{pmatrix}
+          v_0 \\ v_1 \\ v_2 \\ v_3
+        \end{pmatrix}
+        \begin{pmatrix}
+          1 & 0  & 0  &  0\\
+          0 & -1 & 0  &  0\\
+          0 & 0  & -1 &  0\\
+          0 & 0  & 0  & -1\\
+        \end{pmatrix}
+        \begin{pmatrix}
+          w_0 \\ w_1 \\ w_2 \\ w_3
+        \end{pmatrix}\\
+        &=v_0w_0 - (v_1w_1 + v_2w_2 + v_3w_3)
+        \end{split}
+      \end{equation*}
+
+      Man bemerke dass $w_\mu=(w_0, -w_1, -w_2, -w_3)^T$
+
+    \item Warum ist die Gescwhindigkeit difineiert als $v^\mu=\dv t x^\mu$
+      kein Lorentz-Vektor? Welche verwandtete Geschwindigkeit ist ein
+      Lorentz-vektor?
+
+      $v^\mu$ ist kein Vierer-Vektor weil $\ldots$
+
+      $u^\mu$ ist ein Vierer-Vektor, mit $u^\mu=\dv \tau x^\mu$
+
+    \item Wie lauten die Komponenten des Vierer-Potenitals und des
+      Vierer-Stroms in einem gegebenen Koordinatensystem? Wie schreibt
+      sich die Wellengleichung damit?
+
+      \begin{equation*}
+        A^\mu=
+        \begin{pmatrix}
+          \Phi(x^\alpha) \\ A_x(x^\alpha) \\ A_y(x^\alpha) \\ A_z(x^\alpha)
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+          \Phi(x^\alpha) \\ \vb A(x^\alpha)
+        \end{pmatrix}
+        \qquad
+        j^\mu =
+        \begin{pmatrix}
+          \rho(x^\alpha) \\ j_x(x^\alpha) \\ j_y(x^\alpha) \\ j_z(x^\alpha)
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+          \rho(x^\alpha) \\ \vb j(x^\alpha)
+        \end{pmatrix}
+      \end{equation*}
+
+      TODO: Wellengleichung
+
+    \item Man gebe den Feldstärke-Tensor als Funktion des Vierer-Potentials
+      und Matrix mit den Komponenten von $\vb E$ und $\vb B$ an.
+
+      \begin{equation*}
+        F^{\mu\nu}=\partial^\mu A^\nu - \partial^\nu A^\mu=
+        \begin{pmatrix}
+          0   & -E_x & -E_y & -E_z\\ 
+          E_x & 0    & -B_z & B_y \\ 
+          E_y & B_z  & 0    & -B_x\\ 
+          E_z & -B_y & B_x  & 0   \\ 
+        \end{pmatrix}
+      \smref{5.3.16}
+      \end{equation*}
+
+    \item Wie lauten die homogenen Maxwell-Gleichungen in forminvarianter
+      Schreibweise?
+
+    \item Wie lauten die inhomogenen Maxwell-Gleichungen in forminvarianter
+      Schreibweise?
+
+    \item Wie schreibt sich die Lorentz-Kraft für eine Ladung q auf
+      forminvariante Weise?
+
+    \item Man gebe das kirchhoff'sche Beugungsintegral [für
+      Lichteinfall] auf eine Blendenöffnung bei weit 
+      entfernter Lichtquelle und Senkrechtem Einfall an.
+
+    \item Was ergibt sich in der Fraunhofer-Näherung? Wann gilt diese?
+
+\end{enumerate}

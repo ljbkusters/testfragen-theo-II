@@ -1,0 +1,180 @@
+\begin{center}
+  \begin{tabular}{ll|ll|ll}
+    \toprule
+    Frage & Sicherheitsgrad & Frage & Sicherheitsgrad 
+          & Frage & Sicherheitsgrad \\
+    \midrule
+    1 & Sehr sicher & 6  & Sicher      & 11 & Sehr sicher \\ 
+    2 & Sehr sicher & 7  & Sehr sicher & 12 & Sehr sicher \\
+    3 & Sehr sicher & 8  & Sehr sicher & 13 & Sehr sicher \\
+    4 & Sehr sicher & 9  & Sehr sicher & 14 & Sehr sicher \\
+    5 & Sehr sicher & 10 & Sicher      & 15 & Sicher\\
+    \bottomrule
+  \end{tabular}
+\end{center}
+\begin{enumerate}
+  \item Man berechne $\ds \grad\rr{1}$.
+        $$\ds \grad\rr{1}=
+         -\frac{\vb r -\vb r'}{\abs{\vb r - \vb r'}^3}\quad
+         \qty(=-\grad'\rr{1})\quad\text{(Skript 1.3.1)}$$ 
+
+  \item Was ergibt $\ds \Delta\rr{1}$?
+        $$\ds \Delta \rr{1} = -4\pi \delta(\vb r-\vb r')
+        \quad\text{(Skript 1.3.23)}$$
+    
+  \item Wie lauten die beiden Feldgleichungen für das 
+        elektrische Feld in der Elektrostatik?
+        $$\ds \div \vb E=4\pi k\rho(\vb r)\,\qquad\curl\vb E=0
+         \qquad\qty(\text{SI:}\,k=\frac{1}{4\pi\epsilon_0})$$
+        \begin{center}
+          (Skript 1.3.25 und 1.3.6)
+        \end{center}
+  
+  \item Wie lautet die Bestimmungsgleichung für das elektrostatische 
+        Potential bei gegebener Ladungsdichte $\rho(\vb r)$?
+        $$\ds \phi(\vb r)=\int d^3r'\rr{\rho(\vb r')}
+        \quad\text{(Skript 1.3.3)}$$
+
+  \item Wie berechnet sich das elektrische Feld $\vb E (\vb r)$ aus dem
+        Potential $\Phi(\vb r)$?
+        $$\ds \vb E(\vb r) = - \grad \Phi (\vb r)
+        \quad\text{(Skript 1.3.2)}$$
+
+  \item Wie Berechnet man den Potentialunterschied \textbf{[Spannung]}
+        zwischen den Orten 
+        $\vb r_2$ und $\vb r_1$ bei gegebenem Feld $\vb E(\vb r)$?
+        $$\ds U(\vb r_1, \vb r_2)=U_2-U_1
+         =\int_{\vb r_1}^{\vb r_2} \vb E(\vb r)\cdot d\vb s
+         =-\int_{\vb r_1}^{\vb r_2} \vb \grad \Phi (\vb r)\cdot d\vb s
+         =-\qty(\Phi(\vb r_2)-\Phi(\vb r_1))
+         \quad\text{(Skript 3.2.6)}$$
+        \textbf{Notiz}: Wegen $\vb E=-\grad\Phi$ ist $\vb E$ ein reines
+        Gradientenfeld. Dies heißt, daß das Integral über $\vb E$
+        wegunabhängig ist (nur gültig in der Elektrostatik!).
+
+  \item Was besagt der satz von Gauß als mathematische Aussage?
+        $$\ds \int_V d^3r \qty[\div \vb F(\vb r)]=
+         \oint_{\partial V}d\vb A\cdot \vb F(\vb r)
+         \quad\text{(Skript 1.3.12)}$$\\
+        \textbf{Notiz:} In 3 Dimensionen, wobei $V$ ein Volumen darstellt,
+        und $\partial V$ dessen Randfläche darstellt.
+
+  \item Welche Aussage erhält man mit dem Satz von Gauß in der 
+        Elektrostatik in Anwesenheit von Ladungen in einem Volumen V?
+        $$\vb E(\vb r)\eval_{\abs{\vb r} > R}
+          \propto Q_{\text{ges}}\in V_R
+          \quad\text{(Skript 1.3.33)}$$\\
+        \textbf{Oder in Wörter:} Das Elektrische Feld außerhalb 
+        einem Volumen 
+        $V_R$\footnote{Volumen mit 
+          maximale Radius R, d.h. $V_R\subset B_R(\vb r_0)$ 
+          wobei $B_R$ ein Kugel mit Radius R zentriert um $\vb r_0$ ist.}
+        ist proportional zur Gesammtladung $Q_{\text{ges}}$ 
+        im Volumen $V_R$
+
+  \item Was besagt der Satz von Stokes Mathematisch?
+        $$\ds \int_A d\vb A \cdot \qty[\curl \vb F(\vb r)]=
+         \oint_{\partial A}d\vb s\cdot \vb F(\vb r)
+         \quad\text{(Skript 1.4.10)}$$
+        \textbf{Notiz:} In 3 Dimensionen, wobei $A$ eine Fläche 
+        darstellt,
+        und $\partial A$ dessen Randkurve darstellt.
+
+  \item Wann ist die Lösung der Poisson-Gleichung eindeutig?
+        \begin{center}
+          Falls die Randbedingungen vorgegeben sind. (Skript §1.5)
+        \end{center}
+        \textbf{Notiz:} $G(\vb r, \vb r')=\rr{1} + F(\vb r, \vb r')$ 
+        ist wegen $F(\vb r, \vb r')$ nicht eindeutig!
+        
+  \item Man gebe das infinitesimale Flächenelement auf der Oberfläche 
+        einer Kugel mit Radius R an.
+        $$\ds dA = R^2\sin\theta d\theta d\phi
+        \quad d\vb A = \vu e_r dA \smref{1.3.25}$$
+        \textbf{Notiz:} $\ds\int_{\partial B_R(0)} dA=\int\delta(r-R)dV
+         =\int \delta(r-R)r^2dr\sin\theta d\theta d\phi
+         =R^2 \int \sin\theta d\theta d\phi$
+
+  \item Man berechne das Volumen einer Kugel mit Radius R 
+        in Kugelkoordinaten\\
+        $$\ds V_k=\int_{\sqrt{x^2+y^2+z^2}\le R} 1\cdot dxdydz
+         =\int_0^{2\pi}\int_0^\pi\int_0^R 1\cdot r^2dr 
+          \sin\theta d\theta d\phi$$
+        $$\ds V_k=\int_0^R r^2 dr \int_{-1}^{1} d\cos\theta 
+                 \int_0^{2\pi}d\phi
+         =\qty[\frac{1}{3}R^3]\qty[2]\qty[2\pi]=\frac{4\pi}{3}R^3$$
+        \begin{center}
+          (Skript 1.3.36$\sim$38)
+        \end{center}
+
+  \item Wie sieht die Enwicklung einer Funktkion $f(\theta,\phi)$ in
+        Kugelflächenfunkionen aus und wie bestimmt man die 
+        Entwicklungskoffizienten?
+        $$\ds f(\theta, \phi)=\sum_{lm} f_{lm}Y_{lm}(\theta,\phi)
+        \qquad l\in \mathbb{N}_0;\quad \abs{m}\le l; 
+        \quad m\in\mathbb{Z}$$
+        $$\ds f_{lm}=const.
+         =\int_{-1}^{1} d\cos\theta\int_0^{2\pi}d\phi 
+         Y^*_{lm}(\theta,\phi)f(\theta,\phi)
+         =\int d\Omega Y^*_{lm}(\Omega)f(\Omega)$$
+         \textbf{Notiz:} Falls man $f(\theta,\phi)$ als linear kombination
+         von $Y_{lm}(\theta,\phi)$ schreiben kann, kann man $f_{lm}$
+         sehr einfach bestimmen (es gilt zwar $\ds \int d\Omega 
+         Y_{lm}(\Omega)Y_{l'm'}^*(\Omega)=\delta_{ll'}\delta_{mm'}$)
+        \begin{center}
+          (Skript 1.5.70$\sim$71)
+        \end{center}
+
+  \item Wie lautet der Ansatz für die Lösung der Laplace-Gleichung in
+        Kugelfächenfunktionen?\\
+        $$f(r,\theta,\phi)=
+        \sum_{lm}\qty(a_{lm}r^l+b_{lm}r^{-(l+1)})Y_{lm}(\theta,\phi)
+        \quad\text{(Skript 1.5.80)}$$
+         
+  \item Welche zwei wichtigen Gleichungen erfüllt die Dirichlet-Green'sche
+        Funktion $G_D(\vb r, \vb r')$?
+
+        Allgemein Wichtige Bedingungen der Greenshce Funktion
+        \begin{center}
+          \begin{enumerate}
+            \item $\Delta G(\vb r, \vb r') = -4\pi\delta(\vb r -\vb r')
+              \smref{1.5.90}$
+            \item Sei $\Delta g(x) = f(x)$ eine Lösung der inhomogenen  
+              Laplace Gleichung, so ist 
+              $$ g(x)=\Delta\int G(x,x')f(x')dx'$$
+            \item $G(\vb r, \vb r') \to 0$ bzw. $F(\vb r, \vb r')\to 0$ 
+              für $\vb r'\to\infty
+              \smref{§1.5.6, nach Formel 1.5.94}$
+          \end{enumerate}
+        \end{center}
+        \textbf{Notiz:} Relation (b) heißt in Wörter, das man die gesuchte
+        Funktion $g(x)$, welche die Poissong-Gleichung erfüllt, finden
+        kann, indem man das Integral berechnet. Für uns würde bei g(x)
+        Durchaus $\Phi$ stehen, und bei $f(x)$ durchaus $\rho$.
+        Mit diese Relation kann man das 
+        Poisson-Problem
+        von ein DGL in ein Integral umwandern, falls man $G(x,x')$ kennt.
+        Dies ist der Hauptpunkt weshalb man gerne Greensche Funktionen
+        Benützt, denn Integralen sind durchaus einfacher 
+        zu lösen als DGLs (vor allem in der Praxis, wobei numersich
+        lösen möglich ist).
+
+        \textbf{Bei Dirichlet-RWB.} (Hier gefragt):
+        \begin{center}
+        \begin{enumerate}
+          \item $\ds G_D(\vb r, \vb r')= G_D(\vb r', \vb r)
+            \smref{1.5.99}$ 
+          (für reine Dirichlet Randbedingungen) (Skript §1.5.6)\\
+        \item $\ds \Phi(\vb r)=k\int_V d^3r' G_D(\vb r, \vb r')\rho(\vb r)
+           -\frac{1}{4\pi}\int_{\partial V}d\vb A'\cdot\phi(r')
+           \grad' G_D(\vb r, \vb r')$ (Skript 1.5.90)\\
+        \end{enumerate}
+        \end{center}
+        Bei von Neumann-RWB.:
+        \begin{enumerate}
+          \item $\ds \Phi(\vb r')=
+            k\int_V d^3r G_N(\vb r,\vb r')\rho(\vb r)
+            +\frac{1}{4\pi} \int_{\partial V} d\vb A \cdot 
+            G_N(\vb r,\vb r)\grad\phi(r) + C$
+        \end{enumerate}
+\end{enumerate}

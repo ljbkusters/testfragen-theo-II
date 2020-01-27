@@ -1,0 +1,258 @@
+\setcounter{footnote}{0}
+\begin{center}
+  \begin{tabular}{ll|ll|ll}
+    \toprule
+    Frage & Sicherheitsgrad & Frage & Sicherheitsgrad 
+          & Frage & Sicherheitsgrad \\
+    \midrule
+    1& Sehr sicher      & 6 & Sicher     & 11& Sicher\\ 
+    2& Sehr sicher      & 7 & Sicher     & 12& Sicher\\
+    3& Sicher           & 8 & Sicher     & 13& Sicher\\
+    4& Sehr sicher      & 9 & Sicher     & 14& Sicher\\
+    5& Sehr sicher      & 10& Sehr sicher& 15& Sicher\\
+    \bottomrule
+  \end{tabular}
+\end{center}
+\begin{enumerate}
+
+  \item Wie lauten die vollen, makroskopischen Maxwell-Gleichungen für
+        die Felder $\vb E(\vb r, t)$ und $\vb B(\vb r, t)$
+        \begin{center}
+        \scalebox{0.8}{
+        \begin{tabular}{lll}
+        Name          & Differentiell       
+                            & Integral\\
+        Gauß'scher Satz     
+                      & $\ds \div \vb E(\vb r, t) 
+                        = 4\pi k\rho(\vb r, t)$
+                            & $\ds \oint_{\partial V}d\vb A\cdot
+                              \vb E(\vb r, t)=
+                              4\pi k Q_{\text{ges,V}}$\\
+        Keine Magn. Monopole
+                      & $\div \vb B(\vb r, t)=0$
+                            & $\ds\oint_{\partial V}d\vb A\cdot 
+                              \vb B(\vb r, t) = 0 $\\
+        Faraday'sche Gesetz 
+                      & $\ds \curl \vb E(\vb r , t)=k''\partial_t
+                        \vb B(\vb r, t)$
+                      & $\ds \oint_{\partial A}d\vb l\cdot\vb 
+                      E(\vb r, t)=k''\dv{t}\iint_Ad\vb A\cdot \vb B(\vb r, t)$\\
+        Ampère'sche Gesetz  
+          & $\ds \curl \vb B(\vb r, t)=4\pi k'\vb j(\vb r, t)
+            +\frac{k'}{k}\partial_t \vb E(\vb r, t)$
+          & $\ds\oint_{\partial A}d\vb l\cdot \vb B(\vb r, t)=
+          \iint_{A}d\vb A\cdot\qty(4\pi k'\vb j(\vb r, t)+
+          \frac{k'}{k}\partial_t \vb E(\vb r, t))$\\
+        \end{tabular}
+        }
+        (SI: $k=\frac{1}{4\pi\epsilon_0}\quad k'=\frac{\mu_0}{4\pi}\quad
+                  k''=1$)
+        (Gauß: $k=1\quad k'=\frac{1}{c}\quad
+             k''=\frac{1}{c}$) 
+        \end{center}
+        \begin{center}
+          \sref{3.4.1$\sim$4}
+        \end{center}
+        
+        \textbf{Notiz:} Die Integral-Form der Maxwell-Gleichungen folgt
+        direkt aus beidseitig Integrieren der Differential-Form (über 
+        Volumen für die Divergenz-Gesetze, über Oberfläche für die 
+        Rotations-Gesetze) unter Anwendung der Gauß'sche und 
+        Stoke'sche Gesetze.
+
+  \item Welche Gleichung legt das Verhalten der aus Punktladungen
+        zusammen gesetzten Quellen $\rho(\vb r, t)$ und 
+        $\vb j(\vb r, t)$ in den Feldern $\vb E(\vb r, t)$
+        und $\vb B(\vb r, t)$ fest?
+        \begin{center}
+          Die allgemeine Lorentzkraft: 
+          $\ds \vb F_q=q\qty(\vb E+k''\vb v\times\vb B)\smref{3.7.1}$
+        \end{center}
+
+  \item Man zeige mittels Kontinuitätsgleichung und Ampère-Gesetz, 
+        dass der Maxwell'sche Verschiebungsstrom für Ladungserhaltung
+        notwendig ist.
+        $$\div \vb j(\vb r, t) = -\pdv{t}\rho(\vb r ,t)$$
+        $$\curl\vb B(\vb r, t) \coloneqq 
+        4\pi k'\vb j(\vb r ,t) + \vb C(\vb r, t)$$
+        $$\text{Allgemein gilt:}\,\div\curl\vb F(\vb r, t)
+        =\curl \div \vb F(\vb r, t)=0$$
+        \begin{equation*}
+          \begin{split}
+          \ds \div\curl\vb B(\vb r, t)
+                      &\ds= \div \qty[
+                      4\pi k'\vb j(\vb r, t)+\vb C(\vb r, t)]\\
+                      &\ds= 4\pi k'\div\vb j(\vb r,t) +
+                      \div \vb C(\vb r,t)\\
+                      &\ds= 4\pi k'\qty(-\pdv{t}\rho(\vb r, t)) 
+                      +\div \vb C(\vb r,t)\stackrel{!}{=}0\\
+          \Leftrightarrow\ds 4\pi k'\pdv{t}\rho(\vb r, t) 
+                      &\ds =\div \vb 
+                      C(\vb r, t)\footnotemark
+                      \stackrel{!}{=}\div \pdv{t}K\vb E(\vb r, t)\\
+                      &\ds =\ds \pdv{t} 
+                      K4\pi k \rho(\vb r, t)
+          \Leftrightarrow K         
+                      \stackrel{!}{=}\frac{k'}{k}\\
+          \Leftrightarrow \vb C(\vb r,t)
+                      &\coloneqq \frac{k'}{k}\pdv{t}\vb E(\vb r, t)
+          \end{split}
+        \end{equation*}
+        \footnotetext{Erinnere daß $\div \vb E(\vb r, t)=4\pi k\rho(\vb r ,t)$}      
+
+  \item Wie lauten die Wellengleichungen für $\vb E(\vb r, t)$ und
+        $\vb B(\vb r, t)$ im Vakuum?
+        $$\qty(\Delta - \frac{1}{c^2}\pdv[2]{t})\vb E(\vb r, t)=
+        \qty(\Delta - \frac{1}{c^2}\pdv[2]{t})\vb B(\vb r, t)=0
+        \smref{3.5.2 und 3.5.3}$$
+
+  \item Wie sehen Ebene-Wellen-Lösungen im Vakuum aus? Was weiß man
+        über die Richtungen der Felder bezüglich der 
+        Ausbreitungsrichtung?
+        $$f(\vb r , t)=f_r(\vb r)f_t(t)$$
+        $$\vb k \,\bot\, \vb E \quad \vb k\,\bot\,\vb B \quad
+        \vb E\,\bot\, \vb B\smref{3.5.8$\sim$10}$$
+
+  \item Wie erhällt man die Dispersionsrelation und wie lautet sie für
+        elektromagnetische Wellen im Vakuum?
+        \begin{center}
+          Indem man die Lösung (gegebene Funktion) in 
+          der Wellengleichung einsetzt und die
+          triviale Terme gegen einander wegstreicht.
+        \end{center}
+        $$\dv{\omega(k)}{k}=c \quad\text{(im Vakuum)}\smref{3.5.7}$$
+
+  \item Man gebe die Formeln für die Fourier-Hin- und Rücktransformation
+        für eine Funktion $f(t)$ auf der $t$-Achse auf $\omega$-Achse und
+        zurück an.
+        $$\hat f(\omega, \alpha)=\int \frac{dt}{\sqrt{2\pi}}
+              e^{-i\omega t}f(t, \alpha)\smref{3.6.12}$$
+        $$f(t, \alpha)=\int \frac{d\omega}{\sqrt{2\pi}}
+                         e^{+i\omega t}\hat f(\omega, \alpha)
+                        \smref{3.6.11}$$
+        \begin{center}
+          ($\alpha$ stellt hier nicht zur Transformation relevante 
+          sonstige Parameter dar, wie z.B. $\vb r$)
+        \end{center}
+        \textbf{Notiz:} Hier wird explizit um die Fouriertransformation 
+        nach Zeit gefragt. Dies darf nicht verwechseld werden mit die 
+        Fouriertransformation von $\vb x$-raum nach $\vb k$-raum 
+        wobei man über
+        $d^3x$ bzw. $d^3k$ integriert wird \sref{3.6.17 und 3.6.18}.
+        Welche Parameter transformiert werden hängt also von der Frage 
+        ab!
+
+  \item Man berechne die Fouriertransformation von $\delta(t-t_0)$.
+        $$f(t)=\delta (t-t_0)$$ 
+        $$F[f(t)]=\hat f(\omega)
+        =\int\frac{dt}{\sqrt{2\pi}}e^{-i\omega t}\delta(t-t_0)
+        =\frac{1}{\sqrt{2\pi}}e^{-i\omega t_0}
+        \smref{3.9.7}$$ 
+
+  \item Wie berechnet sich der Poynting-Vektor für reelle Felder? Was
+        ist seine physikalische Bedeutung?
+        $$\vb S(\vb r,t)=\frac{1}{\mu_0}\vb E(\vb r,t)\times\vb B(\vb r,t)
+        =\vb E(\vb r,t)\times \vb H(\vb r,t)
+        \smref{3.7.8}$$
+        $$\text{(Allgemein)}\quad\vb S(\vb r,t)=
+        \frac{1}{\mu_0}\Re[\vb E(\vb r,t)]\times \Re[\vb B(\vb r,t)]$$
+        
+        \begin{center}
+          Die physikalische Bedeutung ist die von den 
+          Feldern verursachte Energiefluß.
+        \end{center}
+
+  \clearpage
+  \item Wie lauten die inhomogenen Maxwell-Gleichungen in Materie,
+        charakterisiert durch Dielektrizitätskonstante $\epsilon_r$ und
+        Permeabilität $\mu_r$?
+        \begin{center}
+          \begin{tabular}{rrcl}
+            Inhomogen&$\div \vb D$ & $=$ &$\rho_f$\\
+            &$\curl \vb H-\pdv{t}\vb D$ & $=$ &$\vb j_f$\\
+            Homogen&$\curl \vb E-\pdv{t}\vb B$ & $=$ &$0$\\
+            &$\div \vb B$ & $=$ &$0$\\
+          \end{tabular}
+          \sref{4.1.5$\sim$8}
+          $$\vb D(\vb r,t)=\epsilon_r\epsilon_0\vb E(\vb r,t) \quad
+          \text{und}\quad\vb H(\vb r, t)=\frac{1}{\mu_0\mu_r}
+          \vb B(\vb r,t)\smref{4.1.9}$$
+        \end{center}
+
+  \item Durch welche drei Sachverhalte unterscheiden sich 
+        elektromagnetische Wellen in eienem Wellenleiter mit einfach
+        zusammenhängenden rechteckigem Querschnitt von denen im Vakuum?
+        \begin{enumerate}
+          \item Die Dispersionsrelation ändert sich 
+                ($\omega(\vb k)\ne c\abs{\vb k}$ i.A.)
+          \item Es gilt i.A. \textbf{nicht} dass $\vb E\,\bot\,\vb B$
+          \item Es gilt i.A. \textbf{nicht} dass $\vb E\,\bot\,\vb k$
+                oder dass $\vb B\,\bot\,\vb k$
+        \end{enumerate}
+        \begin{center}
+          \sref{§3.11}
+        \end{center}
+
+  \item Wie sind Phasen- und Gruppengeschwindigkeit definiert und was ist
+        ihre physikalische Bedeutung?
+        \begin{center}
+          \begin{tabular}{ll}
+            $v_{\text{ph}}=\frac{\omega(k)}{k}$ 
+                      &Gescwhindigkeit mit 
+                       den die Spitzen der Welle sich ausbreiten 
+                       \\\\
+            $v_{\text{gr}}=\dv{\omega(k)}{k}$
+                      &Gewschwindigkeit mit
+                       den die Knoten einer ebene Welle sich ausbreiten.\\
+                      &Geschwindigkeit eines gesammten Wellenpackets.
+                      \sref{3.12.9}\\
+          \end{tabular}
+        \end{center}
+        \textbf{Notiz:} 
+        $v_{\text{ph}}$ kann durchaus größer als $c$ sein. Dies ist aber
+        kein Problem, denn die Phasengeschwindigkeit ``trägt'' keine
+        Information. Für $v_{\text{gr}}$ gilt immer $v_{\text{gr}}\le c$!
+
+  \item Man gebe zwei Formen für das Ohm'sche Gesetz an. Wie ist die
+        Beziehung zwischen Leitfähigkeit $\sigma$ und Widerstand $R$ 
+        für einen homogenen Leiter der länge $l$ und mit 
+        Querschnitt $A$?
+        \begin{enumerate}
+          \item $U=IR\smref{3.2.1}$
+          \item $\vb j= \sigma \vb E\smref{3.2.2}$ 
+            $\qty(\sigma=\frac{1}{\rho}\quad R=\frac{l}{\sigma A})$
+        \end{enumerate}
+
+  \item Wie entsteht eine komplexe, frequenzabhängige 
+        Dielektrizitätskonstante $\epsilon(\omega)$ in einem Metal?
+        $$\curl \vb H = \vb j + \pdv{t}\vb D$$
+        $$\curl \vb H -\qty(\sigma +\epsilon_0\epsilon_r\pdv{t})\vb E=0$$
+        $$\curl \vb H -\qty(\sigma +\epsilon_0\epsilon_ri\omega)\vb E=0$$
+        $$\curl \vb H +\epsilon_0 i\omega
+        \qty(\epsilon_r-\frac{\sigma}{i\omega\epsilon_0})\vb E=0$$
+        $$\curl \vb H +i\omega\epsilon_0 \epsilon(\omega)\vb E=0$$
+        $$\epsilon(\omega)=\qty(\epsilon_r-\frac{\sigma}
+        {i\omega\epsilon_0})\smref{4.2.5}$$
+
+  \item Wie verhält sich die Dielektrizitätskonstante $\epsilon(\omega)$
+        bei der Plasmafrequenz $\omega_P$? Was passiert physikalisch bei
+        $\omega=\omega_P$ und bei $\omega>\omega_P$?
+        $$
+        \epsilon(\omega_P)=\epsilon_r\qty(1-\frac{\omega_P^2}{\omega^2})
+        \smref{4.2.23}$$
+        $$\Leftrightarrow\quad\epsilon(\omega_P)=0
+        \quad\epsilon(\omega<\omega_P)<0 
+        \quad\epsilon(\omega>\omega_P)>0$$
+        $$\quad\omega_P=\sqrt{\frac{n_fe^2}
+        {m\epsilon_0\epsilon_r}}\smref{4.2.31}$$
+        \begin{tabular}{rl}
+          $\ds\omega>\omega_p$ &$\Rightarrow$ 
+          Metalle werden durchsichtig\\
+          $\ds\omega\le\omega_p$& $\Rightarrow$ Exponentielle 
+          Abfall von EM-Wellen im Medium
+        \end{tabular}
+        \begin{center}
+          \sref{§4.2.3 S.123}
+        \end{center}
+
+\end{enumerate}
