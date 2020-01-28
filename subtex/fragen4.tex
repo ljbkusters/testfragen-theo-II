@@ -4,14 +4,17 @@
     Frage & Sicherheitsgrad & Frage & Sicherheitsgrad 
           & Frage & Sicherheitsgrad \\
     \midrule
-    1&                  & 6 &            & 11&       \\ 
-    2&                  & 7 &            & 12&       \\
-    3&                  & 8 &            & 13&       \\
-    4&                  & 9 &            & 14&       \\
-    5&                  & 10&            & 15&       \\
+    1& Sicher           & 6 & Sicher     & 11& Sicher\\ 
+    2& unsicher         & 7 & Sicher     & 12& Sicher\\
+    3& unsicher         & 8 & Sicher     & 13& Sicher\\
+    4& Sicher           & 9 & Sicher     & 14&       \\
+    5& Sicher           & 10& Sicher     & 15&       \\
     \bottomrule
   \end{tabular}
 \end{center}
+
+  \textbf{Wichtibe bemerkung:} Dieses Kapitel arbeitet schließlich
+  mit Gauß'sche Einheiten!
 
 \begin{enumerate}
   \item Was bedeutet das spezielle Relativitätsprinzip für physikalische
@@ -20,20 +23,41 @@
     Die Lichtgeschwindigkeit ist eine Konstante in jedem Bezugssystem.
     Die physikalische Gesetze sollen in jedes Bezugssytem gleich sein,
     unterschiedliche Observierer können aber unterschiedliche Gründen
-    angeben weshalb ein Erreignis statt findet.
+    angeben weshalb ein Erreignis statt findet. (z.B. kann ein Observierer
+    im Ruhesystem einer Ladung nur Elektrische Kräfte sehen, während
+    ein Observierer in ein Ruhesystem wo die Ladung sich bewegt auch
+    magnetische Kräfte sieht.) \sref{§5.2.1}
 
   \item Wie lautet die Formel für den invarianten Raum-Zeit-Abstand ds in
-    einem Koordinatensystem? Warum folgt aus der Invarianz von ds die
-    Invarianz der Lichgeschwindigkeit.
+    einem Koordinatensystem? Warum folgt aus der Invarianz von $ds$ die
+    Invarianz der Lichgeschwindigkeit?
     
+    Die invariante Raum-Zeit-Abstand ist gegeben durch:
     \begin{equation*}
-      ds^2 = c^2 t^2 - \vb x^2
+      ds^2 = c^2 dt^2 - d\vb x^2
+      \smref{5.2.5}
     \end{equation*}
+
+      Für das Raum-Zeit-Interval $ds$ mit $ds^2=c^2dt^2-d\vb x^2$. Es soll
+      jetzt gelten dass $ds=ds'$, (also unter Lorentz-Transformation 
+      invariant,) woraus folgt dass:
+      \begin{equation*}
+        c^2dt^2-d\vb x^2 = ds^2 = ds'^2 = c^2dt'^2 - d\vb x'^2 
+      \end{equation*}
+      Dabei ist $c$ in beide Systeme gleich, und deswegen invariant.
+      
+      \textbf{Notiz:} Ob ich die 2. Frage richtig interpretiert habe
+      weiß ich nicht, denn ich finde es eine zirkuläre redenation.
+      Man konstruiert nämlich die Lorentz-Transformation mit c als
+      konstante.
 
   \item Welche Bedingungen stellt man an eigentliche orthochrone
     Lorentz-transformationen?
 
-    %TODO
+    $$\det \Lambda = 1 \smref{5.2.53}$$
+    \textbf{Notiz:} siehe auch 
+    \url{https://de.wikipedia.org/wiki/Lorentz-Transformation} (suche 
+    nach orthochron mit deinem Browser)
 
   \item Wie lautet die Lorentz-Transformation für einen Boost in 
     $z$-Richtung? Wie sieht die Inverse aus?
@@ -42,6 +66,7 @@
     Geschwindigkeit $v$ in $z$-Richtung. Man definiere die (einheitslosen)
     Größen:
     $\beta = \frac{v}{c}$, $\gamma=\qty(1-\frac{v^2}{c^2})^{-\frac{1}{2}}$
+    \sref{5.2.45}
     
     Für die Hintransformation gilt:
     \begin{equation*}
@@ -54,6 +79,7 @@
         0            & 0 & 1 & 0           \\
         -\beta\gamma & 0 & 0 & \gamma      \\
       \end{pmatrix}
+      \smref{5.2.46}
     \end{equation*}
     Für die Rücktransformation gilt:
     \begin{equation*}
@@ -66,11 +92,14 @@
         0            & 0 & 1 & 0           \\
         \beta\gamma  & 0 & 0 & \gamma      \\
       \end{pmatrix}
+      \smref{5.2.48}
     \end{equation*}
 
     Man erinnere sich daran dass:
       $(\Lambda^{-1})^\mu_{\ \nu}
-      =g_{\mu\sigma}\Lambda^{\sigma}_{\ \gamma}g_{\gamma\nu}$
+      =g_{\mu\sigma}\Lambda^{\sigma}_{\ \gamma}g^{\gamma\nu}
+      =\Lambda_{\nu}^{\ \mu}
+      \smref{5.2.25}$
 
     \item Man schreibe den kontravarianten Vierer-Vektor für ein
       Raum-Zeit-Ereignis x. Wie transformiert sich ein kontravarianter
@@ -78,21 +107,22 @@
 
       \begin{equation*}
         x^\mu =
-        \begin{pmatrix}
-          ct\\ x \\ y \\ z
-        \end{pmatrix}
+        (ct, x, y, z)^T
+        \smref{5.2.3}
+      \end{equation*}
+      \begin{equation*}
       \qquad x'^\mu = \Lambda^\mu_{\ \nu} x^\nu 
       \qquad x^\mu = (\Lambda^{-1})^\mu_{\ \nu} x'^\nu 
+      \smref{5.2.12}
       \end{equation*}
 
     \item Wie erhält man den kovarianten Vierer-Vektor für x mit dem
       metrischen Tensor?
 
       \begin{equation*}
-        x_\mu = g_{\mu\nu}x^\nu
-        \begin{pmatrix}
-          ct\\ -x \\ -y \\ -z
-        \end{pmatrix}
+        x_\mu = g_{\mu\nu}x^\nu=
+        (ct, -x, -y, -z)^T
+        \smref{5.2.8}
       \end{equation*}
 
     \item Wie sieht das invariante Skalarprodukt zwischen zwei 
@@ -121,44 +151,81 @@
           w_0 \\ w_1 \\ w_2 \\ w_3
         \end{pmatrix}\\
         &=v_0w_0 - (v_1w_1 + v_2w_2 + v_3w_3)
+        \smref{5.2.6}
         \end{split}
       \end{equation*}
 
       Man bemerke dass $w_\mu=(w_0, -w_1, -w_2, -w_3)^T$
 
+      Für $x_0=ct_x$ und $x_{i\in\{1,2,3\}}$ (also im Koordinatensystem) 
+      folgt natürlich:
+
+      \begin{equation*}
+        v^\mu w_\mu = c^2(t_vt_w) - (v_xw_x + v_yw_y + v_zw_z)
+      \end{equation*}
+
     \item Warum ist die Gescwhindigkeit difineiert als $v^\mu=\dv t x^\mu$
       kein Lorentz-Vektor? Welche verwandtete Geschwindigkeit ist ein
-      Lorentz-vektor?
+      Lorentz-Vektor?
 
-      $v^\mu$ ist kein Vierer-Vektor weil $\ldots$
+      $v^\mu$ ist kein Vierer-Vektor weil es nicht sich nicht
+      wie ein Lorentz-Vektor. Das heißt, dass:
+      \begin{equation*}
+        \dv {t'} x'^\mu \neq \Lambda^{\mu}_{\ \nu}\dv t x^\mu
+        \smref{5.2.61}
+      \end{equation*}
 
-      $u^\mu$ ist ein Vierer-Vektor, mit $u^\mu=\dv \tau x^\mu$
+      $u^\mu$, die \textbf{Weltgeschwindigkeit}, 
+      ist schon ein Lorentz-Vektor,
+      mit $u^\mu=\dv \tau x^\mu$ und
+      $$d\tau=\frac{1}{c}ds=\gamma^{-1}dt \smref{5.2.54\,\&\,55}$$
 
+    \clearpage
     \item Wie lauten die Komponenten des Vierer-Potenitals und des
       Vierer-Stroms in einem gegebenen Koordinatensystem? Wie schreibt
       sich die Wellengleichung damit?
 
       \begin{equation*}
-        A^\mu=
+        A^\mu(x^\alpha)=
         \begin{pmatrix}
-          \Phi(x^\alpha) \\ A_x(x^\alpha) \\ A_y(x^\alpha) \\ A_z(x^\alpha)
+          \Phi\\ A_x\\ A_y\\ A_z
         \end{pmatrix}
         =
         \begin{pmatrix}
           \Phi(x^\alpha) \\ \vb A(x^\alpha)
         \end{pmatrix}
-        \qquad
-        j^\mu =
+        \smref{5.3.8}
+      \end{equation*}
+      \begin{equation*}
+        j^\mu(x^\alpha) =
         \begin{pmatrix}
-          \rho(x^\alpha) \\ j_x(x^\alpha) \\ j_y(x^\alpha) \\ j_z(x^\alpha)
+          c\rho\\ j_x\\ j_y\\ j_z
         \end{pmatrix}
         =
         \begin{pmatrix}
-          \rho(x^\alpha) \\ \vb j(x^\alpha)
+          c\rho(x^\alpha) \\ \vb j(x^\alpha)
         \end{pmatrix}
+        \smref{5.3.1}
       \end{equation*}
 
-      TODO: Wellengleichung
+      Alternativ gilt auch $j^\mu=\rho \dv{x^\mu}{t}
+      =\frac{\rho}{\gamma}u^\mu \smref{5.3.2\ \&\,4}$
+
+      Sei 
+      $\square
+      = -\qty(\frac{1}{c^2}\partial_t^2-\Delta)
+      = -\qty(\pdv[2]{x_0}-\pdv[2]{x_1}-\pdv[2]{x_2}-\pdv[2]{x_3})
+      = -\partial_\mu\partial^\mu \smref{5.3.11}$
+      
+      Dann gilt für die Wellengleichung von $A^\mu$:
+      \begin{equation*}
+        \square A^\mu = -\frac{4\pi}{c}j^\mu 
+        \quad\text{bzw.}\quad
+        \partial_\nu\partial^\nu A^\mu = \frac{4\pi}{c}j^\mu 
+        \smref{5.3.12\,\&\,13}
+      \end{equation*}
+
+      \textbf{Notiz:} $\pdv{x^\mu}=\partial^\mu=(\frac{1}{c}\dv t, \nabla)$
 
     \item Man gebe den Feldstärke-Tensor als Funktion des Vierer-Potentials
       und Matrix mit den Komponenten von $\vb E$ und $\vb B$ an.
@@ -177,11 +244,69 @@
     \item Wie lauten die homogenen Maxwell-Gleichungen in forminvarianter
       Schreibweise?
 
+      \begin{equation*}
+        \partial^\mu F^{\nu\lambda} + 
+        \partial^\lambda F^{\mu\nu} + 
+        \partial^\nu F^{\lambda\mu} + 
+        =0 \smref{5.3.23}
+      \end{equation*}
+      Oder auch:
+      \begin{equation*}
+        \partial_\mu \tilde F^{\mu\nu}
+        =0 \smref{5.3.28}
+      \end{equation*}
+
+      Dabei ist $\tilde F^{\mu\nu}=\frac{1}{2}
+      \epsilon^{\mu\nu\eta\gamma}F_{\eta\gamma}$
+      
+      Mit \sref{5.3.25}
+      \begin{equation*}
+        \epsilon^{\mu\nu\eta\gamma}=
+        \begin{cases}
+          1&\text{gerade Permutation bzw. zykische Vertauschung}\\
+          -1&\text{ungerade Permutation bzw. 
+          antizyklische Vertauschung}\\
+            0&\text{nicht alle verschieden}
+        \end{cases}
+      \end{equation*}
+
+      Es folgt daraus direkt dass
+      \begin{equation*}
+        \begin{array}{lll}
+          \div B = 0 & (\nu = 0) & \smref{5.4.27} \\
+          \curl E = -\frac{1}{c}\partial_t B & (\nu = 0) & \smref{5.4.27} 
+        \end{array}
+      \end{equation*}
+
     \item Wie lauten die inhomogenen Maxwell-Gleichungen in forminvarianter
       Schreibweise?
 
+      Wegen $\partial_\mu A^\mu=0 \smref{5.3.15}$ 
+      (folgt aus Kontinuitätsgleichung), gilt auch
+      
+      \begin{equation*}
+        \partial_\mu F^{\mu\nu}
+        =\partial_\mu\qty[\partial^\mu A^\nu-\partial^\nu A^\mu]
+        =\partial_\mu\partial^\mu A^\nu - \partial^\nu 
+        \underbrace{\partial_\mu A^\mu}_{0}
+        =-\square A^\nu = \frac{4\pi}{c}j^\nu \smref{5.3.20} 
+      \end{equation*}
+      Es folgt daraus direkt dass
+      \begin{equation*}
+        \begin{array}{lll}
+          \div \vb E = 4\pi \rho &(\nu=0) &\smref{5.3.21}\\
+          \curl \vb B = \frac{4\pi}{c}\vb j + \frac{1}{c}\partial_t \vb E
+                      &(\nu=1,2,3) &\smref{5.3.22}
+        \end{array}
+      \end{equation*}
+
     \item Wie schreibt sich die Lorentz-Kraft für eine Ladung q auf
       forminvariante Weise?
+
+      \begin{equation*}
+        K^\mu=\dv \tau p^\mu =m \dv \tau u^\mu = \frac{q}{c} F^{\mu\nu}u_\nu
+        \smref{5.4.53}
+      \end{equation*}
 
     \item Man gebe das kirchhoff'sche Beugungsintegral [für
       Lichteinfall] auf eine Blendenöffnung bei weit 
