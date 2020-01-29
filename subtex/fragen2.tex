@@ -22,7 +22,8 @@
         r_i'r_j'
         \quad\text{(Skript 1.6.2)}$$
         \textbf{Notiz 1:} Dies ist eine ``Fernfeld'' Näherung, d.h. 
-        eine Gute Näherung für $r\gg 0$\\
+        eine Gute Näherung für $r\gg 0$ (denn für $r=0$ divergiert
+        die Näherung).\\
         \textbf{Notiz 2:} Für genauere Information zur mehrdimensionale
         Taylor-Entwicklung, schaue im HöMa II Skript oder schaue hier 
         nach:~\url{https://de.wikipedia.org/wiki/Taylorreihe#Mehrdimensionale_Taylorreihe}
@@ -62,7 +63,7 @@
         
         Für eine Multipol im Zentriert um $\vb r_0$:
         $$E_{\text{pot}}=\Phi(\vb r_0)Q-\vb E(\vb r_0)\cdot\vb p 
-        \quad\qty(+ \frac{1}{6}\sum_{ij}\pdv{x_j}E_i(\vb r_0)Q_{ij}
+        \quad\qty(-\frac{1}{6}\sum_{ij}\pdv{x_j}E_i(\vb r_0)Q_{ij}
         +\ldots)
         \smref{1.7.7}$$
         \textbf{Notiz:} Energie minimierung für $\vb p\parallel \vb E$
@@ -92,15 +93,15 @@
           & $\vb P = \frac{1}{4\pi k} 
             \vu \chi(\vb E)\cdot \vb E\quad$
           & (Skript 1.8.1) \\
-          Falls linear, isotrop: 
+          Falls isotrop: 
           & $\vu\chi(\vb E)=
             \mathbb{1}\chi(\vb E)$
-              & (Skript 1.8.2) \\
+          & (Skript 1.8.2) \\
           Mit schwache abh.\ von $\vb E$:
-                                  & $\chi(\vb E)\approx\chi
-                                  \quad(\chi=const.\in\mathbb{R})$
-                                    & (Skript 1.8.3) \\
-          
+          & $\chi(\vb E)\approx\chi
+          \quad(\chi=const.\in\mathbb{R})$
+            & (Skript 1.8.3) \\
+          (lineares Medium)
         \end{tabular}
         \end{center}
         \textbf{Notiz 1:} $\vu \chi$ ist im allgemeinsten Fall 
@@ -145,7 +146,7 @@
         \url{https://en.wikipedia.org/wiki/Yukawa_potential} 
 
   \textbf{[MAGNETOSTATIK]}
-  \item Man scheibe die Kontinuitätsgleichung in differentieller Form
+  \item Man schreibe die Kontinuitätsgleichung in differentieller Form
         und mit Integralen über ein Volumen $V$ bzw.\ dessen Oberfläche 
         $\partial V$.
         \begin{center}
@@ -158,9 +159,11 @@
                               =\int_V d^3r\partial_t\rho(\vb r,t)=
                               -\int_{\partial V}d\vb A\cdot
                               \vb j(\vb r, t)=-I_{\partial V}$
-                              & (Skript 2.1.1 und 2.1.3)\\
+                              & (Skript 2.1.1 \& 3)\\
         \end{tabular}
         \end{center}
+        \textbf{Notiz:} Bemerke das beim Integral form den Satz v. Gauß
+        angwand wurde.
 
   \item Man schreibe Ladungsdichte $\rho(\vb r)$ und Stromdichte
         $\vb j(\vb r)$ für $i=1,\ldots,N$ Punktladungen $q_i$ mit 
@@ -177,26 +180,47 @@
         \quad \text{(Skript 2.2.1)}$$
         $$\vb A(\vb r)=k'\int d^3r'\rr{\vb j(\vb r')}
         \quad \text{(Skript 2.3.2)}$$
-        \textbf{Notiz:} $k'=\frac{\mu_0}{4\pi}$ (SI)
+        \textbf{Notiz 1:} $k'=\frac{\mu_0}{4\pi}$ (SI)\\
+        \textbf{Notiz 2:} $\curl \vb A(\vb r) = \vb B(\vb r)$ und 
+        $\curl \rr{j(\vb r')}
+        =\frac{\vb j(r') \times (\vb r - \vb r')}{\abs{\vb r - \vb r'}^3}$
 
   \item Wie lauten die zwei Feldgleichungen der Magnetostatik?
-    $$\div \vb B(\vb r) = 0\smref{2.3.5}
-    \quad \curl \vb B= 4\pi k'\vb j(\vb r)\smref{2.3.12}$$
+    \begin{equation*}
+      \begin{array}{ll}
+        \div \vb B(\vb r) = 0&\smref{2.3.5}\\
+        \curl \vb B(\vb r)= 4\pi k'\vb j(\vb r)&\smref{2.3.12}
+      \end{array}
+    \end{equation*}
 
   \item Man berechne das magnetische Dipolmoment für eine Punktladung auf
         einer Kreisbahn mit Radius $R$ sowie Drehimpuls $\vb L$.
         $$\vb j(\vb r,t)=q\vb v(t)\delta(\vb r-\vb r(t))$$
-        $$\vb m = \frac{1}{2}\vb r \times \vb j=\frac{q}{2}\vb 
-        r\times\vb v=\frac{q}{2m}\vb L$$
-        \textbf{Notiz:} Man bemerke, dass man hier keine integrale 
-        formulierung braucht weil wir von ein Punktdipol reden bzw.
-        die $\delta$-Funktion im Integral eine einfache Lösung ergibt.
+        $$\vb m = \frac{1}{2}\int d^3 r (\vb r \times \vb j(\vb r))=\frac{q}{2}\vb 
+        r(t)\times\vb v(t)=\frac{q}{2m}\vb L(t)$$
+        \textbf{Notiz:} Definition von $\vb m$ \sref{2.4.8}
 
   \item Wie lauten die Zusammenhänge zwischen $\vb B$, $\vb H$ 
         und $\vb M$ in einem Paramagneten?
+
+        Allgemein:
         $$\vb B = 4\pi k'\vb H + 4\pi k'\vb M\quad\text{(Skript 2.5.12)}$$
         $$\vb B = \mu_0 \vb H + \mu_0 \vb M \quad\text{(SI) 
         (Skript 2.5.17)}$$
+        Im (Dia- und) Paramagneten:
+        \begin{equation*}
+            \vb M 
+            = \chi_M \vb H 
+            = \frac{1}{4\pi k'}\frac{\chi_M}{1+\chi_M} \vb B
+        \end{equation*}
+         \begin{equation*}
+            \vb B = \mu \vb H \quad \text{mit}\quad
+            \mu = 4\pi k'(1+\chi_M)
+         \end{equation*}
+          \begin{center}
+            \sref{2.6.3$\sim$6}
+          \end{center}
+
         \textbf{Notiz 1:} $\ds \curl \vb H = \vb j_f$ und 
         $\ds \curl \vb M=\vb j_M$\\
         \textbf{Notiz 2:} Die im Skript gegebene Definition ist 
