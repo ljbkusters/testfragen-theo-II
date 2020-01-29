@@ -1,0 +1,46 @@
+\input{preamble.tex}
+\title{Herleitungen für Fragenblatt zur Theo II}
+\begin{document}
+  \input{subtex/introduction.tex} 
+  \newpage
+
+  \textbf{Frage 1.1}
+  \begin{equation*}
+    \begin{split}
+      \grad \rr{1} 
+        &= \partial_i \vu e_i \frac{1}{\abs{r_i \vu e_i - r_i' \vu e_i}}
+        \quad\text{Notation: } \vb r = r_i \vu e_i = \sum_i r_i \vu e_i\\
+        &= \vu e_i \partial_i \frac{1}{\sqrt{(r_i-r_i')_i^2}}
+        \quad\text{Notation: }(r_i-r'_i)^2_i=\sum_i(r_i-r'_i)^2\\
+        &= 
+        -\frac{2(r_i-r_i')_i}{2\qty[\sqrt{(r_i-r_i')_i^2}]^{3}}\vu e_i \\
+        &= -\frac{\vb r - \vb r'}{\abs{\vb r - \vb r'}^3} 
+    \end{split}
+  \end{equation*}
+
+  \textbf{Frage 1.2}
+  \begin{equation*}
+    \text{für } \vb r \neq \vb r'
+  \end{equation*}
+  \begin{equation*}
+    \begin{split}
+      \Delta \rr{1}
+      &=-\div\frac{\vb r - \vb r'}{\abs{\vb r - \vb r'}^3}\\  
+      &=-\partial_i \vu e_i \cdot 
+      \frac{r_i \vu e_i - r'_i \vu e_i}
+      {\qty[\sqrt{(r_i - r'_i)_i^2}]^3}\\  
+      &=-\qty(
+      \frac{3}{\qty[\sqrt{(r_i - r'_i)_i^2}]^3}
+      +(r_i-r'_i)\frac{-3\sqrt{(r_i-r'_i)_i^2}}
+      {{\qty[\sqrt{(r_i-r'_i)_i^2}]}^4}
+      \qty[\frac{2(r_i-r_i')}{2\sqrt{{(r_i-r'_i)}_i^2}}]
+      )\\  
+      &=-\qty(
+      \frac{3}{\qty[\sqrt{(r_i-r'_i)_i^2}]^3} 
+      + \frac{-3(r_i-r'_i)_i^2}{\qty[\sqrt{(r_i-r'_i)_i^2}]^4}
+      )\\
+      &=0
+    \end{split}
+  \end{equation*}
+
+\end{document}

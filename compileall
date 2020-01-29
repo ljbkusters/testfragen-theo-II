@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# format date for later use
+DATE=`date +%d-%m-%y`
+# clean output dir
+rm output/*
+
+# compile main file
+pdflatex -halt-on-error theo2-fragen-sammlung.tex
+mv theo2-fragen-sammlung.pdf output/theo2-fragen-sammlung-v$DATE.pdf
+
+# compile herleitungen file
+pdflatex -halt-on-error herleitungen.tex
+mv herleitungen.pdf output/herleitungen-v$DATE.pdf
+
+# compile probeklausur file
+pdflatex -halt-on-error probe-klausur-lsg.tex
+mv probe-klausur-lsg.pdf output/probe-klausur-lsg-v$DATE.pdf

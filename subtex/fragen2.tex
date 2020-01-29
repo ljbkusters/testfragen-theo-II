@@ -69,6 +69,7 @@
         \textbf{Notiz:} Energie minimierung für $\vb p\parallel \vb E$
         und gleich ausgerichtet (also $\vu e_{\vb p}=\vu e_{\vb E}$).\\
 
+  \clearpage
   \item Wie lautet die elektrostatische Energie einer Ladungsverteilung?
         Man gebe zwei Äquivalente Ausdrücke, einerseits mit $\rho(\vb r)$
         und andersseits mit $\vb E(\vb r)$.
@@ -84,7 +85,6 @@
         \end{tabular}
         \end{center}
 
-  \clearpage
   \item Wie ist die elektrische Suszeptibilität $\chi$ in einem 
         linearen, isotropen Medium definiert?
         \begin{center}
@@ -145,6 +145,7 @@
         \textbf{Notiz:} Siehe auch Yukawa Potential: 
         \url{https://en.wikipedia.org/wiki/Yukawa_potential} 
 
+  \clearpage
   \textbf{[MAGNETOSTATIK]}
   \item Man schreibe die Kontinuitätsgleichung in differentieller Form
         und mit Integralen über ein Volumen $V$ bzw.\ dessen Oberfläche 
@@ -170,7 +171,7 @@
         Trajektorien $\vb r_i(t)$.
         $$\rho(\vb r)=\sum_i q_i\delta(\vb r-\vb r_i(t))
         \quad \text{(Skript 1.1.2)}$$
-        $$\vb j(\vb r)=\sum_i q_i\dot{\vb r}_i\delta(\vb r-\vb r_i(t))
+        $$\vb j(\vb r)=\sum_i q_i\dot(t){\vb r}_i\delta(\vb r-\vb r_i(t))
         \quad \text{(Skript 2.1.2)}$$
 
   \item Wie lautet das Biot-Savart'sche Gesetz für $\vb A(\vb r)$ und
@@ -195,9 +196,10 @@
 
   \item Man berechne das magnetische Dipolmoment für eine Punktladung auf
         einer Kreisbahn mit Radius $R$ sowie Drehimpuls $\vb L$.
-        $$\vb j(\vb r,t)=q\vb v(t)\delta(\vb r-\vb r(t))$$
-        $$\vb m = \frac{1}{2}\int d^3 r (\vb r \times \vb j(\vb r))=\frac{q}{2}\vb 
-        r(t)\times\vb v(t)=\frac{q}{2m}\vb L(t)$$
+        $$\vb j(\vb r,t)=q\vb v(t)\delta(\vb r-\vb r(t))\smref{2.1.2}$$
+        $$\vb m(t) 
+        = \frac{1}{2}\int d^3 r (\vb r(t) \times \vb j(\vb r,t))
+        =\frac{q}{2}\vb r(t)\times\vb v(t)=\frac{q}{2m}\vb L(t)$$
         \textbf{Notiz:} Definition von $\vb m$ \sref{2.4.8}
 
   \item Wie lauten die Zusammenhänge zwischen $\vb B$, $\vb H$ 
@@ -224,5 +226,5 @@
         \textbf{Notiz 1:} $\ds \curl \vb H = \vb j_f$ und 
         $\ds \curl \vb M=\vb j_M$\\
         \textbf{Notiz 2:} Die im Skript gegebene Definition ist 
-        \textbf{Falsch}! (aber richtig bis auf die Vorfaktor.)
+        \textbf{Falsch}! (aber richtig bis auf der Vorfaktor.)
 \end{enumerate}

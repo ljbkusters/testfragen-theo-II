@@ -1,8 +1,0 @@
-#!/bin/sh
-
-pdflatex FragenAntwortsammlung.tex
-
-#rm *.log
-#rm *.aux
-#rm *.out
-#rm *.toc

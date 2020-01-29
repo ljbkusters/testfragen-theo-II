@@ -1,0 +1,52 @@
+\input{preamble.tex}
+\title{Probeklausur zur Theo II}
+\begin{document}
+\textbf{Aufgabe 1}\hfill[60 Punkte (15 $\times$ 2)]
+
+Siehe die Fragensammlung
+
+\textbf{Aufgabe 2}\hfill[8+7=15 Punkte]
+
+Betracten Sie eine Kugel mit Radius R, deren Mittelpunkt im Ursprung des
+Koordinatensystems liegt. Die Kugeloberfläche trägt die Flächenladungsdichte
+$\rho_F(\theta,\phi)=\rho_0 \cos\theta$. Im Innenraum ($\abs{\vec x}<R$)
+und im Außenraum ($\abs{\vec{x}}>R$) der Kugel befindet sich Vakuum.
+\begin{enumerate}[label=\alph*)]
+  \item Bestimmen Sie eine geignete Näherung für das Potential 
+    $\Phi(\vec x)$ in $\abs{\vec x}\gg R$ und daraus
+    das $\vec E$-Feld
+
+  \item Bestimmen Sie eine geignete Näherung für das Potential 
+    $\Phi(\vec x)$ in der Nähe des Ursprungs $\abs{\vec x}\ll R$ und daraus
+    das $\vec E$-Feld
+\end{enumerate}
+Es sollen jeweils nur die führenden, d.h.\ die ersten nicht verschwindenden
+Terme der entsprechenden Entwicklung berechnet werden.
+
+\textbf{Aufgabe 3}\hfill[3+8+4=15 Punkte]
+Betrachten Sie eine zeitlich veränderliche Stromdichte $J(\vec x,t)$, deren
+räumliche Ausdehnung so klein ist, dass Sie in komplexer Schreibweise durch
+$\vec J(\vec x,t)=J_0 e^{-i\omega t}\delta(\vec x)\vec e_z$ approximiert
+werden kann. ($J_0$ und $\omega$ konstant). Die Quelle befindet sich 
+im Vakuum.
+\begin{enumerate}[label=\alph*)]
+  \item Zeigen Sei ausgehend von einem geeigneten integralausdruck, dass
+    das zugehörige Vektropotential durch
+    \begin{equation*}
+      \vec A(\vec x, t)
+      =J_0 e^{-i\omega t}\frac{\mu_0}{4\pi}\frac{e^{-ikr}}{r}\vec e_z
+    \end{equation*}
+    mit $r=\abs{\vec x}$ gegeben ist.
+
+  \item Berechnen Sie mit dem Ergebnis aus a) das $\vec B$-Feld und
+    daraus da $\vec E$-Feld.
+
+  \item Hier sollen nur noch die Teile der in b) berechneten Felder
+    betrachtet werden, die nicht stärker als $1/r$ abfallen, d.h. man
+    betrachtet eine Näherung für die Felder weit weg von der Quelle.
+    Berechnen Sie damit den zeitlich gemittelten Poyntingvektor und
+    die zeitlich gemittelte Leistung $\dv {P}{\theta}$, die unter dem
+    Winkel $\theta$ zur $z$-Achse abgestrahlt wird.
+\end{enumerate}
+
+\end{document}
