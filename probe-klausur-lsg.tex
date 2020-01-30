@@ -11,18 +11,225 @@ Betracten Sie eine Kugel mit Radius R, deren Mittelpunkt im Ursprung des
 Koordinatensystems liegt. Die Kugeloberfläche trägt die Flächenladungsdichte
 $\rho_F(\theta,\phi)=\rho_0 \cos\theta$. Im Innenraum ($\abs{\vec x}<R$)
 und im Außenraum ($\abs{\vec{x}}>R$) der Kugel befindet sich Vakuum.
+
+Es sollen jeweils nur die führenden, d.h.\ die ersten nicht verschwindenden
+Terme der entsprechenden Entwicklung berechnet werden.
 \begin{enumerate}[label=\alph*)]
   \item Bestimmen Sie eine geignete Näherung für das Potential 
     $\Phi(\vec x)$ in $\abs{\vec x}\gg R$ und daraus
     das $\vec E$-Feld
 
+    \textbf{Lösung} 
+
+    Man verallgemeinere die Ladungsdichte zunächst mit die 
+    $\delta$-Distribution.
+    \begin{equation}
+      \rho(r,\theta) = \rho_0 \cos\theta \delta(r-R)
+    \end{equation}
+
+    \textbf{Potential: Karthesische Entwicklung} 
+
+    Man sehe direkt aus symmetrie Grunden dass $Q_{ges}=0$ 
+    (wegen $\rho\propto\cos\theta$).
+    Das heißt, dass der führenden Term höchstens das Dipolmoment sein kann.
+    Für das Dipolmomnet gilt:
+    \begin{equation}
+      p_i = \int d^3x x_i \rho(\vec x)
+    \end{equation}
+    Dabei ist $x_1=x=r\sin\theta\cos\phi$, $x_2=y=r\sin\theta\sin\phi$,
+    $x_3=z=r\cos\theta$
+
+    Aus symmetrie Grunden würde es Sinn machen wenn $p_x$ und $p_y$
+    verschwinden. Dies ist leicht zu überprüfen denn
+
+    \begin{equation*}
+      p_x=\int d^3r r\sin\theta\cos\phi \rho (\vec r)
+      \propto \int_{0}^{2\pi}\cos\phi = 0
+    \end{equation*}
+    und analog
+    \begin{equation*}
+      p_y=\int d^3r r\sin\theta\sin\phi \rho(\vec r) 
+      \propto \int_{0}^{2\pi}\sin\phi = 0
+    \end{equation*}
+
+    Es würde auch Sinn machen, dass $p_z$ nicht verschwindet, wegen der
+    Polarität der Ladungsdichte.
+    \begin{equation*}
+      \begin{split}
+        p_z
+        &=\int d^3 r \underbrace{(r \cos\theta)}_{z} 
+        \underbrace{\rho_0 \cos\theta \delta(r-R)}_{\rho(\vec r)}\\
+        &=
+        \rho_0
+        \int_0^{2\pi}d\phi
+        \int_{-1}^{1}d\cos\theta 
+        \int_0^{\infty} dr r^3 \cos^2\theta \delta(r-R)\\
+        &=
+        2\pi\rho_0
+        \int_{-1}^{1}d\cos\theta \cos^2\theta 
+        \int_0^{\infty} dr r^3 \delta(r-R)\\
+        &=
+        2\pi\rho_0
+        \qty[\frac{2}{3}]
+        \qty[R^3]
+        =
+        \frac{4\pi}{3}R^3 \rho_0
+        =V_k \rho_0
+      \end{split}
+    \end{equation*}
+    Sodass $\vec p=V_k\rho_0 \vu e_z$ mit $V_k$ das Volumen der Kugel
+    (bemerke, dass, obwohl nicht zufällig, das Kugelvolumen nur ein
+    mathematisches Ergibnis ist, und keine tiefere Bedeutung hat).
+
+    Das Potential wird nun bis zur führende Ordnung gegeben durch
+    \begin{equation}
+      \Phi(\vec r)= k\frac{\vec r\cdot\vec p}{\abs{\vec r}^3}
+      = kV_k\rho_0 \frac{r\cos\theta}{r^3} 
+      = \frac{1}{4\pi\epsilon_0} V_k\rho_0 \frac{\cos\theta}{r^2} 
+    \end{equation}
+
+    \textbf{Potential: Spährische Entwicklung} 
+    
+    Man Schreibe $\rho(\vec r)$ zunächst als linearkombination von
+    Kugelflächenfunktionen.
+
+    \begin{equation*}
+      \rho(\vec r)
+      =\rho_0\cos\theta\delta(r-R)
+      =\rho_0\sqrt{\frac{4\pi}{3}}Y_{10}(\theta,\phi)\delta(r-R)
+    \end{equation*}
+    Wobei wir benutzt haben dass $Y_{10}=\sqrt{\frac{3}{4\pi}}$
+
+    Das Potential wird für $r\gg0$ gegeben durch
+    \begin{equation}
+      \Phi(\vec r)
+      =k\sum_{lm}\frac{4\pi}{2l+1}\frac{q_{lm}}{r^{l+1}}Y_{lm}(\theta,\phi)
+      \quad l\in\mathbb{N}_0\quad m\in\mathbb{Z}\quad -l\le m\le l
+    \end{equation}
+    mit
+    \begin{equation}
+      q_{lm}=\int d^3 r r^l \rho(\vec r) Y^*_{lm}(\theta,\phi)
+    \end{equation}
+    
+    Wir möchten jetzt die Orthogonalität der Kugelflächenfunktionen
+    anwenden. Es gilt
+    \begin{equation}\label{eq:orthogonal}
+      \int_\Omega d\Omega Y_{lm}(\Omega) Y^*_{l'm'}(\Omega)
+      =\delta_{ll'}\delta_{mm'}
+    \end{equation}
+    Wobei man über den gesammten Raumwinkel $\Omega$ integriert.
+    
+    Wegen der Orthogonalität aus Formel~\ref{eq:orthogonal} zusammen mit
+    unser Ladungsverteilung sieht man sofort, dass alle $q_{lm}=0$ mit 
+    $l\neq 1$, $m\neq0$.
+
+    \begin{equation*}
+      \begin{split}
+        q_{10}=\int dr r^2 \int d\Omega (r^1) \rho_0 \sqrt{\frac{4\pi}{3}}
+        Y_{10}Y^*_{10}\delta(r-R)=\rho_0 \sqrt{\frac{4\pi}{3}}R^3
+      \end{split}
+    \end{equation*}
+
+    Sodass sich für das Potential ergibt, dass
+    \begin{equation}
+      \begin{split}
+      \Phi(r,\theta) 
+      &= 
+      k
+      \qty(\frac{4\pi}{3})
+      \qty(\rho_0 \sqrt{\frac{4\pi}{3}}R^3)
+      \frac{1}{r^2}
+      Y_{10}(\theta,\phi)\\
+      &= 
+      k
+      \underbrace{\frac{4\pi}{3}R^3}_{V_k}\rho_0
+      \frac{1}{r^2}
+      \sqrt{\frac{4\pi}{3}}\sqrt{\frac{3}{4\pi}}\cos\theta\\
+      &=\frac{1}{4\pi\epsilon_0}V_k\rho_0 \frac{\cos\theta}{r^2} 
+      \end{split}
+    \end{equation}
+
+    \textbf{E-Feld} 
+
+    Nun das wir wissen, dass 
+    $\Phi(r,\theta)
+    =\frac{V_k\rho_0}{4\pi\epsilon_0}\frac{cos\theta}{r^2}$ können wir das
+    elektrische Feld finden.
+    \begin{equation}
+      \vec E(\vec r)=-\grad\Phi(\vec r)
+    \end{equation}
+    Das Problem lässt sich am einfachsten lösen indem wir $\nabla$ in
+    Kugelkoordinaten anwenden. Es gilt
+    \begin{equation*}
+    \nabla=\nabla_k
+    =\vu e_r \partial_r 
+    + \vu e_\theta \frac{1}{r}\partial_\theta
+    + \vu e_\phi \frac{1}{r\sin\theta}\partial_\phi
+    \end{equation*}
+
+    sodass sich für das Elektrische Feld ergibt dass
+    \begin{equation}
+      \vec E (r,\theta)= 
+      -\frac{V_k\rho_0}{4\pi\epsilon_0}
+      \qty[-2 \frac{\cos\theta}{r^3}\vu e_r 
+           -\frac{\sin\theta}{r^3}\vu e_\theta]
+           = \frac{V_k\rho_0}{4\pi\epsilon_0}\frac{1}{r^3}
+           (2\cos\theta \vu e_r + \sin\theta \vu e_\theta)
+    \end{equation}
+
   \item Bestimmen Sie eine geignete Näherung für das Potential 
     $\Phi(\vec x)$ in der Nähe des Ursprungs $\abs{\vec x}\ll R$ und daraus
     das $\vec E$-Feld
-\end{enumerate}
-Es sollen jeweils nur die führenden, d.h.\ die ersten nicht verschwindenden
-Terme der entsprechenden Entwicklung berechnet werden.
 
+    \textbf{Lösung} 
+    
+    \textbf{Potential: Spährische Entwicklung} 
+
+    Mit der karthesische Entwicklung findet man hier keine Lösung, denn
+    sie Funktioniert nur bei $r\gg0$. Man
+    muss also eine spährische Multipol-Entwicklung durchführen.
+
+    Für die spährische Multipol-Entwicklung nähe $r=0$ gilt nun
+    \begin{equation}
+      \Phi(\vec r)=k\sum_{lm}\frac{4\pi}{2l+1}r^lq_{lm}Y_{lm}(\theta,\phi)
+    \end{equation}
+    mit
+    \begin{equation}
+      q_{lm}=\int d^3 r \frac{1}{r^{l+1}}\rho(\vec r)Y^*_{lm}(\theta,\phi) 
+    \end{equation}
+
+    Sowie in Aufgabe a) verschwinden alle $q_{lm}$ außer $q_{10}$.
+    \begin{equation*}
+      \begin{split}
+        q_{10}
+        &=
+        \int d^3r \frac{1}{r^{1+1}}\delta(r-R)
+        \sqrt{\frac{4\pi}{3}}Y_{10}Y^*_{10} \\
+        &= \rho_0 \sqrt{\frac{4\pi}{3}}
+        \underbrace{\int dr \frac{r^2}{r^2} \delta(r-R)}_{1}
+        \underbrace{\int d\Omega Y_{10}(\Omega)Y^*_{lm}(\Omega)}_{1}
+      \end{split}
+    \end{equation*}
+    Daraus ergibt sich dann das Potential
+    \begin{equation}
+      \begin{split}
+        \Phi(\vec r)
+        &=k \frac{4\pi}{3} r \sqrt{4\pi/3} \sqrt{3/4\pi} \cos\theta\\
+        &=\frac{4\pi}{4\pi\epsilon_0}\frac{\rho_0}{3}r\cos\theta
+        =\frac{\rho_0}{3\epsilon_0}r\cos\theta 
+      \end{split}
+    \end{equation}
+
+    \textbf{E-Feld}
+    
+    Das $\vec E$-Feld lässt sich einfach finden wie in a)
+    \begin{equation}
+      \vec E(\theta) = -\frac{\rho_0}{3\epsilon_0}
+      \qty(\cos\theta \vu e_r - \sin\theta \vu e_\phi) 
+    \end{equation}
+\end{enumerate}
+
+\newpage
 \textbf{Aufgabe 3}\hfill[3+8+4=15 Punkte]
 Betrachten Sie eine zeitlich veränderliche Stromdichte $J(\vec x,t)$, deren
 räumliche Ausdehnung so klein ist, dass Sie in komplexer Schreibweise durch
