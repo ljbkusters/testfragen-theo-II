@@ -10,7 +10,7 @@ pdflatex -halt-on-error theo2-fragen-sammlung.tex
 mv theo2-fragen-sammlung.pdf output/theo2-fragen-sammlung-v$DATE.pdf
 
 # compile herleitungen file
-pdflatex -halt-on-error herleitungen.tex
+pdflatex herleitungen.tex
 mv herleitungen.pdf output/herleitungen-v$DATE.pdf
 
 # compile probeklausur file
