@@ -183,7 +183,7 @@ Terme der entsprechenden Entwicklung berechnet werden.
 
     \textbf{Lösung} 
     
-    \textbf{Potential: Spährische Entwicklung} 
+    \textbf{Potential: Sphärische Entwicklung} 
 
     Mit der karthesische Entwicklung findet man hier keine Lösung, denn
     sie Funktioniert nur bei $r\gg0$. Man
@@ -225,11 +225,25 @@ Terme der entsprechenden Entwicklung berechnet werden.
     Das $\vec E$-Feld lässt sich einfach finden wie in a)
     \begin{equation}
       \vec E(\theta) = -\frac{\rho_0}{3\epsilon_0}
-      \qty(\cos\theta \vu e_r - \sin\theta \vu e_\phi) 
+      \qty(\cos\theta \vu e_r - \sin\theta \vu e_\theta) 
+      =-\frac{\rho_0}{3\epsilon_0}\vu e_z
     \end{equation}
+    (Alternativ hätte man auch sehen können dass 
+    $\Phi\propto r\cos\theta=z$ und dann die karthesische definition von
+    $\nabla$ einsetzen können)
+
+    \vfill
+    \textbf{Die Korrektheit der Lösungen 
+      wurde überprüft und ist garantiert.}
+
+    (Nach Aufgabe $2.3.13$ aus
+    ``Grundkurs Theretische Physik 3: Elektrodynamik'' von Wolfgang Nolting
+    [10. Auflage])
+
 \end{enumerate}
 
 \newpage
+\setcounter{equation}{0}
 \textbf{Aufgabe 3}\hfill[3+8+4=15 Punkte]
 Betrachten Sie eine zeitlich veränderliche Stromdichte $J(\vec x,t)$, deren
 räumliche Ausdehnung so klein ist, dass Sie in komplexer Schreibweise durch
@@ -237,7 +251,7 @@ $\vec J(\vec x,t)=J_0 e^{-i\omega t}\delta(\vec x)\vec e_z$ approximiert
 werden kann. ($J_0$ und $\omega$ konstant). Die Quelle befindet sich 
 im Vakuum.
 \begin{enumerate}[label=\alph*)]
-  \item Zeigen Sei ausgehend von einem geeigneten integralausdruck, dass
+  \item Zeigen Sei ausgehend von einem geeigneten Integralausdruck, dass
     das zugehörige Vektropotential durch
     \begin{equation*}
       \vec A(\vec x, t)
@@ -254,6 +268,9 @@ im Vakuum.
     Berechnen Sie damit den zeitlich gemittelten Poyntingvektor und
     die zeitlich gemittelte Leistung $\dv {P}{\theta}$, die unter dem
     Winkel $\theta$ zur $z$-Achse abgestrahlt wird.
+
+  \textbf{Aufgabe kommt aus Nachklausur WS18/19, dazu wurde eine
+  Lösung veröffentlicht, womit diese Lösung überprüft wurde}
 \end{enumerate}
 
 \end{document}
