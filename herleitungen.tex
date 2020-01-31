@@ -9,22 +9,22 @@
     \begin{split}
       \grad \rr{1} 
         &= \partial_i \vu e_i \frac{1}{\abs{r_i \vu e_i - r_i' \vu e_i}}
-        \quad\text{Notation: } \vb r = r_i \vu e_i = \sum_i r_i \vu e_i\\
+        \quad\text{Notation: } \vb* r = r_i \vu e_i = \sum_i r_i \vu e_i\\
         &= \vu e_i \partial_i \frac{1}{\sqrt{(r_i-r_i')_i^2}}
         \quad\text{Notation: }(r_i-r'_i)^2_i=\sum_i(r_i-r'_i)^2\\
         &= 
         -\frac{2(r_i-r_i')_i}{2\qty[\sqrt{(r_i-r_i')_i^2}]^{3}}\vu e_i \\
-        &= -\frac{\vb r - \vb r'}{\abs{\vb r - \vb r'}^3} 
+        &= -\frac{\vb* r - \vb* r'}{\abs{\vb* r - \vb* r'}^3} 
     \end{split}
   \end{equation*}
 
   \textbf{Frage 1.2}
 
-  für $\vb r \neq \vb r'$
+  für $\vb* r \neq \vb* r'$
   \begin{equation*}
     \begin{split}
       \Delta \rr{1}
-      &=-\div\frac{\vb r - \vb r'}{\abs{\vb r - \vb r'}^3}\\  
+      &=-\div\frac{\vb* r - \vb* r'}{\abs{\vb* r - \vb* r'}^3}\\  
       &=-\partial_i \vu e_i \cdot 
       \frac{r_i \vu e_i - r'_i \vu e_i}
       {\qty[(r_i - r'_i)_i^2]^{3/2}}\\  
@@ -40,37 +40,38 @@
       &=0
     \end{split}
   \end{equation*}
-  für $\vb r=\vb r'$
+  für $\vb* r=\vb* r'$
   \begin{equation*}
     \rr{1}\to \infty\quad \text{und}\quad \Delta\rr{1}\ \text{undefiniert}
   \end{equation*}
   Dies ist sind genau die Eigenschaften der $\delta$-Distribution.
 
-  Man weißt also dass $\Delta \rr{1}=-C\delta(\vb r - \vb r')$
+  Man weißt also dass $\Delta \rr{1}=-C\delta(\vb* r - \vb* r')$
   Man möchte C noch finden:
 
   \begin{equation*}
     \int_V dV \Delta \rr{1} 
-    = -\int_V dV \div \frac{\vb r - \vb r'}{\abs{\vb r - \vb r'}^3} 
+    = -\int_V dV \div \frac{\vb* r - \vb* r'}{\abs{\vb* r - \vb* r'}^3} 
     = -\int_{\partial V} 
-    d\vb A \frac{\vb r - \vb r'}{\abs{\vb r - \vb r'}^3}
+    d\vb* A \frac{\vb* r - \vb* r'}{\abs{\vb* r - \vb* r'}^3}
   \end{equation*}
-  Führe die koordinaten $\vb {\tilde r} = \vb r-\vb r'$ ein.
-  $d\vb {\tilde A}=dA \vu e_{\tilde r}$
+  Führe die Koordinaten $\tilde {\vb* {r}} = \vb* r-\vb* r'$ ein.
+  $d\tilde {\vb* A} =dA \vu { e}_{\tilde r}$. Bemerke dass 
+  $(\vb* r-\vb*r')\cdot d\vb* A= \tilde{\vb* r}\cdot d\tilde{\vb* A}$
   \begin{equation*}
     = -\int_{\partial V} 
-    d\vb{ \tilde A} \frac{\vb {\tilde r}}{\abs{\vb{\tilde r}}^3}
+    d\tilde{\vb*{A}} \frac{\tilde{\vb* {r}}}{\abs{\tilde{\vb*{r}}}^3}
     = -\int_{\partial V} 
     d\tilde \Omega \tilde r^2 \frac{\tilde r}{\tilde r^3} = -4\pi
   \end{equation*}
   Es folgt dann aus der Definition der $\delta$-Distribution dass
   \begin{equation*}
-    -4\pi = \int dV \Delta \rr{1} = -\int dV C\delta(\vb r - \vb r')
+    -4\pi = \int dV \Delta \rr{1} = -\int dV C\delta(\vb* r - \vb* r')
     \Rightarrow C=4\pi
   \end{equation*}
   Sodass insgesammt gilt:
   \begin{equation*}
-    \Delta \rr{1} = -4\pi \delta (\vb r - \vb r')
+    \Delta \rr{1} = -4\pi \delta (\vb* r - \vb* r')
   \end{equation*}
    
 \end{document}

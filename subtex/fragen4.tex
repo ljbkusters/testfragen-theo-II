@@ -34,7 +34,7 @@
     
     Die invariante Raum-Zeit-Abstand ist gegeben durch:
     \begin{equation*}
-      ds^2 = c^2 dt^2 - d\vb x^2
+      ds^2 = c^2 dt^2 - d\vb* x^2
       \smref{5.2.5}
     \end{equation*}
 
@@ -42,20 +42,20 @@
       Lichtgeschwindigkeit bewegt soll gelten dass die Minkowski-Metrik
       verschwindet. Das heißt dass:
       \begin{equation*}
-        (cdt)^2 - d\vb x^2 = 0 
+        (cdt)^2 - d\vb* x^2 = 0 
       \end{equation*}
-      Wobei natürlich gilt dass $d\vb x=\vb vdt$ mit $\abs{\vb v}=c$.
-      ($d\vb x^2 = dx^2 + dy^2 + dz^2$)
+      Wobei natürlich gilt dass $d\vb* x=\vb* vdt$ mit $\abs{\vb* v}=c$.
+      ($d\vb* x^2 = dx^2 + dy^2 + dz^2$)
 
-      In System $S'$ gibt es jetzt die Parameter $t'$, $\vb x'$ und $\vb v'$
-      mit $d\vb x'=\vb v'dt'$. Wir möchen zeigen, dass 
-      $\abs{\vb v}=\abs{\vb v'}$ falls $\abs{\vb v}=c$.
+      In System $S'$ gibt es jetzt die Parameter $t'$, $\vb* x'$ und $\vb* v'$
+      mit $d\vb* x'=\vb* v'dt'$. Wir möchen zeigen, dass 
+      $\abs{\vb* v}=\abs{\vb* v'}$ falls $\abs{\vb* v}=c$.
       Aus der Invarianz von $ds$ folgt dass $ds=ds'$, woraus folgt dass
       \begin{equation*}
-        c^2dt^2-d\vb x^2 = ds^2 = 0 = ds'^2 = c^2dt'^2 - d\vb x'^2
+        c^2dt^2-d\vb* x^2 = ds^2 = 0 = ds'^2 = c^2dt'^2 - d\vb* x'^2
       \end{equation*}
-      Es muss also gelten, dass $c^2dt'^2 = d\vb x'^2$ und deswegen folgt
-      $c=\abs{\vb v'}\Rightarrow \abs{\vb v}=\abs{\vb v'}=c$, 
+      Es muss also gelten, dass $c^2dt'^2 = d\vb* x'^2$ und deswegen folgt
+      $c=\abs{\vb* v'}\Rightarrow \abs{\vb* v}=\abs{\vb* v'}=c$, 
       sodass sich die Geschwindigkeit 
       des Teilchens (bei Lichtgeschwindigkeit) als invariant ergibt.
 
@@ -208,7 +208,7 @@
       \end{pmatrix}
       =
       \begin{pmatrix}
-        \Phi(x^\alpha) \\ \vb A(x^\alpha)
+        \Phi(x^\alpha) \\ \vb* A(x^\alpha)
       \end{pmatrix}
       \smref{5.3.8}
     \end{equation*}
@@ -219,7 +219,7 @@
       \end{pmatrix}
       =
       \begin{pmatrix}
-        c\rho(x^\alpha) \\ \vb j(x^\alpha)
+        c\rho(x^\alpha) \\ \vb* j(x^\alpha)
       \end{pmatrix}
       \smref{5.3.1}
     \end{equation*}
@@ -313,7 +313,7 @@
     \begin{equation*}
       \begin{array}{lll}
         \div \vb E = 4\pi \rho &(\nu=0) &\smref{5.3.21}\\
-        \curl \vb B = \frac{4\pi}{c}\vb j + \frac{1}{c}\partial_t \vb E
+        \curl \vb B = \frac{4\pi}{c}\vb* j + \frac{1}{c}\partial_t \vb E
                     &(\nu=1,2,3) &\smref{5.3.22}
       \end{array}
     \end{equation*}
@@ -333,17 +333,17 @@
     
     Sei $G$ die Green'sche Funktion zur Helmholzgleichung mit
     \begin{equation*}
-      G(\vb r, \vb r')
-      =-\frac{1}{4\pi}\frac{e^{ik\abs{\vb r -\vb r'}}}{\abs{\vb r - \vb r'}}
+      G(\vb* r, \vb* r')
+      =-\frac{1}{4\pi}\frac{e^{ik\abs{\vb* r -\vb* r'}}}{\abs{\vb* r - \vb* r'}}
     \end{equation*}
-    Sei weiter $\psi(\vb r)$ eine skalare Funktion die die Helmholzgleichung
+    Sei weiter $\psi(\vb* r)$ eine skalare Funktion die die Helmholzgleichung
     Erfüllt (z.B.:\ Wellenamplitude).
     So ergibt sich für das allgemeine Kirchoff Integral
     \begin{equation*}
-      \psi(\vb r')=\int_{\partial V} d\vb A 
+      \psi(\vb* r')=\int_{\partial V} d\vb* A 
       \cdot 
-      \qty[\psi(\vb r)\grad G(\vb r, \vb r')-
-      G(\vb r, \vb r')\grad\psi(\vb r)]
+      \qty[\psi(\vb* r)\grad G(\vb* r, \vb* r')-
+      G(\vb* r, \vb* r')\grad\psi(\vb* r)]
       \smref{6.1.6}
     \end{equation*}
     Wobei $\partial V$ als die Blendenöffnung $A$ gesehen werden soll.
@@ -354,11 +354,11 @@
     $r\le a \ll r_Q$
 
     So ist 
-    $k\abs{\vb r -\vb r_Q}\approx kr_Q\qty(1-\frac{1}{2}\frac{r^2}{r^2_Q})$
+    $k\abs{\vb* r -\vb* r_Q}\approx kr_Q\qty(1-\frac{1}{2}\frac{r^2}{r^2_Q})$
 
     Sei nun $ka^2/r_Q\ll \pi$ bzw $\lambda \gg 2a^2/r_Q$ so ist
     \begin{equation*}
-      \psi(\vb r)=C\int_A dA \rr{e^{ik\abs{\vb r-\vb r'}}}\smref{6.1.14}
+      \psi(\vb* r)=C\int_A dA \rr{e^{ik\abs{\vb* r-\vb* r'}}}\smref{6.1.14}
     \end{equation*}
   \item Was ergibt sich in der Fraunhofer-Näherung? Wann gilt diese?
 
