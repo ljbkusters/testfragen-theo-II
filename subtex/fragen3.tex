@@ -33,15 +33,15 @@
                             & $\ds\oint_{\partial V}d\vb* A\cdot 
                               \vb B(\vb* r, t) = 0 $\\
         Faraday'sche Gesetz 
-                      & $\ds \curl \vb E(\vb* r , t)=k''\partial_t
+                      & $\ds \curl \vb E(\vb* r , t)=-k''\partial_t
                         \vb B(\vb* r, t)$
-                      & $\ds \oint_{\partial A}d\vb* l\cdot\vb* 
-                      E(\vb* r, t)=k''\dv{t}\iint_Ad\vb* A\cdot \vb B(\vb* r, t)$\\
+                      & $\ds \oint_{\partial A}d\vb* l\cdot\vb 
+                      E(\vb* r, t)=-k''\dv{t}\iint_Ad\vb* A\cdot \vb B(\vb* r, t)$\\
         Ampère'sche Gesetz  
           & $\ds \curl \vb B(\vb* r, t)=4\pi k'\vb* j(\vb* r, t)
-            -\frac{k'}{k}\partial_t \vb E(\vb* r, t)$
+            +\frac{k'}{k}\partial_t \vb E(\vb* r, t)$
           & $\ds\oint_{\partial A}d\vb* l\cdot \vb B(\vb* r, t)=
-          \iint_{A}d\vb* A\cdot\qty(4\pi k'\vb* j(\vb* r, t)-
+          \iint_{A}d\vb* A\cdot\qty(4\pi k'\vb* j(\vb* r, t)+
           \frac{k'}{k}\partial_t \vb E(\vb* r, t))$\\
         \end{tabular}
         }
@@ -170,7 +170,7 @@
           \begin{tabular}{rrcl}
             Inhomogen&$\div \vb D$ & $=$ &$\rho_f$\\
             &$\curl \vb H-\pdv{t}\vb D$ & $=$ &$\vb* j_f$\\
-            Homogen&$\curl \vb E-\pdv{t}\vb B$ & $=$ &$0$\\
+            Homogen&$\curl \vb E+\pdv{t}\vb B$ & $=$ &$0$\\
             &$\div \vb B$ & $=$ &$0$\\
           \end{tabular}
           \sref{4.1.5$\sim$8}
