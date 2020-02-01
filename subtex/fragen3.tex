@@ -15,7 +15,7 @@
 \end{center}
 \begin{enumerate}
 
-  \item Wie lauten die vollen, makroskopischen Maxwell-Gleichungen für
+  \item Wie lauten die vollen, makroskopischen Maxwell-Gleichungen für %1
         die Felder $\vb E(\vb* r, t)$ und $\vb B(\vb* r, t)$
         \begin{center}
         \scalebox{0.8}{
@@ -60,7 +60,7 @@
         Rotations-Gesetze) unter Anwendung der Gauß'sche und 
         Stoke'sche Gesetze.
 
-  \item Welche Gleichung legt das Verhalten der aus Punktladungen
+  \item Welche Gleichung legt das Verhalten der aus Punktladungen %2
         zusammen gesetzten Quellen $\rho(\vb* r, t)$ und 
         $\vb* j(\vb* r, t)$ in den Feldern $\vb E(\vb* r, t)$
         und $\vb B(\vb* r, t)$ fest?
@@ -69,7 +69,7 @@
           $\ds \vb* F_q=q\qty(\vb E+k''\vb* v\times\vb B)\smref{3.7.1}$
         \end{center}
 
-  \item Man zeige mittels Kontinuitätsgleichung und Ampère-Gesetz, 
+  \item Man zeige mittels Kontinuitätsgleichung und Ampère-Gesetz, %3
         dass der Maxwell'sche Verschiebungsstrom für Ladungserhaltung
         notwendig ist.
         $$\div \vb* j(\vb* r, t) = -\pdv{t}\rho(\vb* r ,t)$$
@@ -100,29 +100,40 @@
         \end{equation*}
         \footnotetext{Erinnere daß $\div \vb E(\vb* r, t)=4\pi k\rho(\vb* r ,t)$}      
 
-  \item Wie lauten die Wellengleichungen für $\vb E(\vb* r, t)$ und
+  \item Wie lauten die Wellengleichungen für $\vb E(\vb* r, t)$ und %4
         $\vb B(\vb* r, t)$ im Vakuum?
         $$\qty(\Delta - \frac{1}{c^2}\pdv[2]{t})\vb E(\vb* r, t)=
         \qty(\Delta - \frac{1}{c^2}\pdv[2]{t})\vb B(\vb* r, t)=0
         \smref{3.5.2 und 3.5.3}$$
 
-  \item Wie sehen Ebene-Wellen-Lösungen im Vakuum aus? Was weiß man
+  \item Wie sehen Ebene-Wellen-Lösungen im Vakuum aus? Was weiß man %5
         über die Richtungen der Felder bezüglich der 
         Ausbreitungsrichtung?
+        
+        Allgemein gilt für eine ebene Welle:
         $$f(\vb* r , t)=f_r(\vb* r)f_t(t)$$
-        $$\vb* k \,\bot\, \vb E \quad \vb* k\,\bot\,\vb B \quad
-        \vb E\,\bot\, \vb B\smref{3.5.8$\sim$10}$$
+        Die Lösungen der Wellengleichung für die 
+        elektromagnetische Feldern haben die Form:
+        \begin{equation*}
+          \vb* f(\vb* r, t)=\vb* f_0 e^{i(\vb*k\cdot\vb*r-\omega t)}
+          \quad\text{mit}\quad
+          \vb* f_{(0)} = \vb E_{(0)}, \vb B_{(0)} \smref{3.5.4 \& 5}
+        \end{equation*}
+        $$\vb* k \,\bot\, \vb E_{(0)} \quad \vb* k\,\bot\,\vb B_{(0)} \quad
+        \vb E_{(0)}\,\bot\, \vb B_{(0)}\smref{3.5.8$\sim$10}$$
 
-  \item Wie erhällt man die Dispersionsrelation und wie lautet sie für
+  \item Wie erhällt man die Dispersionsrelation und wie lautet sie für %6
         elektromagnetische Wellen im Vakuum?
         \begin{center}
           Indem man die Lösung (gegebene Funktion) in 
           der Wellengleichung einsetzt und die
           triviale Terme gegen einander wegstreicht.
         \end{center}
-        $$\dv{\omega(k)}{k}=c \quad\text{(im Vakuum)}\smref{3.5.7}$$
+        \begin{equation*}
+          \vb* k^2 = \omega^2 c^2 \smref{3.5.7}
+        \end{equation*}
 
-  \item Man gebe die Formeln für die Fourier-Hin- und Rücktransformation
+  \item Man gebe die Formeln für die Fourier-Hin- und Rücktransformation %7
         für eine Funktion $f(t)$ auf der $t$-Achse auf $\omega$-Achse und
         zurück an.
         $$\hat f(\omega, \alpha)=\int \frac{dt}{\sqrt{2\pi}}
@@ -142,14 +153,14 @@
         Welche Parameter transformiert werden hängt also von der Frage 
         ab!
 
-  \item Man berechne die Fouriertransformation von $\delta(t-t_0)$.
+  \item Man berechne die Fouriertransformation von $\delta(t-t_0)$. %8
         $$f(t)=\delta (t-t_0)$$ 
         $$F[f(t)]=\hat f(\omega)
         =\int\frac{dt}{\sqrt{2\pi}}e^{-i\omega t}\delta(t-t_0)
         =\frac{1}{\sqrt{2\pi}}e^{-i\omega t_0}
         \smref{3.9.7}$$ 
 
-  \item Wie berechnet sich der Poynting-Vektor für reelle Felder? Was
+  \item Wie berechnet sich der Poynting-Vektor für reelle Felder? Was %9
         ist seine physikalische Bedeutung?
         $$\vb S(\vb* r,t)=\frac{1}{\mu_0}\vb E(\vb* r,t)\times\vb B(\vb* r,t)
         =\vb E(\vb* r,t)\times \vb H(\vb* r,t)
@@ -163,7 +174,7 @@
         \end{center}
 
   \clearpage
-  \item Wie lauten die inhomogenen Maxwell-Gleichungen in Materie,
+  \item Wie lauten die inhomogenen Maxwell-Gleichungen in Materie, %10
         charakterisiert durch Dielektrizitätskonstante $\epsilon_r$ und
         Permeabilität $\mu_r$?
         \begin{center}
@@ -179,7 +190,7 @@
           \vb B(\vb* r,t)\smref{4.1.9}$$
         \end{center}
 
-  \item Durch welche drei Sachverhalte unterscheiden sich 
+  \item Durch welche drei Sachverhalte unterscheiden sich %11
         elektromagnetische Wellen in eienem Wellenleiter mit einfach
         zusammenhängenden rechteckigem Querschnitt von denen im Vakuum?
         \begin{enumerate}
@@ -193,7 +204,8 @@
           \sref{§3.11}
         \end{center}
 
-  \item Wie sind Phasen- und Gruppengeschwindigkeit definiert und was ist
+  \item Wie sind Phasen- und Gruppengeschwindigkeit definiert und was %12
+    ist
         ihre physikalische Bedeutung?
         \begin{center}
           \begin{tabular}{ll}
@@ -213,7 +225,7 @@
         kein Problem, denn die Phasengeschwindigkeit ``trägt'' keine
         Information. Für $v_{\text{gr}}$ gilt immer $v_{\text{gr}}\le c$!
 
-  \item Man gebe zwei Formen für das Ohm'sche Gesetz an. Wie ist die
+  \item Man gebe zwei Formen für das Ohm'sche Gesetz an. Wie ist die %13
         Beziehung zwischen Leitfähigkeit $\sigma$ und Widerstand $R$ 
         für einen homogenen Leiter der länge $l$ und mit 
         Querschnitt $A$?
@@ -223,18 +235,22 @@
             $\qty(\sigma=\frac{1}{\rho}\quad R=\frac{l}{\sigma A})$
         \end{enumerate}
 
-  \item Wie entsteht eine komplexe, frequenzabhängige 
+  \item Wie entsteht eine komplexe, frequenzabhängige %14
         Dielektrizitätskonstante $\epsilon(\omega)$ in einem Metal?
-        $$\curl \vb H = \vb* j + \pdv{t}\vb D$$
-        $$\curl \vb H -\qty(\sigma +\epsilon_0\epsilon_r\pdv{t})\vb E=0$$
-        $$\curl \vb H -\qty(\sigma +\epsilon_0\epsilon_ri\omega)\vb E=0$$
-        $$\curl \vb H +\epsilon_0 i\omega
-        \qty(\epsilon_r-\frac{\sigma}{i\omega\epsilon_0})\vb E=0$$
-        $$\curl \vb H +i\omega\epsilon_0 \epsilon(\omega)\vb E=0$$
-        $$\epsilon(\omega)=\qty(\epsilon_r-\frac{\sigma}
-        {i\omega\epsilon_0})\smref{4.2.5}$$
+        \begin{equation*}
+          \begin{split}
+            \curl \vb H &= \vb* j + \pdv{t}\vb D\\
+            \curl \vb H -\qty(\sigma +\epsilon_0\epsilon_r\pdv{t})\vb E&=0\\
+            \curl \vb H -\qty(\sigma +\epsilon_0\epsilon_ri\omega)\vb E&=0\\
+            \curl \vb H +\epsilon_0 i\omega
+            \qty(\epsilon_r-\frac{\sigma}{i\omega\epsilon_0})\vb E&=0\\
+            \curl \vb H +i\omega\epsilon_0 \epsilon(\omega)\vb E&=0\\
+            \epsilon(\omega)&=\qty(\epsilon_r-\frac{\sigma}
+            {i\omega\epsilon_0})\smref{4.2.5}\\
+          \end{split}
+        \end{equation*}
 
-  \item Wie verhält sich die Dielektrizitätskonstante $\epsilon(\omega)$
+  \item Wie verhält sich die Dielektrizitätskonstante $\epsilon(\omega)$ %15
         bei der Plasmafrequenz $\omega_P$? Was passiert physikalisch bei
         $\omega=\omega_P$ und bei $\omega>\omega_P$?
         $$

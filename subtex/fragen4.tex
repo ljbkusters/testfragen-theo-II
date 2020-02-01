@@ -17,7 +17,7 @@
   mit Gauß'sche Einheiten!
 
 \begin{enumerate}
-  \item Was bedeutet das spezielle Relativitätsprinzip für physikalische
+  \item Was bedeutet das spezielle Relativitätsprinzip für physikalische %1
     Gesetze und die Lichtgeschwindigkeit?
 
     Die Lichtgeschwindigkeit ist eine Konstante in jedem Bezugssystem.
@@ -28,7 +28,7 @@
     ein Observierer in ein Ruhesystem wo die Ladung sich bewegt auch
     magnetische Kräfte sieht.) \sref{§5.2.1}
 
-  \item Wie lautet die Formel für den invarianten Raum-Zeit-Abstand ds in
+  \item Wie lautet die Formel für den invarianten Raum-Zeit-Abstand ds in %2
     einem Koordinatensystem? Warum folgt aus der Invarianz von $ds$ die
     Invarianz der Lichgeschwindigkeit?
     
@@ -59,7 +59,7 @@
       sodass sich die Geschwindigkeit 
       des Teilchens (bei Lichtgeschwindigkeit) als invariant ergibt.
 
-  \item Welche Bedingungen stellt man an eigentliche orthochrone
+  \item Welche Bedingungen stellt man an eigentliche orthochrone %3
     Lorentz-transformationen?
 
     \textbf{Definition:} Eine Lorentz-Transformation, bei der (Raum-) 
@@ -76,7 +76,7 @@
     \url{https://de.wikipedia.org/wiki/Lorentz-Transformation} (suche 
     nach orthochron mit deinem Browser)
 
-  \item Wie lautet die Lorentz-Transformation für einen Boost in 
+  \item Wie lautet die Lorentz-Transformation für einen Boost in %4
     $z$-Richtung? Wie sieht die Inverse aus?
     
     Sei $S$ ein Ruhesystem und bewege $S'$ sich mit relativen 
@@ -118,7 +118,7 @@
       =\Lambda_{\nu}^{\ \mu}
       \smref{5.2.25}$
 
-  \item Man schreibe den kontravarianten Vierer-Vektor für ein
+  \item Man schreibe den kontravarianten Vierer-Vektor für ein %5
     Raum-Zeit-Ereignis x. Wie transformiert sich ein kontravarianter
     Lorentz-Vierer-Vektor?
 
@@ -133,7 +133,7 @@
     \smref{5.2.12}
     \end{equation*}
 
-  \item Wie erhält man den kovarianten Vierer-Vektor für x mit dem
+  \item Wie erhält man den kovarianten Vierer-Vektor für x mit dem %6
     metrischen Tensor?
 
     \begin{equation*}
@@ -142,7 +142,7 @@
       \smref{5.2.8}
     \end{equation*}
 
-  \item Wie sieht das invariante Skalarprodukt zwischen zwei 
+  \item Wie sieht das invariante Skalarprodukt zwischen zwei %7
     Vierer-Vektoren in einem Koordinaten-System aus, ohne und mit
     dem metrischen Tensor geschrieben?
     
@@ -181,7 +181,7 @@
       v^\mu w_\mu = c^2(t_vt_w) - (v_xw_x + v_yw_y + v_zw_z)
     \end{equation*}
 
-  \item Warum ist die Gescwhindigkeit difineiert als $v^\mu=\dv t x^\mu$
+  \item Warum ist die Gescwhindigkeit difineiert als $v^\mu=\dv t x^\mu$ %8
     kein Lorentz-Vektor? Welche verwandtete Geschwindigkeit ist ein
     Lorentz-Vektor?
 
@@ -191,13 +191,19 @@
       \dv {t'} x'^\mu \neq \Lambda^{\mu}_{\ \nu}\dv t x^\mu
       \smref{5.2.61}
     \end{equation*}
+    Dies ist einfach zu Zeigen. Es gilt zwar: 
+    $v^\mu=\dv t x^\mu=(c,\vb* v)$. Es gilt nun:
+    \begin{equation*}
+      v_\mu v^\mu = c^2-\vb* v^2
+    \end{equation*}
+    Was offensichtlich kein Lorentz-Vektor entspricht.
 
     $u^\mu$, die \textbf{Weltgeschwindigkeit}, 
     ist schon ein Lorentz-Vektor,
     mit $u^\mu=\dv \tau x^\mu$ und
     $$d\tau=\frac{1}{c}ds=\gamma^{-1}dt \smref{5.2.54\,\&\,55}$$
 
-  \item Wie lauten die Komponenten des Vierer-Potenitals und des
+  \item Wie lauten die Komponenten des Vierer-Potenitals und des %9
     Vierer-Stroms in einem gegebenen Koordinatensystem? Wie schreibt
     sich die Wellengleichung damit?
 
@@ -243,7 +249,8 @@
 
     \textbf{Notiz:} $\pdv{x^\mu}=\partial^\mu=(\frac{1}{c}\dv t, \nabla)$
 
-  \item Man gebe den Feldstärke-Tensor als Funktion des Vierer-Potentials
+  \item Man gebe den Feldstärke-Tensor als Funktion des %10
+    Vierer-Potentials
     und Matrix mit den Komponenten von $\vb E$ und $\vb B$ an.
 
     \begin{equation*}
@@ -258,7 +265,7 @@
     \end{equation*}
 
   \clearpage
-  \item Wie lauten die homogenen Maxwell-Gleichungen in forminvarianter
+  \item Wie lauten die homogenen Maxwell-Gleichungen in forminvarianter %11
     Schreibweise?
 
     \begin{equation*}
@@ -296,8 +303,8 @@
       \end{array}
     \end{equation*}
 
-  \item Wie lauten die inhomogenen Maxwell-Gleichungen in forminvarianter
-    Schreibweise?
+  \item Wie lauten die inhomogenen Maxwell-Gleichungen in %12
+    forminvarianter Schreibweise?
 
     Wegen $\partial_\mu A^\mu=0 \smref{5.3.15}$ 
     (folgt aus Kontinuitätsgleichung), gilt auch
@@ -318,8 +325,8 @@
       \end{array}
     \end{equation*}
 
-  \item Wie schreibt sich die Lorentz-Kraft für eine Ladung q auf
-    forminvariante Weise?
+  \item Wie schreibt sich die Lorentz-Kraft für eine Ladung q auf %13
+     forminvariante Weise?
 
     \begin{equation*}
       K^\mu=\dv \tau p^\mu =m \dv \tau u^\mu = \frac{q}{c} F^{\mu\nu}u_\nu
@@ -327,7 +334,7 @@
     \end{equation*}
 
   \clearpage
-  \item Man gebe das kirchhoff'sche Beugungsintegral [für
+  \item Man gebe das kirchhoff'sche Beugungsintegral [für %14
     Lichteinfall] auf eine Blendenöffnung bei weit 
     entfernter Lichtquelle und Senkrechtem Einfall an.
     
@@ -360,10 +367,25 @@
     \begin{equation*}
       \psi(\vb* r)=C\int_A dA \rr{e^{ik\abs{\vb* r-\vb* r'}}}\smref{6.1.14}
     \end{equation*}
-  \item Was ergibt sich in der Fraunhofer-Näherung? Wann gilt diese?
 
-    gilt falls \sref{6.2.1}
+  \item Was ergibt sich in der Fraunhofer-Näherung? Wann gilt diese? %15
 
-    Ergibt \sref{6.2.6}
+    Die Fraunhofer-Näherung gillt für
+    \begin{equation*}
+      \frac{a}{d} \ll \frac{\lambda}{a} \smref{6.2.1}
+    \end{equation*}
+    Mit $a$ die Breite der Öffnung, $d$ die Abstand zur 
+
+    Die Fraunhofer-Näherung ergibt für die (komplexe) Amplitude der
+    elektromagnetische Wellen am Schirm:
+    \begin{equation*}
+      \psi(x)\approx \frac{e^{ikd}}{d}\int_{-a/2}^{a/2}dx'
+      e^{-i \frac{k}{d}xx'}
+      =
+      -a \frac{e^{ikd}}{d} \frac{\sin(qx)}{qx} 
+      \smref{6.2.6}
+    \end{equation*}
+    Mit $q=\frac{k}{d} \frac{a}{2}$ und stellt $x$ die Schirmkoordinate dar.
+    Dabei observiert man die Intensität $I=\abs{\psi(x)}^2$ auf dem Schirm.
 
 \end{enumerate}
