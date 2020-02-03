@@ -195,14 +195,13 @@
         zusammenhängenden rechteckigem Querschnitt von denen im Vakuum?
         \begin{enumerate}
           \item Die Dispersionsrelation ändert sich 
-                ($\omega(\vb* k)\ne c\abs{\vb* k}$ i.A.)
-          \item Es gilt i.A. \textbf{nicht} dass $\vb E\,\bot\,\vb B$
+            ($\omega(\vb* k)\ne c\abs{\vb* k}$ i.A.) \sref{3.11.23}
+          \item Minimal Energie für bestimmte Moden, vorher
+            keine Wellenausbretung. \sref{3.11.26}
           \item Es gilt i.A. \textbf{nicht} dass $\vb E\,\bot\,\vb* k$
-                oder dass $\vb B\,\bot\,\vb* k$
+            oder dass $\vb B\,\bot\,\vb* k$ (d.h. i.A. keine TEM-Wellen,
+            aber schon möglich) \sref{§3.11 TEM-Wellen}
         \end{enumerate}
-        \begin{center}
-          \sref{§3.11}
-        \end{center}
 
   \item Wie sind Phasen- und Gruppengeschwindigkeit definiert und was %12
     ist
@@ -245,6 +244,7 @@
             \curl \vb H +\epsilon_0 i\omega
             \qty(\epsilon_r-\frac{\sigma}{i\omega\epsilon_0})\vb E&=0\\
             \curl \vb H +i\omega\epsilon_0 \epsilon(\omega)\vb E&=0\\
+            \curl \vb H +\epsilon_0 \epsilon(\omega)\pdv{t}\vb E&=0\\
             \epsilon(\omega)&=\qty(\epsilon_r-\frac{\sigma}
             {i\omega\epsilon_0})\smref{4.2.5}\\
           \end{split}
@@ -256,6 +256,9 @@
         $$
         \epsilon(\omega_P)=\epsilon_r\qty(1-\frac{\omega_P^2}{\omega^2})
         \smref{4.2.23}$$
+        \begin{center}
+          	\rotatebox[origin=c]{90}{$\Rsh$}\sref{§4.2.2 Herleitung}
+        \end{center}
         $$\Leftrightarrow\quad\epsilon(\omega_P)=0
         \quad\epsilon(\omega<\omega_P)<0 
         \quad\epsilon(\omega>\omega_P)>0$$
@@ -263,8 +266,10 @@
         {m\epsilon_0\epsilon_r}}\smref{4.2.31}$$
         \begin{tabular}{rl}
           $\ds\omega>\omega_p$ &$\Rightarrow$ 
-          Metalle werden durchsichtig\\
-          $\ds\omega\le\omega_p$& $\Rightarrow$ Exponentielle 
+          Metalle werden durchsichtig (EM-Wellen verbreiten sich)\\
+          $\ds\omega=\omega_p$ &$\Rightarrow$ 
+          Nur rein elektrische longitudinale (Plasma-)Moden möglich\\
+          $\ds\omega<\omega_p$& $\Rightarrow$ Exponentielle 
           Abfall von EM-Wellen im Medium
         \end{tabular}
         \begin{center}
