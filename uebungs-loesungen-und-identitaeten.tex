@@ -1,0 +1,219 @@
+\input{preamble.tex}
+\usepackage{relsize}
+
+\newcommand{\kd}[1]{\delta_{#1}}
+\newcommand{\eps}[1]{\epsilon_{#1}}
+\newcommand{\aref}[1]{(Aufgabe #1)}
+\newcommand{\amref}[1]{\quad\text{(Aufgabe #1)}}
+\newcommand{\ve}[1]{{\vu{e}}_{#1}}
+
+\title{Einige Lösungen und Identitäten aus den Übungen}
+\begin{document}
+  \maketitle
+  Diese Sammlung von Lösungen und Identitäten ist nur ausgedacht um
+  Endergebnisse zu vergleichen und vielleicht noch einige nützliche
+  Identitäten und Gedächtnisstütze zu geben.
+  \newpage
+
+  \tableofcontents
+  \newpage
+  
+  \section{Mathematik}\label{sec:Mathematik}
+    \subsection{Epsilon Tensor (3. Ordung)}
+    \aref{1.1} 
+    \begin{itemize}
+      \item $\eps{ijk}\eps{imn}=\kd{jm}\kd{kn}-\kd{jn}\kd{km}$
+      \item $\eps{ijk}\eps{ijn}=2\kd{kn}$
+      \item $\eps{ijk}\eps{ijk}=6$
+    \end{itemize}
+    \subsection{Delta Funktion}
+    \aref{1.2} 
+    \begin{itemize}
+      \item $f(x)\delta(x)=f(0)\delta(x)$
+      \item $\delta(h(x))=\sum_{x_n}\frac{1}{\abs{h'(x_n)}}
+        \delta(x-x_n)$ mit $x_n$ die Nullstellen von $h(x)$
+      \item $\delta(\lambda x)= \frac{1}{\abs{\lambda}}\delta{x}$
+      \item $\delta(-x)= \delta(x)$
+    \end{itemize}
+    \subsection{Identitäten zur Ableitungen mit Nabla Operator}
+    Gradient \aref{1.3} 
+    \begin{itemize}
+      \item $\grad(\vb*b\cdot\vb*x)=\vb*b(\div\vb*x)=3\vb*b
+        \qquad(\vb*b=\text{const.})$
+      \item $\grad((\vb*x\times\vb*b)\cdot\vb*c)=\vb*b\times\vb*c
+        \qquad(\vb*b,\vb*c=\text{const.})$
+      \item $\grad\phi(r)=\phi'(r)\ve{r}$
+    \end{itemize}
+    Divergenz \aref{1.4} 
+    \begin{itemize}
+      \item $\div\vb*x=3$
+      \item $\div(\vb*a\times\vb*x)=0$
+      \item $\div(\frac{\vb*x}{r^3})=0$ für $r\neq0$
+      \item $\div(f(r)\ve{r})=f'(r)$
+    \end{itemize}
+    Divergenz \aref{1.5} 
+    \begin{itemize}
+      \item $\curl(\vb*x f(r))=f'(\vb*x\times\vb*x)=0$
+      \item $\curl(\vb*b\times\vb*x)=2\vb b$
+      \item $\curl(\grad\phi(\vb*r))=0$
+      \item $\div(\curl\vb*A(\vb*r))=0$
+      \item $\curl(\vb*A(\vb*r)\vb*B(\vb*r))=
+        \vb*A(\div\vb*B)-\vb*B(\div\vb*A)+
+        (\vb*B\cdot\grad)\vb*A-(\vb*A\cdot\grad)\vb*B$
+    \end{itemize}
+
+  \section{Lösungen zur einfache Ladungsverteilungen in der Elektrostatik}
+    \subsection{Homogen geladene Kugel}
+    Homogene Volumenladungsdichte $\rho(\vb*r)=\rho_0\Theta(R-r)$
+    und $Q=V_k\rho_0=\frac{4\pi}{3}R^3\rho_0$.
+    \begin{equation}
+      \Phi(\vb*r)=\frac{Q}{4\pi\epsilon_0} 
+    \begin{cases}
+      \frac{1}{2} \qty(\frac{3}{R} -\frac{r^2}{R^3} )&r\le R\\
+      \frac{1}{r} & r\ge R
+    \end{cases}
+    \end{equation}
+    \begin{equation}
+      \vb E(\vb*r)=
+      \frac{Q}{4\pi\epsilon_0} 
+      \begin{cases}
+        \frac{r}{R^3} & r\le R\\
+        \frac{1}{r^2} & r\ge R\\
+      \end{cases}
+    \end{equation}
+    
+    \subsection{Unendlich langer (radial ausgedehnte) Draht}
+      Draht, unendlich lang, Radius $R$. Homogene Längenladungsdichte 
+      $\lambda$. Lösung in Zylinderkoordinaten gegeben. \aref{2.2}
+      \begin{equation}
+        \Phi(\vb*r)=
+        \begin{cases}
+          -\frac{\lambda}{4\pi\epsilon_0}\frac{r^2}{R^2}  &r\le R\\
+          -\frac{\lambda}{2\pi\epsilon_0}\ln(\frac{r}{R})
+          -\frac{\lambda}{4\pi\epsilon_0} &r\ge R\\
+        \end{cases}
+      \end{equation}
+      \begin{equation}
+        \vb E(\vb*r) =
+        \begin{cases}
+          \frac{\lambda}{2\pi R^2\epsilon_0}r\ve{r} & r\le R\\
+          \frac{\lambda}{2\pi\epsilon_0}\frac{1}{r}\ve{r} & r\ge R
+        \end{cases}
+      \end{equation}
+
+    \subsection{Unendlich ausgedehnte Ebene}
+    x-y-Ebene mit homogene Flächenladungsdichte $\rho_0^F$ (bei $z=0$).
+    \aref{2.2}
+    \begin{equation}
+      \Phi(\vb*r)=-\frac{\rho_0^F}{2\epsilon_0}\abs{z} 
+    \end{equation}
+    \begin{equation*}
+      \vb E(\vb*r)=\pm \frac{\rho_0^F}{2\epsilon_0}\qquad (-) \Rightarrow
+      z<0\quad (+)\Rightarrow z>0
+    \end{equation*}
+
+    \subsection{Endlich ausgedehnte Draht mit infinitisimale Radius}
+    Längenladungsdichte $\kappa$, Ausdehnung von $z=-L/2$ bis $z=L/2$.
+    \aref{2.3}
+    \begin{equation}
+      \Phi(\vb*r)=\frac{\kappa}{4\pi\epsilon_0} 
+      \ln\abs{
+        \frac{z+L+\sqrt{r^2+(z+L)^2}}
+        {z-L+\sqrt{r^2+(z-L)^2}} 
+      }
+    \end{equation}
+
+    \newpage
+    \subsection{Unendlich langer Draht vor Metallische Zylinder}
+    Unendlich langer Draht mit Längenladungsdichte $\lambda>0$ vor
+    Metallische Zylinder (Radius a) 
+    mit $\Phi=\text{const.}$ auf Randfläche auf 
+    der $x-Achse$ auf abstand R $(\vb* R = R\ve{x})$. Ergebins in
+    Zylinderkoordinaten.\aref{2.3}
+   
+    \begin{equation}
+      \Phi(\vb*r)=
+      \begin{cases}
+        -\frac{\lambda}{2\pi\epsilon_0}
+        \qty(\ln\abs{\vb*r}+\ln\abs{\vb*r-\vb*R}
+        -\ln\abs{\vb*r- \frac{a^2}{R}\ve{x}})& r > R\\
+        \text{const.}         & r\le R 
+      \end{cases}
+    \end{equation}
+
+    \subsection{Quadratisches Rohr mit 3 geerdete Seiten}
+    Quadratisches Rohr mit 3 geerdete Seiten und eine ungeerdete Seite auf
+    Spannung $V$, in $z$-Richtung unendlich ausgedehnt.\aref{3.3}
+
+    \begin{equation}
+      \Phi(x,y)=\sum_{m} \frac{4V}{a} \sin(\frac{n\pi}{a} x)
+      \frac{\cosh(\frac{n\pi}{a}y)}{\sinh(\frac{n\pi}{a} b)} 
+      \qquad m=2n-1\quad n\in\mathbb{N}
+    \end{equation}
+
+    \subsection{Geerdetes quadratisches Rohr mit Draht}
+    Geerdetes, metallisches und quadratisches 
+    Rohr ($\Phi=0$) um Ursprung zentriert, mit im Ursprung zentrierter
+    Draht (Längenladungsdichte $\lambda$).\aref{4.1}
+
+    \begin{equation}
+      \Phi(\vb*r)=\Phi_1(x,y)+\Phi_2(x,y)+\Phi_3(x,y)+\Phi_4(x,y)
+    \end{equation}
+    mit
+    \begin{equation*}
+      \Phi_1(x,y)=\sum_n^\infty C_n 
+      \sin(\frac{\pi n}{a} (x+\frac{a}{2}))
+      \sinh(\frac{\pi n}{a} (y+\frac{a}{2}))
+    \end{equation*}
+    und
+    \begin{equation*}
+      C_n = \frac{1}{\sinh(n\pi)}\frac{2}{a} \int_{-a/2}^{a/2}dx
+      \frac{\lambda}{4\pi\epsilon_0}\ln(\frac{x^2+(\frac{a_0}{2})^2}
+      {r_0^2})\sin(\frac{\pi n}{a}\qty(x+a/2))
+    \end{equation*}
+    Wobei weiter $\Phi_1(x,y)=\Phi_3(x,-y)$, $\Phi_1(x,y)=\Phi_2(-y,x)$
+    $\Phi_2(x,y)=\Phi_4(-x,y)$
+
+    und schließlich $r_0=\frac{1}{\sqrt{2}}a$
+    
+    (Es gilt natürlich auch dass $\Phi$ ausserhalb vom Rohr konstant ist.)
+
+  \subsection{Kreisscheibe mit vorgegebenes Potential}
+  Kreisscheibe auf $xy$-Ebene mit Radius R, auf Potential $u_0$. 
+  Gesucht ist das Potential auf 
+  $z$-Achse und $r\gg R$ für $z>0$. \aref{4.3}
+  
+  Auf $z$-Achse
+  \begin{equation}
+    \Phi(z)=u_0\qty[\frac{z}{R^2+z^2}-1]
+  \end{equation}
+  für $r\gg R$
+  \begin{equation}
+    \Phi(\vb*r)=\frac{1}{2}u_0R^2 \frac{z}{\abs{r}^3}
+  \end{equation}
+
+  \section{Näherungen mit Multipolmomente in der Elektrostatik}
+  \subsection{Exponentiel unterdrückter Ladungsdichte}
+  Gesucht ist das Potential für $r\gg a_0$ und für $r\approx 0$ für die 
+  Ladungsdichte unter anwendung der Kugelkoordinatenentwicklung.
+  \begin{equation*}
+    \rho=\frac{Q}{4\pi a_0^5}r^2 e^{-r/a_0}\sin^2\theta
+  \end{equation*}
+
+  für $r\gg a_0$
+
+  $q_{00}=Q$, $q_{20}=-6Qa_0^2$, $q_{lm}=0$ sonst
+  \begin{equation}
+    \Phi(\vb*r)= \frac{Q}{4\pi\epsilon_0a_0}\qty[\frac{a_0}{r} -3 
+    \frac{a_0^3}{r^3} P_2(\cos\theta) + O\qty(\frac{a_0^4}{r^4})]
+  \end{equation}
+  
+  für $r\approx 0$
+  \begin{equation}
+    \Phi(\vb*r)= \frac{Q}{4\pi\epsilon_0a_0}
+    \qty[\frac{1}{4} - 
+    \frac{r^2}{120 a_0^2} P_2(\cos\theta)
+    +O\qty(\frac{r^4}{a_0^4} )]
+  \end{equation}
+
+\end{document}
