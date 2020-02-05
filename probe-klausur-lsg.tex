@@ -245,7 +245,8 @@ Terme der entsprechenden Entwicklung berechnet werden.
 \newpage
 \setcounter{equation}{0}
 \textbf{Aufgabe 3}\hfill[3+8+4=15 Punkte]
-Betrachten Sie eine zeitlich veränderliche Stromdichte $J(\vec x,t)$, deren
+Betrachten Sie eine zeitlich veränderliche Stromdichte $\vec J(\vec x,t)$, 
+deren
 räumliche Ausdehnung so klein ist, dass Sie in komplexer Schreibweise durch
 $\vec J(\vec x,t)=J_0 e^{-i\omega t}\delta(\vec x)\vec e_z$ approximiert
 werden kann. ($J_0$ und $\omega$ konstant). Die Quelle befindet sich 
@@ -259,8 +260,155 @@ im Vakuum.
     \end{equation*}
     mit $r=\abs{\vec x}$ gegeben ist.
 
+    \textbf{Lösung} 
+    Allgemein gilt in der Lorenz Eichung:
+    $\square \vec A(\vec r,t)=-\mu_0 \vec J(\vec r,t)$
+
+    Mit die Greensche Funktion zur d'Alembertsche Operator 
+    ($\square=(\Delta-\frac{1}{c^2}\pdv[2]t)$) kann man $\vec A(\vec r,t)$ 
+    finden.
+
+    Es gilt 
+    \begin{equation}
+      \vec A(\vec r, t) = -\mu_0 \int d^3 r' \int dt' 
+      G(\vec r - \vec r', t - t')\vec J(\vec r, t)
+    \end{equation}
+
+    \begin{center}
+    Wobei $G(\vec r - \vec r', t-t')
+    =-\frac{1}{4\pi} 
+    \frac{\delta(t_{ret})}{\abs{\vec r- \vec r'}}$ und 
+    $t_{ret}=t-\frac{\abs{\vec r -\vec r'}}{c}$ sodass insgesammt
+    \end{center}
+
+    \begin{equation}
+      \begin{split}
+      \vec A(\vec r, t)
+      &=\frac{\mu_0}{4\pi} \int d^3 r' \int dt
+      J_0e^{-i\omega t'}\delta(\vec r')
+      \delta\qty(t-\frac{\abs{\vec r-\vec r'}}{c}) 
+      \frac{1}{\abs{\vec r -\vec r'}} \vec{e}_z\\
+      &=J_0 \frac{\mu_0}{4\pi}\int dt' e^{-i\omega t'}
+      \delta\qty(t-\frac{\abs{\vec r}}{c})
+      \frac{1}{\abs{\vec r}} \vec{e}_z\\
+      &=J_0 \frac{\mu_0}{4\pi}e^{-iw\qty(t-\frac{\abs{\vec r}}{c})}
+      \frac{1}{r} \vec{e}_z\quad\text{mit}\quad{k=\frac{\omega}{c}}\\
+      &=J_0 e^{-i\omega t} \frac{\mu_0}{4\pi} \frac{e^{ikr}}{r}\vec{e}_z 
+      \end{split}
+    \end{equation}
+
   \item Berechnen Sie mit dem Ergebnis aus a) das $\vec B$-Feld und
     daraus da $\vec E$-Feld.
+
+    Es gilt die Bezieh
+    \begin{equation}
+      \vec B(\vec r, t)= \curl \vec A(\vec r, t)
+    \end{equation}
+
+    Weiter gilt für $\grad$ in Kugelkoordinaten natürlich
+    \begin{equation*}
+      \grad = \vec e_r \partial_r + \frac{\vec e_\theta}{r}\partial_\theta 
+      + \frac{\vec e_\phi}{r\sin\theta}\partial_\phi
+    \end{equation*}
+    
+    Wegen $\vec A(\vec r, t)=A(r, t)\vec e_z = A_t(t)A_r(r)\vec e_z$ folgt
+    dass
+    \begin{equation}
+      \curl \vec A(\vec r, t) 
+      =(\vec e_r \times \vec e_z) A_t(t)\partial_r A_r(r)
+    \end{equation}
+
+    Wobei man $A_t(t)=J_0 e^{-i\omega t}\frac{\mu_0}{4\pi}$ und
+    $A_r(r)=\frac{e^{ikr}}{r}$ definieren kann.
+
+    Und mit $(\vec e_r\times\vec e_z)=-\sin\theta \vec e_\phi$ findet man 
+    insgesammt für $\vec B(\vec r, t)$
+    \begin{equation}
+      \vec B(\vec r, t)=A_t(t)\sin\theta(-\vec e_\phi)
+      \qty[ik-\frac{1}{r}]A_r(r)
+      = \frac{J_0}{4\pi}e^{-i\omega t}\frac{e^{ikr}}{r} 
+      \qty(\frac{1}{r} -ik)\sin\theta\vec e_\phi
+    \end{equation}
+    
+    Nun sucht man noch das Elektrische Feld, welches für $r>0$ 
+    (für $r>0$ verschwindet den Strom) gegeben wird
+    durch das Faradaysche Gesetz:
+    \begin{equation}
+      \curl \vec B(\vec r, t)= \frac{1}{c^2} \pdv t \vec E(\vec r, t) 
+    \end{equation}
+    
+    Weil $\vec E\propto e^{-i\omega t}$ gilt, folgt 
+    $\partial_t \vec E(\vec r, t)=i\omega \vec E(\vec r, t)$
+
+    Nun kann man das Problem in zwei Wegen lösen. Entweder man nimmt direkt
+    die Rotation von $\vec B$ oder man sieht dass
+    \begin{equation}
+      \curl\vec B=\curl\curl\vec A=\grad(\div\vec A)-\Delta \vec A
+    \end{equation}
+    Was wesentlich einfacher zu lösen ist, weil $\vec B$ abhähngig von
+    $r$, $\theta$ und $\phi$ ist während $\vec A$ nur von $r$ abhängt.
+
+    In Kugelkoordinaten gilt
+    \begin{equation*}
+      \Delta = \Delta_r + \Delta_\Omega = 
+      \frac{1}{r^2}\partial_r(r^2\partial_r) 
+      + \Delta_\Omega
+    \end{equation*}
+
+    Man berechne zunächst die Einzelkomponente
+    \begin{equation}
+      \begin{split}
+        \Delta \vec A(\vec r, t)
+        &=A_t(t)\vec e_z\Delta_r A_r(r) + \Delta_\Omega A(r)\\
+        &=A_t(t)\vec e_z \qty{\frac{1}{r^2}\partial_r
+        \qty(r^2\qty[ik-\frac{1}{r}]A(r))} + 0\\
+        &=A_t(t)\vec e_z \qty{\frac{1}{r^2}
+        \qty([2ik-1]A(r) + r^2\qty[ik-\frac{1}{r}]^2A(r))}\\
+        &=
+        \qty(\qty[\frac{2ik}{r} +\frac{1}{r^2}] 
+        + \qty[ik-\frac{1}{r}]^2)\vec A(\vec r,t)\\
+      \end{split}
+    \end{equation}
+    und
+    \begin{equation}
+      \begin{split}
+        \grad(\div\vec A(\vec r, t))
+        &=\grad
+        \qty(\sin\theta\qty[ik-\frac{1}{r}] A(\vec r, t))\\
+        &=\qty(\vec e_r \partial_r + \frac{\vec e_\theta}{r} +
+        \frac{e_\phi}{r\sin\theta} \partial_\phi)
+        \qty(\sin\theta\qty[ik-\frac{1}{r}] A(\vec r, t))\\
+        &=\sin\theta\qty[\frac{1}{r^2} +
+        \qty(ik - \frac{1}{r})^2]A(\vec r, t)\vec e_r
+        + \frac{\cos\theta}{r}\qty(ik-\frac{1}{r})A(\vec r,t)\vec e_\theta
+      \end{split}
+    \end{equation}
+    Sodass insgesammt für $\vec E(\vec r, t)$ gilt dass
+    \begin{equation}
+      \begin{split}
+        \vec E(\vec r, t)
+        &=\frac{c^2}{iw}\curl\curl \vec A(\vec r, t)\\
+        &=\frac{c^2}{iw}\bigg(
+          \sin\theta\qty[\frac{1}{r^2} +
+          \qty(ik - \frac{1}{r})^2]A(\vec r, t)\vec e_r
+          + \frac{\cos\theta}{r}\qty(ik-\frac{1}{r})A(\vec r,t)\vec e_\theta
+        \\&\qquad\qquad
+        -\qty(\frac{ik}{r}+\qty[
+        \qty[2ik-\frac{1}{r^2}]-\frac{1}{r}]^2)\vec A(\vec r,t)
+        \bigg)\\
+      \end{split}
+    \end{equation}
+    \begin{equation*}
+        =\frac{c^2}{iw}\qty(
+          \sin\theta\qty[\frac{1}{r^2} +
+          \qty(ik - \frac{1}{r})^2]\vec e_r
+          + \frac{\cos\theta}{r}\qty(ik-\frac{1}{r})\vec e_\theta
+          -\qty(
+          \qty[
+            \frac{2ik}{r}-\frac{1}{r^2} 
+          ]+\qty[ik-\frac{1}{r}]^2)\vec e_z
+      )A(\vec r, t)\\
+    \end{equation*}
 
   \item Hier sollen nur noch die Teile der in b) berechneten Felder
     betrachtet werden, die nicht stärker als $1/r$ abfallen, d.h. man
@@ -269,8 +417,79 @@ im Vakuum.
     die zeitlich gemittelte Leistung $\dv {P}{\theta}$, die unter dem
     Winkel $\theta$ zur $z$-Achse abgestrahlt wird.
 
+    Weil $\vec A(\vec r, t)\propto \frac{1}{r}$ fällt bei $\vec B$ und 
+    $\vec E$ alles zwischen den Klammeren weg, wo noch 
+    ein $\frac{1}{r}$ Term
+    steht (für eine näherung bus zur $1/r$). $\vec E$ und $\vec B$ sind
+    nun also gegeben durch
+
+    \begin{equation}
+      \vec B(\vec r, t) = -ik\sin\theta A(\vec r, t)\vec e_\phi
+      +O(1/r^2)
+    \end{equation}
+    \begin{equation}
+      \vec E(\vec r, t) 
+      = \frac{c^2}{i\omega} \qty(-\sin\theta k^2\vec e_r+k^2 \vec e_z)
+      A(\vec r, t)
+      +O(1/r^2)
+    \end{equation}
+
+    Es folgt damit für 
+    $\bar{\vec{S}}$
+    
+    \begin{equation}
+      \begin{split}
+        \bar{\vec{S}}
+        &= \frac{1}{2\mu_0} \vec E^* \times \vec B\\
+        &=\frac{1}{2\mu_0}\qty(\frac{-c^2}{i\omega}A^*{\vec r, t})
+        \qty(-\sin\theta ik A(\vec r, t))
+        \qty[-k^2\sin\theta (\vec e_\phi \times \vec e_r)
+        +k^2 \vec e_\phi \times \vec e_z
+        ]\\
+        &= \frac{c^2k^3}{2\mu_0 \omega}\sin\theta A^*(\vec r, t)A(\vec r, t)
+        \qty[-\sin\theta\vec e_\theta + 
+        \begin{pmatrix}
+          \cos\phi\\\sin\phi\\0
+        \end{pmatrix}
+        ]\\
+        &\text{Dabei ist}\ 
+        A^*(\vec r,t)A(\vec r, t)=\frac{\mu_0^2J_0^2}{16\pi^2r^2}
+        \quad\text{und}\quad
+        c^2=\frac{1}{\mu_0\epsilon_0}\\
+        &= \frac{k^3J_0^2}{32\pi^2\epsilon_0\omega} 
+        \frac{\sin\theta}{r^2}
+        \qty[-\sin\theta \vec e_\theta+
+        \begin{pmatrix}
+          \cos\phi\\\sin\phi\\0
+        \end{pmatrix}
+        ]
+      \end{split}
+    \end{equation}
+    
+    Man findet dann für $\partial P/\partial \theta$
+
+    \begin{equation}
+      \begin{split}
+        \pdv{P}{\theta}
+        &=\int_0^{2\pi}d\phi r^2\sin\theta\bar{\vec S}\cdot\vec e_r\\
+        &= \frac{k^3J_0^2}{32\pi^2\epsilon_0\omega} 
+        {\sin^2\theta}
+        \int_0^{2\pi}d\phi
+        \qty[-\sin\theta \underbrace{\vec e_\theta\cdot\vec e_r}_{=0}+
+        \underbrace{\begin{pmatrix}
+          \cos\phi\\\sin\phi\\0
+        \end{pmatrix}
+        \cdot \vec e_r}_{=\sin\theta}
+        ]\\
+        &= \frac{k^3J_0^2}{16\pi\epsilon_0\omega} 
+        {\sin^3\theta}
+      \end{split}
+    \end{equation}
+    
+  \vfill
   \textbf{Aufgabe kommt aus Nachklausur WS18/19, dazu wurde eine
-  Lösung veröffentlicht, womit diese Lösung überprüft wurde}
+  Lösung veröffentlicht, womit diese Lösung überprüft wurde. Meine
+  Lösung geht über einen anderen Weg, aber das Endergebnis ist gleich}
 \end{enumerate}
 
 \end{document}

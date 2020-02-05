@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# format date for later use
+DATE=`date +%d-%m-%y`
+output=pdf-output
+# clean output dir
+rm $output/probe-klausur-lsg*
+
+# compile probeklausur file
+pdflatex probe-klausur-lsg.tex
+mv probe-klausur-lsg.pdf $output/probe-klausur-lsg-v$DATE.pdf

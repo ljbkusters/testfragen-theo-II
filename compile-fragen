@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# format date for later use
+DATE=`date +%d-%m-%y`
+output=pdf-output
+# clean output dir
+rm $output/theo2-fragen-sammlung*
+
+# compile main file
+pdflatex theo2-fragen-sammlung.tex
+mv theo2-fragen-sammlung.pdf $output/theo2-fragen-sammlung-v$DATE.pdf

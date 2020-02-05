@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# format date for later use
+DATE=`date +%d-%m-%y`
+output=pdf-output
+# clean output dir
+rm $output/herleitungen*
+
+# compile herleitungen file
+pdflatex herleitungen.tex
+mv herleitungen.pdf $output/herleitungen-v$DATE.pdf
