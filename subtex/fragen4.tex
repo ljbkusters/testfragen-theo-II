@@ -188,7 +188,7 @@
     $v^\mu$ ist kein Vierer-Vektor weil es nicht sich nicht
     wie ein Lorentz-Vektor. Das heißt, dass:
     \begin{equation*}
-      \dv {t'} x'^\mu \neq \Lambda^{\mu}_{\ \nu}\dv t x^\mu
+      \dv {t'} x'^\mu \neq \Lambda^{\mu}_{\ \nu}\dv t x^\nu
       \smref{5.2.61}
     \end{equation*}
     Dies ist einfach zu Zeigen. Es gilt zwar: 
@@ -271,7 +271,7 @@
     \begin{equation*}
       \partial^\mu F^{\nu\lambda} + 
       \partial^\lambda F^{\mu\nu} + 
-      \partial^\nu F^{\lambda\mu} + 
+      \partial^\nu F^{\lambda\mu}
       =0 \smref{5.3.23}
     \end{equation*}
     Oder auch:
@@ -287,9 +287,8 @@
     \begin{equation*}
       \epsilon^{\mu\nu\eta\gamma}=
       \begin{cases}
-        1&\text{gerade Permutation bzw. zykische Vertauschung}\\
-        -1&\text{ungerade Permutation bzw. 
-        antizyklische Vertauschung}\\
+        1&\text{gerade Permutation}\\
+        -1&\text{ungerade Permutation}\\
           0&\text{nicht alle verschieden}
       \end{cases}
     \end{equation*}
@@ -367,6 +366,7 @@
     \begin{equation*}
       \psi(\vb* r)=C\int_A dA \rr{e^{ik\abs{\vb* r-\vb* r'}}}\smref{6.1.14}
     \end{equation*}
+    Dies ist bei Weit entfernter Lichtquelle der Falls.
 
   \item Was ergibt sich in der Fraunhofer-Näherung? Wann gilt diese? %15
 
@@ -374,7 +374,8 @@
     \begin{equation*}
       \frac{a}{d} \ll \frac{\lambda}{a} \smref{6.2.1}
     \end{equation*}
-    Mit $a$ die Breite der Öffnung, $d$ die Abstand zur 
+    Mit $a$ die Breite der Öffnung, $d$ die Abstand zur Schirm und
+    $\lambda$ die Wellenlänge des Lichtes.
 
     Die Fraunhofer-Näherung ergibt für die (komplexe) Amplitude der
     elektromagnetische Wellen am Schirm:
@@ -385,7 +386,8 @@
       -a \frac{e^{ikd}}{d} \frac{\sin(qx)}{qx} 
       \smref{6.2.6}
     \end{equation*}
-    Mit $q=\frac{k}{d} \frac{a}{2}$ und stellt $x$ die Schirmkoordinate dar.
-    Dabei observiert man die Intensität $I=\abs{\psi(x)}^2$ auf dem Schirm.
+    Mit $q=\frac{k}{d} \frac{a}{2}$ und wobei $x$ die Schirmkoordinate 
+    darstellt.
+    Dabei beobachtet man die Intensität $I=\abs{\psi(x)}^2$ auf dem Schirm.
 
 \end{enumerate}

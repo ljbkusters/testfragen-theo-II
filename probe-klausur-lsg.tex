@@ -324,10 +324,13 @@ im Vakuum.
     Und mit $(\vec e_r\times\vec e_z)=-\sin\theta \vec e_\phi$ findet man 
     insgesammt für $\vec B(\vec r, t)$
     \begin{equation}
-      \vec B(\vec r, t)=A_t(t)\sin\theta(-\vec e_\phi)
-      \qty[ik-\frac{1}{r}]A_r(r)
-      = \frac{J_0}{4\pi}e^{-i\omega t}\frac{e^{ikr}}{r} 
-      \qty(\frac{1}{r} -ik)\sin\theta\vec e_\phi
+      \begin{split}
+        \vec B(\vec r, t)=A_t(t)\sin\theta(-\vec e_\phi)
+        \qty[ik-\frac{1}{r}]A_r(r)
+        &= \frac{J_0}{4\pi}e^{-i\omega t}\frac{e^{ikr}}{r} 
+        \qty(\frac{1}{r} -ik)\sin\theta\vec e_\phi\\
+        &= \sin\theta A(\vec r, t) \qty(ik- \frac{1}{r})\vec e_\phi 
+      \end{split}
     \end{equation}
     
     Nun sucht man noch das Elektrische Feld, welches für $r>0$ 
@@ -337,8 +340,9 @@ im Vakuum.
       \curl \vec B(\vec r, t)= \frac{1}{c^2} \pdv t \vec E(\vec r, t) 
     \end{equation}
     
-    Weil $\vec E\propto e^{-i\omega t}$ gilt, folgt 
-    $\partial_t \vec E(\vec r, t)=i\omega \vec E(\vec r, t)$
+    Weil $\vec E\propto E_r(\vec r) e^{-i\omega t}$ gilt, folgt 
+    $\partial_t \vec E(\vec r, t)=-i\omega \vec E(\vec r, t)$. (Dies
+    folgt aus der Fakt, dass $\vec E$ die Wellengleichungerfüllt!)
 
     Nun kann man das Problem in zwei Wegen lösen. Entweder man nimmt direkt
     die Rotation von $\vec B$ oder man sieht dass
@@ -387,8 +391,8 @@ im Vakuum.
     \begin{equation}
       \begin{split}
         \vec E(\vec r, t)
-        &=\frac{c^2}{iw}\curl\curl \vec A(\vec r, t)\\
-        &=\frac{c^2}{iw}\bigg(
+        &=-\frac{c^2}{iw}\curl\curl \vec A(\vec r, t)\\
+        &=-\frac{c^2}{iw}\bigg(
           \sin\theta\qty[\frac{1}{r^2} +
           \qty(ik - \frac{1}{r})^2]A(\vec r, t)\vec e_r
           + \frac{\cos\theta}{r}\qty(ik-\frac{1}{r})A(\vec r,t)\vec e_\theta
@@ -399,7 +403,7 @@ im Vakuum.
       \end{split}
     \end{equation}
     \begin{equation*}
-        =\frac{c^2}{iw}\qty(
+        =-\frac{c^2}{iw}\qty(
           \sin\theta\qty[\frac{1}{r^2} +
           \qty(ik - \frac{1}{r})^2]\vec e_r
           + \frac{\cos\theta}{r}\qty(ik-\frac{1}{r})\vec e_\theta
@@ -424,12 +428,12 @@ im Vakuum.
     nun also gegeben durch
 
     \begin{equation}
-      \vec B(\vec r, t) = -ik\sin\theta A(\vec r, t)\vec e_\phi
+      \vec B(\vec r, t) = ik\sin\theta A(\vec r, t)\vec e_\phi
       +O(1/r^2)
     \end{equation}
     \begin{equation}
       \vec E(\vec r, t) 
-      = \frac{c^2}{i\omega} \qty(-\sin\theta k^2\vec e_r+k^2 \vec e_z)
+      = -\frac{k^2c^2}{i\omega} \qty(-\sin\theta \vec e_r+\vec e_z)
       A(\vec r, t)
       +O(1/r^2)
     \end{equation}
@@ -440,13 +444,13 @@ im Vakuum.
     \begin{equation}
       \begin{split}
         \bar{\vec{S}}
-        &= \frac{1}{2\mu_0} \vec E^* \times \vec B\\
-        &=\frac{1}{2\mu_0}\qty(\frac{-c^2}{i\omega}A^*{\vec r, t})
-        \qty(-\sin\theta ik A(\vec r, t))
+        &= \frac{1}{2\mu_0} \vec E \times \vec B^*\\
+        &=\frac{1}{2\mu_0}\qty(\frac{-c^2}{i\omega}A{\vec r, t})
+        \qty(-\sin\theta ik A^*(\vec r, t))
         \qty[-k^2\sin\theta (\vec e_\phi \times \vec e_r)
         +k^2 \vec e_\phi \times \vec e_z
         ]\\
-        &= \frac{c^2k^3}{2\mu_0 \omega}\sin\theta A^*(\vec r, t)A(\vec r, t)
+        &= \frac{c^2k^3}{2\mu_0 \omega}\sin\theta A(\vec r, t)A^*(\vec r, t)
         \qty[-\sin\theta\vec e_\theta + 
         \begin{pmatrix}
           \cos\phi\\\sin\phi\\0
@@ -489,7 +493,8 @@ im Vakuum.
   \vfill
   \textbf{Aufgabe kommt aus Nachklausur WS18/19, dazu wurde eine
   Lösung veröffentlicht, womit diese Lösung überprüft wurde. Meine
-  Lösung geht über einen anderen Weg, aber das Endergebnis ist gleich}
+  Lösung geht über einen anderen Weg, aber das Endergebnis (bei c) 
+ist gleich}
 \end{enumerate}
 
 \end{document}
