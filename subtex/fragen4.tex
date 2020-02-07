@@ -19,10 +19,20 @@
 \begin{enumerate}
   \item Was bedeutet das spezielle Relativitätsprinzip für physikalische %1
     Gesetze und die Lichtgeschwindigkeit?
+    
+    Die zwei Einstein'sche Postulate der spezielle Relativität lauten:
 
-    Die Lichtgeschwindigkeit ist eine Konstante in jedem Bezugssystem.
-    Die physikalische Gesetze sollen in jedes Bezugssytem gleich sein,
-    unterschiedliche Beobachter können aber unterschiedliche Gründen
+    1. Die physikalische Gesetze sind in alle 
+    (gleichförmig geradlinig zueinander bewegte)
+    Bezugssyteme gleich.
+
+    2. Die Lichtgeschwindigkeit ist (im Vakuum) 
+    eine Konstante ($c$) in jedem Bezugssystem
+    und ist insbesondere unabhängig von der 
+    Bewgegung der Quelle.
+    
+    \textbf{Notiz zu 1.:} 
+    Unterschiedliche Beobachter können aber unterschiedliche Gründen
     angeben weshalb ein Erreignis statt findet. (z.B. kann ein Beobachter
     im Ruhesystem einer Ladung nur Elektrische Kräfte sehen, während
     ein Beobachter in ein Ruhesystem wo die Ladung sich bewegt auch
@@ -100,9 +110,9 @@
     \end{equation*}
     Für die Rücktransformation gilt:
     \begin{equation*}
-      x^\mu = \qty(\Lambda^{-1})^\mu_{\ \nu} x'^\nu 
+      x^\mu = \Lambda_\mu^{\ \nu} x'^\nu 
       \text{ mit } 
-      \Lambda^\mu_{\ \nu}=
+      \Lambda_\mu^{\ \nu}=
       \begin{pmatrix}
         \gamma       & 0 & 0 & \beta\gamma\\
         0            & 1 & 0 & 0           \\
@@ -129,7 +139,7 @@
     \end{equation*}
     \begin{equation*}
     \qquad x'^\mu = \Lambda^\mu_{\ \nu} x^\nu 
-    \qquad x^\mu = (\Lambda^{-1})^\mu_{\ \nu} x'^\nu 
+    \qquad x^\mu = \Lambda_\mu^{\ \nu} x'^\nu 
     \smref{5.2.12}
     \end{equation*}
 
@@ -369,7 +379,6 @@
     Dies ist bei Weit entfernter Lichtquelle der Falls.
 
   \item Was ergibt sich in der Fraunhofer-Näherung? Wann gilt diese? %15
-
     Die Fraunhofer-Näherung gillt für
     \begin{equation*}
       \frac{a}{d} \ll \frac{\lambda}{a} \smref{6.2.1}
