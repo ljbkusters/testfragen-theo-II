@@ -5,73 +5,181 @@
   \newpage
 
   \textbf{Frage 1.1}
-  \begin{equation*}
-    \begin{split}
-      \grad \rr{1} 
-        &= \partial_i \vu e_i \frac{1}{\abs{r_i \vu e_i - r_i' \vu e_i}}
-        \quad\text{Notation: } \vb* r = r_i \vu e_i = \sum_i r_i \vu e_i\\
-        &= \vu e_i \partial_i \frac{1}{\sqrt{(r_i-r_i')_i^2}}
-        \quad\text{Notation: }(r_i-r'_i)^2_i=\sum_i(r_i-r'_i)^2\\
-        &= 
-        -\frac{2(r_i-r_i')_i}{2\qty[\sqrt{(r_i-r_i')_i^2}]^{3}}\vu e_i \\
-        &= -\frac{\vb* r - \vb* r'}{\abs{\vb* r - \vb* r'}^3} 
-    \end{split}
-  \end{equation*}
+    \begin{equation*}
+      \begin{split}
+        \grad \rr{1} 
+          &= \partial_i \vu e_i \frac{1}{\abs{r_i \vu e_i - r_i' \vu e_i}}
+          \quad\text{Notation: } \vb* r = r_i \vu e_i = \sum_i r_i \vu e_i\\
+          &= \vu e_i \partial_i \frac{1}{\sqrt{(r_i-r_i')_i^2}}
+          \quad\text{Notation: }(r_i-r'_i)^2_i=\sum_i(r_i-r'_i)^2\\
+          &= 
+          -\frac{2(r_i-r_i')_i}{2\qty[\sqrt{(r_i-r_i')_i^2}]^{3}}\vu e_i \\
+          &= -\frac{\vb* r - \vb* r'}{\abs{\vb* r - \vb* r'}^3} 
+      \end{split}
+    \end{equation*}
 
   \textbf{Frage 1.2}
+    für $\vb* r \neq \vb* r'$
+    \begin{equation*}
+      \begin{split}
+        \Delta \rr{1}
+        &=-\div\frac{\vb* r - \vb* r'}{\abs{\vb* r - \vb* r'}^3}\\  
+        &=-\partial_i \vu e_i \cdot 
+        \frac{r_i \vu e_i - r'_i \vu e_i}
+        {\qty[(r_i - r'_i)_i^2]^{3/2}}\\  
+        &=-\qty(
+        \frac{3}{\qty[(r_i - r'_i)_i^2]^{3/2}}
+        +(r_i-r'_i)_i\qty(-\frac{3}{2})\frac{2(r_i-r'_i)}
+        {{\qty[(r_i-r'_i)_i^2]}^{5/2}}
+        )\\  
+        &=-\qty(
+        \frac{3}{\qty[(r_i-r'_i)_i^2]^{3/2}} 
+        + \frac{-3(r_i-r'_i)_i^2}{\qty[(r_i-r'_i)_i^2]^{5/2}}
+        )\\
+        &=0
+      \end{split}
+    \end{equation*}
+    für $\vb* r=\vb* r'$
+    \begin{equation*}
+      \rr{1}\to \infty\quad \text{und}\quad \Delta\rr{1}\ \text{undefiniert}
+    \end{equation*}
+    Dies ist sind genau die Eigenschaften der $\delta$-Distribution.
 
-  für $\vb* r \neq \vb* r'$
-  \begin{equation*}
-    \begin{split}
-      \Delta \rr{1}
-      &=-\div\frac{\vb* r - \vb* r'}{\abs{\vb* r - \vb* r'}^3}\\  
-      &=-\partial_i \vu e_i \cdot 
-      \frac{r_i \vu e_i - r'_i \vu e_i}
-      {\qty[(r_i - r'_i)_i^2]^{3/2}}\\  
-      &=-\qty(
-      \frac{3}{\qty[(r_i - r'_i)_i^2]^{3/2}}
-      +(r_i-r'_i)_i\qty(-\frac{3}{2})\frac{2(r_i-r'_i)}
-      {{\qty[(r_i-r'_i)_i^2]}^{5/2}}
-      )\\  
-      &=-\qty(
-      \frac{3}{\qty[(r_i-r'_i)_i^2]^{3/2}} 
-      + \frac{-3(r_i-r'_i)_i^2}{\qty[(r_i-r'_i)_i^2]^{5/2}}
-      )\\
-      &=0
-    \end{split}
-  \end{equation*}
-  für $\vb* r=\vb* r'$
-  \begin{equation*}
-    \rr{1}\to \infty\quad \text{und}\quad \Delta\rr{1}\ \text{undefiniert}
-  \end{equation*}
-  Dies ist sind genau die Eigenschaften der $\delta$-Distribution.
+    Man weißt also dass $\Delta \rr{1}=-C\delta(\vb* r - \vb* r')$
+    Man möchte C noch finden:
 
-  Man weißt also dass $\Delta \rr{1}=-C\delta(\vb* r - \vb* r')$
-  Man möchte C noch finden:
+    \begin{equation*}
+      \int_V dV \Delta \rr{1} 
+      = -\int_V dV \div \frac{\vb* r - \vb* r'}{\abs{\vb* r - \vb* r'}^3} 
+      = -\int_{\partial V} 
+      d\vb* A \frac{\vb* r - \vb* r'}{\abs{\vb* r - \vb* r'}^3}
+    \end{equation*}
+    Führe die Koordinaten $\tilde {\vb* {r}} = \vb* r-\vb* r'$ ein.
+    $d\tilde {\vb* A} =dA \vu { e}_{\tilde r}$. Bemerke dass 
+    $(\vb* r-\vb*r')\cdot d\vb* A= \tilde{\vb* r}\cdot d\tilde{\vb* A}$
+    \begin{equation*}
+      = -\int_{\partial V} 
+      d\tilde{\vb*{A}} \frac{\tilde{\vb* {r}}}{\abs{\tilde{\vb*{r}}}^3}
+      = -\int_{\partial V} 
+      d\tilde \Omega \tilde r^2 \frac{\tilde r}{\tilde r^3} = -4\pi
+    \end{equation*}
+    Es folgt dann aus der Definition der $\delta$-Distribution dass
+    \begin{equation*}
+      -4\pi = \int dV \Delta \rr{1} = -\int dV C\delta(\vb* r - \vb* r')
+      \Rightarrow C=4\pi
+    \end{equation*}
+    Sodass insgesammt gilt:
+    \begin{equation*}
+      \Delta \rr{1} = -4\pi \delta (\vb* r - \vb* r')
+    \end{equation*}
 
-  \begin{equation*}
-    \int_V dV \Delta \rr{1} 
-    = -\int_V dV \div \frac{\vb* r - \vb* r'}{\abs{\vb* r - \vb* r'}^3} 
-    = -\int_{\partial V} 
-    d\vb* A \frac{\vb* r - \vb* r'}{\abs{\vb* r - \vb* r'}^3}
-  \end{equation*}
-  Führe die Koordinaten $\tilde {\vb* {r}} = \vb* r-\vb* r'$ ein.
-  $d\tilde {\vb* A} =dA \vu { e}_{\tilde r}$. Bemerke dass 
-  $(\vb* r-\vb*r')\cdot d\vb* A= \tilde{\vb* r}\cdot d\tilde{\vb* A}$
-  \begin{equation*}
-    = -\int_{\partial V} 
-    d\tilde{\vb*{A}} \frac{\tilde{\vb* {r}}}{\abs{\tilde{\vb*{r}}}^3}
-    = -\int_{\partial V} 
-    d\tilde \Omega \tilde r^2 \frac{\tilde r}{\tilde r^3} = -4\pi
-  \end{equation*}
-  Es folgt dann aus der Definition der $\delta$-Distribution dass
-  \begin{equation*}
-    -4\pi = \int dV \Delta \rr{1} = -\int dV C\delta(\vb* r - \vb* r')
-    \Rightarrow C=4\pi
-  \end{equation*}
-  Sodass insgesammt gilt:
-  \begin{equation*}
-    \Delta \rr{1} = -4\pi \delta (\vb* r - \vb* r')
-  \end{equation*}
+  \newpage
+  \textbf{Frage 2.1} 
    
+    \begin{equation*}
+      \text{Zz:}\quad
+      \rr{1}= \frac{1}{\abs{\vb*r}}
+      +\frac{\vb*r\cdot\vb*r'}{\abs{\vb*r}^3} 
+      +\frac{1}{2}\sum_{i,j=1}^3 \frac{3r_ir_j-\delta_{ij}\vb*r^2}{r^5}
+      r_i'r_j'
+    \end{equation*}
+
+    Eine allgemeine mehrdimensionale Taylorentwicklung wird gegeben durch:
+
+    \begin{equation*}
+      f(\vb*\alpha, \vb*\beta)
+      =\qty(\exp(\vb*\beta\cdot\nabla_{\vb*\beta'})
+      f(\vb*\alpha, \vb*\beta'))
+      \bigg|_{\vb*\beta=\vb*\beta_0}
+      =\qty(\sum_{n=0}^\infty
+      \frac{(\vb*\beta\cdot\nabla_{\vb*\beta'})^n}{n!}
+      f(\vb*\alpha, \vb*\beta'))
+      \bigg|_{\vb*\beta'=\vb*\beta_0}
+    \end{equation*}
+
+    Man bemerke dass $\nabla$ einen Operator ist! Die exponential Funktion
+    dient hier nur zur vereinfachung der Darstellung!
+
+    Man Taylore um $\vb*r'=0$ (dies heißt, daß $\vb*r\gg\vb*r'$ sodass 
+    $\vb*r-\vb*r'\approx\vb*r$, dafür muss $\vb*r$ natürlich weit
+    von der Quelle entfernt sein).
+
+    Man definiere nun $f(\vb*r,\vb*r')=f(r_1,r_2,r_3,r_1',r_2',r_3')
+    \equiv\rr{1}$
+    
+    Sodass bis zur 2. Ordnung die Taylorentwicklung für unsere Funktion
+    wie folgt aussieht:
+
+    \begin{equation*}
+      \rr{1}=f(\vb*r, 0)
+      + (\vb*r'\cdot \nabla_{\vb*{\bar{r}'}}) f(\vb*r, \vb*r')\bigg|_{\vb*r'=0}
+      + \frac{1}{2}(\vb*r'\cdot\nabla_{\vb*{\bar r'}})^2
+      f(\vb*r,\vb*{\bar r}')
+      \bigg|_{\vb*{\bar r'}=0}
+      + \ldots
+    \end{equation*}
+    
+    \underline{0. Ordnung:}
+    \begin{equation*}
+      \frac{1}{\abs{\vb*r-\vb*{\bar r'}}}\bigg|_{\vb*{\bar r'}=0} 
+      = \frac{1}{\abs{\vb*r}}= \frac{1}{r} 
+    \end{equation*}
+
+    \underline{1. Ordnung:}
+    \begin{equation*}
+      \vb*{\bar r'}\cdot
+      \nabla_{\vb*{\bar{r}'}}\frac{1}{\abs{\vb*r-\vb*{\bar{r}'}}}
+      \bigg|_{\vb*{\bar r'}=0}
+      \stackrel{\text{F1.1}}{=} \frac{\vb*{\bar r'}\cdot\vb*r}{r^3} 
+    \end{equation*}
+    (Man bemerke dass hier nach $-\vb*{\bar r'}$ ableitet,
+    wodurch man das Negative von Frage 1.1 erhält)
+
+    \underline{2. Ordnung:}
+    \begin{equation*}
+      \begin{split}
+      \frac{1}{2}(\vb*{\bar r'}\cdot\nabla_{\vb*{\bar{r}'}})^2
+      \frac{1}{\abs{\vb*r-\vb*{\bar r'}}}\bigg|_{\vb*{\bar r'}=0}
+      &=
+      \frac{1}{2}\qty[r_i'\pdv {\bar r_i'}]\qty[r_j'\pdv{\bar r_j'}]
+      \frac{1}{\abs{\vb*r-\vb*{\bar r'}}}
+      \bigg|_{\vb*{\bar r'}=0}\\
+      &=
+      \frac{r'_ir'_j}{2} 
+      \frac{\partial^2}{\partial_{\bar r_i'}\partial_{\bar r_j'}} 
+      \frac{1}{\abs{\vb*r-\vb*{\bar r'}}}\bigg|_{\vb*{\bar r'}=0}\\
+      &\stackrel{\text{F1.1}}{=} 
+      \frac{r'_ir'_j}{2} \frac{\partial}{\partial_{\bar r_i'}} 
+      \frac{x_j}{\abs{\vb*r-\vb*{\bar r'}}^3}\bigg|_{\vb*{\bar r'}=0}\\
+      &=
+      \frac{r'_ir'_j}{2} \frac{\partial}{\partial_{\bar r_i'}} 
+      \frac{x_j}{\abs{\vb*r-\vb*{\bar r'}}^3}\bigg|_{\vb*{\bar r'}=0}
+      \qquad x_j\equiv (r_j-\bar r_j')\\\
+      &=
+      \frac{r'_ir'_j}{2} 
+      \qty(
+        \text{-}\frac{3}{2}
+        \frac{\text{-}2x_i x_j}{\abs{\vb*r-\vb*{\bar r'}}^5}
+        -\frac{\delta_{ij}}{\abs{\vb*r-\vb*{\bar r'}}^3} 
+      )\bigg|_{\vb*{\bar r'}=0}\quad\text{(Produktregel)}\\
+      &=
+      \frac{1}{2}\sum_{i,j=1}^3 \frac{3r_ir_j-\delta_{ij}\vb*r^2}{r^5}
+      r_i'r_j'
+      \end{split}
+    \end{equation*}
+
+    \textit{Eine wichtige Bemerkung:}
+    Aus Symmetrie gründe gilt
+    \begin{equation*}
+      \frac{1}{2}\sum_{i,j=1}^3 \frac{3r_ir_j-\delta_{ij}\vb*r^2}{r^5}
+      r_i'r_j'
+      =
+      \frac{1}{2}\sum_{i,j=1}^3 \frac{3r'_ir'_j-\delta_{ij}\vb*r'^2}{r^5}
+      r_ir_j
+    \end{equation*}
+    
+    Wir benutzen im allgemeinen die letzte Definition wenn wir die
+    elektrische und magnetische Multipole berechnen!
+    
+
 \end{document}
