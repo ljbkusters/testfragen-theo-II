@@ -63,8 +63,9 @@
         
         Für eine Multipol im Zentriert um $\vb* r_0$:
         $$E_{\text{pot}}=\Phi(\vb* r_0)Q-\vb E(\vb* r_0)\cdot\vb* p 
-        \qquad\qty(-\frac{1}{6}\sum_{ij}\pdv{x_j}E_i(\vb* r_0)Q_{ij}
-        +\ldots)
+        \qquad
+        \underbrace{\qty(-\frac{1}{6}\sum_{ij}\pdv{x_j}E_i(\vb* r_0)Q_{ij}
+        +\ldots)}_{\text{hier nicht gefragt!}}
         \smref{1.7.7}$$
         \textbf{Notiz:} Energie minimierung für $\vb* p\parallel \vb E$
         und gleich ausgerichtet (also $\vu e_{\vb* p}=\vu e_{\vb E}$).\\
@@ -104,6 +105,17 @@
           (lineares Medium)
         \end{tabular}
         \end{center}
+
+        Sei die Frage genau so gestellt, so würde ich in der Klausur einfach
+        das untere aufschreiben:
+        \begin{equation*}
+          \vb*P = \frac{1}{4\pi k}\chi \vb E 
+        \end{equation*}
+        Dabei würde ich angeben dass die definition im Skript analog ist,
+        aber in diese (meine) schreibweise $\chi$ dimensionslos ist. 
+        Man kann natürlich auch die Definition aus dem Skript direkt
+        hinschreiben.
+
         \textbf{Notiz 1:} $\vu \chi$ ist im allgemeinsten Fall 
         definiert als ein Matrix/Tensor.
         dies lässt zu, dass $\vu \chi$ in unterschiedliche Richtungen
@@ -122,7 +134,9 @@
         dielektrischer Verschiebung und Polarisation?
         $$\vb E= 4\pi k\vb D - 4\pi k\vb P \quad\text{(Skript 1.8.17)}$$
         \textbf{Notiz 1:} Die im Skript gegebene Definition ist 
-        \textbf{Falsch}! (aber richtig bis auf die Vorfaktoren.)\\
+        \textbf{Falsch}! (aber richtig bis auf die Vorfaktoren.)
+        Ich würde in der Klausur einfach die Definition in SI einheiten
+        schreiben, denn die ist auch im Skript richtig angegeben!\\
         \textbf{Notiz 2:} Alternativ gilt $\vb D=\epsilon \vb E
         \stackrel{\text{(SI)}}=\epsilon_0\epsilon_r \vb E$ mit
         $\epsilon=\frac{1+\chi}{4\pi k}$ (Herleitung wie im Skript) und
@@ -214,10 +228,12 @@
             \vb M 
             = \chi_M \vb H 
             = \frac{1}{4\pi k'}\frac{\chi_M}{1+\chi_M} \vb B
+            \stackrel{\text{(SI)}}= \frac{\chi_M}{\mu_0\mu_r} \vb B
         \end{equation*}
          \begin{equation*}
             \vb B = \mu \vb H \quad \text{mit}\quad
             \mu = 4\pi k'(1+\chi_M)
+            \stackrel{\text{(SI)}}= {\mu_0\mu_r} 
          \end{equation*}
           \begin{center}
             \sref{2.6.3$\sim$6}
