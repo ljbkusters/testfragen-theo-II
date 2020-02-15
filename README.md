@@ -4,14 +4,15 @@ Die Lösungen die hier zusammengefasst wurden, kommen von mir und
 aus die Theo II Whatsappgruppe.
 **Weder absolute Vollständichkeit noch absolute Korrektheit kann garrantiert werden!**
 
+## Dieses Projekt wird nicht weiter bearbeitet!
+Falls jemand das Projekt weiter selber bearbeiten möchtet, könnt ihr es gerne
+forken. Ich weiß dass es noch einige Fehler gibt, aber ich werde die persönlich
+nicht weiter korrigieren!
+
 Die Hauptdatei findet ihr im "pdf-output" Ordner. Falls ich Zeit habe werde
 ich auch noch einige Herleitungen und auch die Probeklausur-Lösungen
 hochladen. Ich habe auch den Ordner "zusammenfassungen" gemacht,
 wo ich vielleicht noch einige Zusammenfassungen zur bestimmte Themen teile.
-
-Bei Anmerkungen, Fragen, Korrektionen oder sonstiges, könnt ihr mich gerne per 
-email erreichen:  
-ljbkusters@gmail.com
 
 # Noch ein kleines Dankeschön
 
